@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+arm64-linux/
+ascend_ddk/

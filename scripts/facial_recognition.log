@@ -1,0 +1,204 @@
+2021-03-02 09:05:55,127-INFO-app_manager.py:85 create app manager thread
+2021-03-02 09:05:55,128-INFO-presenter_server.py:79 presenter server starting, type: facial_recognition
+2021-03-02 09:16:02,060-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:59916, fd:12
+2021-03-02 09:16:02,061-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 09:16:02,061-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 09:16:03,565-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 09:16:03,565-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 09:16:03,565-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 59916)>}
+2021-03-02 09:16:03,565-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 09:16:03,565-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 09:16:27,771-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:59920, fd:12
+2021-03-02 09:16:27,772-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 09:16:27,772-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 09:16:29,277-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 09:16:29,277-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 09:16:29,278-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 59920)>}
+2021-03-02 09:16:29,278-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 09:16:29,278-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 09:16:35,920-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:59924, fd:12
+2021-03-02 09:16:35,921-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 09:16:35,921-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 09:16:37,425-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 09:16:37,425-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 09:16:37,425-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 59924)>}
+2021-03-02 09:16:37,426-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 09:16:37,426-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 09:18:29,918-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:59928, fd:12
+2021-03-02 09:18:29,919-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 09:18:29,919-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 09:18:31,422-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 09:18:31,423-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 09:18:31,423-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 59928)>}
+2021-03-02 09:18:31,423-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 09:18:31,423-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 16:15:37,816-INFO-app_manager.py:85 create app manager thread
+2021-03-02 16:15:37,848-INFO-presenter_server.py:79 presenter server starting, type: facial_recognition
+2021-03-02 16:16:02,559-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44520, fd:18
+2021-03-02 16:16:02,565-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 16:16:02,565-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 16:16:04,069-ERROR-presenter_socket_server.py:142 socket 18 receive msg head null
+2021-03-02 16:16:04,071-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 16:16:04,071-INFO-facial_recognition_server.py:194 clean fd:18, conns:{18: <socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44520)>}
+2021-03-02 16:16:04,072-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 16:16:04,072-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 16:16:29,220-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44524, fd:18
+2021-03-02 16:16:29,221-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 16:16:29,222-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 16:16:30,726-ERROR-presenter_socket_server.py:142 socket 18 receive msg head null
+2021-03-02 16:16:30,726-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 16:16:30,726-INFO-facial_recognition_server.py:194 clean fd:18, conns:{18: <socket.socket fd=18, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44524)>}
+2021-03-02 16:16:30,727-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 16:16:30,727-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 16:22:13,218-INFO-web.py:196 Register face failed
+2021-03-02 16:22:38,026-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44528, fd:13
+2021-03-02 16:22:38,028-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 16:22:38,028-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 16:22:39,531-ERROR-presenter_socket_server.py:142 socket 13 receive msg head null
+2021-03-02 16:22:39,532-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 16:22:39,532-INFO-facial_recognition_server.py:194 clean fd:13, conns:{13: <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44528)>}
+2021-03-02 16:22:39,532-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 16:22:39,533-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 16:23:06,609-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44532, fd:13
+2021-03-02 16:23:06,611-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 16:23:06,611-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 16:23:08,115-ERROR-presenter_socket_server.py:142 socket 13 receive msg head null
+2021-03-02 16:23:08,115-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 16:23:08,115-INFO-facial_recognition_server.py:194 clean fd:13, conns:{13: <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44532)>}
+2021-03-02 16:23:08,116-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 16:23:08,116-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 16:35:39,971-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44536, fd:12
+2021-03-02 16:35:39,972-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 16:35:39,972-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 16:35:41,477-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 16:35:41,478-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 16:35:41,478-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44536)>}
+2021-03-02 16:35:41,479-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 16:35:41,480-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 16:37:22,688-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44540, fd:12
+2021-03-02 16:37:22,689-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 16:37:22,689-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 16:37:24,193-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 16:37:24,193-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 16:37:24,193-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44540)>}
+2021-03-02 16:37:24,194-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 16:37:24,194-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 16:43:48,377-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44544, fd:13
+2021-03-02 16:43:48,378-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 16:43:48,378-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 16:43:49,882-ERROR-presenter_socket_server.py:142 socket 13 receive msg head null
+2021-03-02 16:43:49,883-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 16:43:49,883-INFO-facial_recognition_server.py:194 clean fd:13, conns:{13: <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44544)>}
+2021-03-02 16:43:49,884-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 16:43:49,884-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 16:43:54,757-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44548, fd:13
+2021-03-02 16:43:54,759-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 16:43:54,760-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 16:43:56,262-ERROR-presenter_socket_server.py:142 socket 13 receive msg head null
+2021-03-02 16:43:56,262-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 16:43:56,262-INFO-facial_recognition_server.py:194 clean fd:13, conns:{13: <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44548)>}
+2021-03-02 16:43:56,262-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 16:43:56,262-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 17:05:06,827-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44552, fd:12
+2021-03-02 17:05:06,829-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 17:05:06,830-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 17:05:08,333-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 17:05:08,334-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 17:05:08,334-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44552)>}
+2021-03-02 17:05:08,335-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 17:05:08,336-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 17:06:42,545-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44556, fd:12
+2021-03-02 17:06:42,546-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 17:06:42,547-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 17:06:44,050-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 17:06:44,051-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 17:06:44,051-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44556)>}
+2021-03-02 17:06:44,051-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 17:06:44,051-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-02 17:25:57,318-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:44560, fd:12
+2021-03-02 17:25:57,319-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-02 17:25:57,320-INFO-app_manager.py:115 register app: face_recognition
+2021-03-02 17:25:58,820-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-02 17:25:58,820-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-02 17:25:58,821-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 44560)>}
+2021-03-02 17:25:58,821-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-02 17:25:58,821-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-03 15:14:26,194-INFO-app_manager.py:85 create app manager thread
+2021-03-03 15:14:26,207-INFO-presenter_server.py:79 presenter server starting, type: facial_recognition
+2021-03-03 15:14:29,076-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:33022, fd:12
+2021-03-03 15:14:29,080-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-03 15:14:29,081-INFO-app_manager.py:115 register app: face_recognition
+2021-03-03 15:14:30,583-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-03 15:14:30,584-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-03 15:14:30,584-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 33022)>}
+2021-03-03 15:14:30,585-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-03 15:14:30,585-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-03 15:16:42,813-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:33026, fd:14
+2021-03-03 15:16:42,814-ERROR-facial_recognition_server.py:428 channel name presentername is not exist.
+2021-03-03 15:16:42,814-INFO-facial_recognition_server.py:194 clean fd:14, conns:{14: <socket.socket fd=14, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 33026)>}
+2021-03-03 15:27:24,123-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:60806, fd:12
+2021-03-03 15:27:24,124-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-03 15:27:24,124-INFO-app_manager.py:115 register app: face_recognition
+2021-03-03 15:27:25,629-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-03 15:27:25,629-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-03 15:27:25,630-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 60806)>}
+2021-03-03 15:27:25,630-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-03 15:27:25,630-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-03 15:32:28,149-INFO-app_manager.py:85 create app manager thread
+2021-03-03 15:32:28,150-INFO-presenter_server.py:79 presenter server starting, type: facial_recognition
+2021-03-03 15:33:21,874-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:52480, fd:12
+2021-03-03 15:33:21,877-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-03 15:33:21,878-INFO-app_manager.py:115 register app: face_recognition
+2021-03-03 15:33:22,089-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:52490, fd:13
+2021-03-03 15:33:22,090-INFO-facial_recognition_handler.py:120 create videothread-face_recognition...
+2021-03-03 15:33:22,090-INFO-channel_manager.py:127 create channel resource, channel_name:face_recognition, channel_fd:13, media_type:video
+2021-03-03 15:33:42,902-ERROR-presenter_socket_server.py:142 socket 13 receive msg head null
+2021-03-03 15:33:42,904-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-03 15:33:42,904-INFO-facial_recognition_server.py:194 clean fd:13, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52480)>, 13: <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52490)>}
+2021-03-03 15:33:42,904-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-03 15:33:42,905-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-03 15:33:42,905-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52480)>}
+2021-03-03 15:33:42,905-INFO-channel_handler.py:124 videothread-face_recognition set _close_thread_switch True
+2021-03-03 15:33:42,906-INFO-channel_manager.py:139 clean channel: face_recognition's resource
+2021-03-03 15:33:42,906-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-03 15:33:42,906-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-03 15:33:42,908-INFO-facial_recognition_handler.py:131 Stop thread:videothread-face_recognition.
+2021-03-03 15:33:44,503-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:52492, fd:12
+2021-03-03 15:33:44,506-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-03 15:33:44,506-INFO-app_manager.py:115 register app: face_recognition
+2021-03-03 15:33:44,727-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:52502, fd:13
+2021-03-03 15:33:44,728-INFO-facial_recognition_handler.py:120 create videothread-face_recognition...
+2021-03-03 15:33:44,729-INFO-channel_manager.py:127 create channel resource, channel_name:face_recognition, channel_fd:13, media_type:video
+2021-03-03 15:34:36,065-ERROR-presenter_socket_server.py:142 socket 13 receive msg head null
+2021-03-03 15:34:36,066-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-03 15:34:36,066-INFO-facial_recognition_server.py:194 clean fd:13, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52492)>, 13: <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52502)>}
+2021-03-03 15:34:36,067-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-03 15:34:36,067-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-03 15:34:36,067-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52492)>}
+2021-03-03 15:34:36,067-INFO-channel_handler.py:124 videothread-face_recognition set _close_thread_switch True
+2021-03-03 15:34:36,068-INFO-channel_manager.py:139 clean channel: face_recognition's resource
+2021-03-03 15:34:36,068-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-03 15:34:36,068-INFO-facial_recognition_handler.py:131 Stop thread:videothread-face_recognition.
+2021-03-03 15:34:36,068-INFO-app_manager.py:131 unregister app: face_recognition
+2021-03-03 15:34:46,720-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:52504, fd:12
+2021-03-03 15:34:46,722-INFO-channel_manager.py:216 register channel: face_recognition
+2021-03-03 15:34:46,722-INFO-app_manager.py:115 register app: face_recognition
+2021-03-03 15:34:47,013-INFO-presenter_socket_server.py:255 create new connection:client-ip:192.168.1.2, client-port:52514, fd:13
+2021-03-03 15:34:47,014-INFO-facial_recognition_handler.py:120 create videothread-face_recognition...
+2021-03-03 15:34:47,015-INFO-channel_manager.py:127 create channel resource, channel_name:face_recognition, channel_fd:13, media_type:video
+2021-03-03 15:35:55,205-INFO-facial_recognition_server.py:658 Register face john succeed
+2021-03-03 15:35:55,206-INFO-web.py:193 Register face success
+2021-03-03 15:43:23,531-INFO-facial_recognition_server.py:658 Register face jack succeed
+2021-03-03 15:43:23,531-INFO-web.py:193 Register face success
+2021-03-03 15:44:07,608-INFO-web.py:219 Delete face success
+2021-03-03 15:44:19,320-ERROR-presenter_socket_server.py:142 socket 13 receive msg head null
+2021-03-03 15:44:19,320-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-03 15:44:19,320-INFO-facial_recognition_server.py:194 clean fd:13, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52504)>, 13: <socket.socket fd=13, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52514)>}
+2021-03-03 15:44:19,320-ERROR-presenter_socket_server.py:142 socket 12 receive msg head null
+2021-03-03 15:44:19,320-ERROR-presenter_socket_server.py:204 msg_total_len is None.
+2021-03-03 15:44:19,320-INFO-facial_recognition_server.py:194 clean fd:12, conns:{12: <socket.socket fd=12, family=AddressFamily.AF_INET, type=2049, proto=0, laddr=('192.168.1.223', 7008), raddr=('192.168.1.2', 52504)>}
+2021-03-03 15:44:19,321-INFO-channel_handler.py:124 videothread-face_recognition set _close_thread_switch True
+2021-03-03 15:44:19,321-INFO-channel_manager.py:139 clean channel: face_recognition's resource
+2021-03-03 15:44:19,321-INFO-channel_manager.py:227 unregister channel: face_recognition
+2021-03-03 15:44:19,321-INFO-facial_recognition_handler.py:131 Stop thread:videothread-face_recognition.
+2021-03-03 15:44:19,321-INFO-app_manager.py:131 unregister app: face_recognition
