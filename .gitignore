@@ -31,5 +31,7 @@
 *.out
 *.app
 
-arm64-linux/
-ascend_ddk/
+model/
+build/
+data/
+out/
