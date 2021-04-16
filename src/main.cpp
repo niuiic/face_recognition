@@ -93,3 +93,4 @@ int main(int argc, char *argv[]) {
   INFO_LOG("Execute sample success");
   return SUCCESS;
 }
+// for test
