@@ -1,23 +1,21 @@
-已经是最新的。
 sending incremental file list
 
-sent 623 bytes  received 17 bytes  1,280.00 bytes/sec
-total size is 180,718  speedup is 282.37
+sent 619 bytes  received 17 bytes  1,272.00 bytes/sec
+total size is 180,718  speedup is 284.15
 sending incremental file list
 
 sent 2,853 bytes  received 33 bytes  5,772.00 bytes/sec
 total size is 1,823,273  speedup is 631.76
 sending incremental file list
 
-sent 674 bytes  received 17 bytes  1,382.00 bytes/sec
-total size is 245,451  speedup is 355.21
-来自 https://github.com/niuiic/face_recognition
- * branch            main       -> FETCH_HEAD
-[ 16%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
-[ 16%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
-[ 16%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
-[ 22%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
-[ 27%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
+sent 670 bytes  received 17 bytes  1,374.00 bytes/sec
+total size is 245,451  speedup is 357.28
+fatal: unable to access 'https://github.com/niuiic/face_recognition/': gnutls_handshake() failed: The TLS connection was non-properly terminated.
+[  5%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
+[ 11%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
+[ 16%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
+[ 22%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
+[ 27%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
 [ 33%] Building CXX object CMakeFiles/main.dir/face_register.cpp.o
 [ 38%] Building CXX object CMakeFiles/main.dir/face_detection.cpp.o
 [ 44%] Building CXX object CMakeFiles/main.dir/face_feature_mask.cpp.o
@@ -41,7 +39,6 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
          INFO_LOG("FaceFeatureMaskProcess::ImageYUV2BGR, push_resized_image = %x", resized_img_iter->data.get());
          ^
 [ 61%] Building CXX object CMakeFiles/main.dir/face_post_process.cpp.o
-[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
 In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition.h:39,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:34:
@@ -78,12 +75,13 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:465:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
          ^
+[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
 [ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
 [ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
 [ 83%] Building CXX object CMakeFiles/main.dir/dvpp_jpegd.cpp.o
 [ 88%] Building CXX object CMakeFiles/main.dir/dvpp_cropandpaste.cpp.o
 [ 94%] Building CXX object CMakeFiles/main.dir/main.cpp.o
 [100%] Linking CXX executable /home/niuiic/Documents/Project/Cpp/face_recognition/out/main
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -[100%] Built target main
-lprotobuf
+[100%] Built target main
+/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
