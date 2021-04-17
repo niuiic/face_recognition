@@ -92,4 +92,4 @@ int main(int argc, char *argv[]) {
   ResourceLoad::GetInstance().DestroyResource();
   INFO_LOG("Execute sample success");
   return SUCCESS;
-}
+// }
