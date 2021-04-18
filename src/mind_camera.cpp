@@ -81,11 +81,11 @@ string MindCamera::CameraDatasetsConfig::ToString() const {
 bool MindCamera::Init() {
   INFO_LOG("[CameraDatasets] start init!");
   if (config_ == nullptr) {
-    // ´´½¨ÅäÖÃ
+    // åˆ›å»ºé…ç½®
     config_ = make_shared<CameraDatasetsConfig>();
   }
 
-  // ÉèÖÃÅäÖÃ
+  // è®¾ç½®é…ç½®
   config_->fps = 10;
   config_->image_format = CommonParseParam("YUV420SP");
   config_->channel_id = CommonParseParam("Channel-1");
@@ -94,7 +94,7 @@ bool MindCamera::Init() {
                  config_->resolution_height);
   bool ret = true;
 
-  // ÅäÖÃÉèÖÃÊ§°Ü±êÖ¾
+  // é…ç½®è®¾ç½®å¤±è´¥æ ‡å¿—
   bool failed_flag =
       (config_->image_format == PARSEPARAM_FAIL ||
        config_->channel_id == PARSEPARAM_FAIL ||
@@ -171,7 +171,7 @@ MindCamera::CameraOperationCode MindCamera::PreCapProcess() {
   MediaLibInit();
 
   CameraStatus status =
-      QueryCameraStatus(config_->channel_id); // »ñÈ¡ÉãÏñÍ·×´Ì¬
+      QueryCameraStatus(config_->channel_id); // è·å–æ‘„åƒå¤´çŠ¶æ€
   if (status != CAMERA_STATUS_CLOSED) {
     ERROR_LOG("[CameraDatasets] PreCapProcess.QueryCameraStatus "
               "{status:%d} failed.",
@@ -267,8 +267,8 @@ static struct timespec time2 = {0, 0};
 
 bool MindCamera::DoCapProcess() {
   CameraOperationCode ret_code =
-      PreCapProcess(); // ³õÊ¼»¯ÉãÏñÍ·£¬»ñÈ¡ÉãÏñÍ·×´Ì¬Âë
-  // ÉãÏñÍ·³ö´íÇé¿ö´¦Àí
+      PreCapProcess(); // åˆå§‹åŒ–æ‘„åƒå¤´ï¼Œè·å–æ‘„åƒå¤´çŠ¶æ€ç 
+  // æ‘„åƒå¤´å‡ºé”™æƒ…å†µå¤„ç†
   if (ret_code == kCameraSetPropertyFailed) {
     CloseCamera(config_->channel_id);
 
@@ -281,7 +281,7 @@ bool MindCamera::DoCapProcess() {
     return false;
   }
 
-  // ÉèÖÃÈÎÎñÕıÔÚÖ´ĞĞµÄ±êÖ¾
+  // è®¾ç½®ä»»åŠ¡æ­£åœ¨æ‰§è¡Œçš„æ ‡å¿—
   SetExitFlag(CAMERADATASETS_RUN);
 
   bool ret = true;
@@ -317,7 +317,7 @@ bool MindCamera::DoCapProcess() {
     // p_obj->org_img.alignWidth, p_obj->org_img.alignHeight,
     // p_obj->org_img.size);
 
-    // KEY£º¶ÔÍ¼Ïñ½øĞĞ´¦Àí£¬½øĞĞÈËÁ³¼ì²âÓëÊ¶±ğ
+    // KEYï¼šå¯¹å›¾åƒè¿›è¡Œå¤„ç†ï¼Œè¿›è¡Œäººè„¸æ£€æµ‹ä¸è¯†åˆ«
     ResourceLoad::GetInstance().SendNextModelProcess("MindCamera", p_obj);
     clock_gettime(CLOCK_REALTIME, &time2);
 
@@ -346,8 +346,8 @@ int MindCamera::GetExitFlag() {
 
 bool MindCamera::Process() {
   INFO_LOG("[CameraDatasets] start process!");
-  Init();         // KEY£º³õÊ¼»¯MindCamerea
-  DoCapProcess(); // KEY£ºÖ´ĞĞÉãÏñÍ·½ø³Ì
+  Init();         // KEYï¼šåˆå§‹åŒ–MindCamerea
+  DoCapProcess(); // KEYï¼šæ‰§è¡Œæ‘„åƒå¤´è¿›ç¨‹
   INFO_LOG("[CameraDatasets] end process!");
   return true;
 }
