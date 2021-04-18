@@ -275,6 +275,7 @@ Result FaceDetection::Process(
         return FAILED;
     }
     clock_gettime(CLOCK_REALTIME, &time1);
+
     // resize image
     ImageData resized_image;
     if (PreProcess(image_handle, resized_image) == FAILED) {
@@ -283,7 +284,6 @@ Result FaceDetection::Process(
         return FAILED;
     }
     clock_gettime(CLOCK_REALTIME, &time2);
-
 
     // inference
     aclmdlDataset* detection_inference;
@@ -294,7 +294,6 @@ Result FaceDetection::Process(
     }
     clock_gettime(CLOCK_REALTIME, &time3);
 
-
     // post process
     if (PostProcess(image_handle, detection_inference) == FAILED) {
         err_msg = "face_detection deal result failed.";
@@ -302,6 +301,7 @@ Result FaceDetection::Process(
         return FAILED;
     }
     clock_gettime(CLOCK_REALTIME, &time4);
+
     // send result
     SendResult(image_handle);
     return SUCCESS;
