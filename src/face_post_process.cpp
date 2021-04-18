@@ -136,7 +136,7 @@ FacePostProcess::SendFeature(const shared_ptr<FaceRecognitionInfo> &info) {
   // return SUCCESS;
 }
 
-// KEY£ºÈËÁ³ºó´¦ÀíÍê³É·µ»Ø×îÖÕ½á¹û
+// KEYï¼šäººè„¸åå¤„ç†å®Œæˆè¿”å›æœ€ç»ˆç»“æœ
 Result
 FacePostProcess::ReplyFeature(const shared_ptr<FaceRecognitionInfo> &info) {
   // get channel for reply feature (data from register)
@@ -169,6 +169,7 @@ FacePostProcess::ReplyFeature(const shared_ptr<FaceRecognitionInfo> &info) {
   for (int i = 0; i < face_imgs.size(); i++) {
     // every face feature
     face_feature = result.add_feature();
+
     // box
     face_feature->mutable_box()->set_lt_x(face_imgs[i].rectangle.lt.x);
     face_feature->mutable_box()->set_lt_y(face_imgs[i].rectangle.lt.y);
@@ -180,6 +181,7 @@ FacePostProcess::ReplyFeature(const shared_ptr<FaceRecognitionInfo> &info) {
       face_feature->add_vector(face_imgs[i].feature_vector[j]);
     }
   }
+  // å°†äººè„¸è¯†åˆ«çš„ç»“æœä¼ ç»™presenterserverï¼Œå¹¶è¿”å›æ‰§è¡Œæƒ…å†µ
   PresenterErrorCode error_code = channel->SendMessage(result, resp);
   INFO_LOG("FacePostProcess::ReplyFeature end.");
   return CheckSendMessageRes(error_code);

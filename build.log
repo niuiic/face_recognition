@@ -1,13 +1,119 @@
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
-It is also possible that a host key has just been changed.
-The fingerprint for the ECDSA key sent by the remote host is
-SHA256:ERsaxnx3cOIW6f8sKD5/RcaVy5d999odGyNbgXBXmM8.
-Please contact your system administrator.
-Add correct host key in /home/niuiic/.ssh/known_hosts to get rid of this message.
-Offending ECDSA key in /home/niuiic/.ssh/known_hosts:3
-Host key for 192.168.1.107 has changed and you have requested strict checking.
-Host key verification failed.
+来自 https://github.com/niuiic/face_recognition
+ * branch            dev        -> FETCH_HEAD
+ * [新分支]          dev        -> origin/dev
+更新 907b73a..d700a16
+Fast-forward
+ .../index/face_detection.cpp.5D8478C96CB0921B.idx  | Bin 5142 -> 5142 bytes
+ .../face_post_process.cpp.684B128B9D625C52.idx     | Bin 3124 -> 3122 bytes
+ .cache/clangd/index/main.cpp.4885A62A7CFFAE99.idx  | Bin 1810 -> 1810 bytes
+ .../index/mind_camera.cpp.F2D8842340704408.idx     | Bin 5906 -> 5906 bytes
+ .../index/resource_load.h.2ABB55DD80AB12C8.idx     | Bin 3634 -> 3634 bytes
+ build.log                                          | 100 +----
+ build.sh                                           |   4 +-
+ commit.sh                                          |   4 -
+ inc/resource_load.h                                | 144 +++---
+ src/face_detection.cpp                             |   4 +-
+ src/face_post_process.cpp                          | 262 +++++------
+ src/main.cpp                                       |   2 +-
+ src/mind_camera.cpp                                | 490 +++++++++++----------
+ 13 files changed, 471 insertions(+), 539 deletions(-)
+ delete mode 100755 commit.sh
+sending incremental file list
+inc/
+inc/resource_load.h
+          3,133 100%    0.00kB/s    0:00:00            3,133 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=1/21)
+
+sent 1,926 bytes  received 39 bytes  3,930.00 bytes/sec
+total size is 180,742  speedup is 91.98
+sending incremental file list
+
+sent 2,853 bytes  received 33 bytes  5,772.00 bytes/sec
+total size is 1,823,273  speedup is 631.76
+sending incremental file list
+src/
+src/face_detection.cpp
+         10,022 100%    0.00kB/s    0:00:00           10,022 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=11/21)
+src/face_post_process.cpp
+          7,391 100%    7.05MB/s    0:00:00            7,391 100%    7.05MB/s    0:00:00 (xfr#2, to-chk=9/21)
+src/main.cpp
+          2,591 100%    2.47MB/s    0:00:00            2,591 100%    2.47MB/s    0:00:00 (xfr#3, to-chk=4/21)
+src/mind_camera.cpp
+         11,159 100%   10.64MB/s    0:00:00           11,159 100%   10.64MB/s    0:00:00 (xfr#4, to-chk=3/21)
+
+sent 11,405 bytes  received 96 bytes  23,002.00 bytes/sec
+total size is 245,943  speedup is 21.38
+Scanning dependencies of target main
+[  5%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
+[ 11%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
+[ 16%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
+[ 22%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
+[ 27%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
+[ 33%] Building CXX object CMakeFiles/main.dir/face_register.cpp.o
+[ 38%] Building CXX object CMakeFiles/main.dir/face_detection.cpp.o
+[ 44%] Building CXX object CMakeFiles/main.dir/face_feature_mask.cpp.o
+[ 50%] Building CXX object CMakeFiles/main.dir/face_recognition.cpp.o
+[ 55%] Building CXX object CMakeFiles/main.dir/facial_recognition_message.pb.cc.o
+[ 61%] Building CXX object CMakeFiles/main.dir/face_post_process.cpp.o
+In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_feature_mask.h:36,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:33:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::Resize(std::vector<FaceImage>&, std::vector<ImageData>&)’:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::__shared_ptr<unsigned char, (__gnu_cxx::_Lock_policy)2>::element_type* {aka unsigned char*}’ [-Wformat=]
+ #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
+                                                                           ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:180:9: note: in expansion of macro ‘INFO_LOG’
+         INFO_LOG("FaceFeatureMaskProcess::Resize, push_resized_image = %x", resized_image.data.get());
+         ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::ImageYUV2BGR(std::vector<ImageData>&, std::vector<cv::Mat>&)’:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::__shared_ptr<unsigned char, (__gnu_cxx::_Lock_policy)2>::element_type* {aka unsigned char*}’ [-Wformat=]
+ #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
+                                                                           ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:196:9: note: in expansion of macro ‘INFO_LOG’
+         INFO_LOG("FaceFeatureMaskProcess::ImageYUV2BGR, push_resized_image = %x", resized_img_iter->data.get());
+         ^
+[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
+[ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
+[ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
+In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition.h:39,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:34:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::ArrangeResult(int32_t, float*, uint32_t, const std::vector<AlignedFace>&, std::vector<FaceImage>&)’:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘std::vector<AlignedFace>::size_type {aka long unsigned int}’ [-Wformat=]
+ #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
+                                                                           ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:356:9: note: in expansion of macro ‘INFO_LOG’
+         INFO_LOG("inference result size not correct. batch_begin=%d, total_face=%d, inference_size=%d, need_size=%d, cont %d",
+         ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+ #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
+                                                                           ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:356:9: note: in expansion of macro ‘INFO_LOG’
+         INFO_LOG("inference result size not correct. batch_begin=%d, total_face=%d, inference_size=%d, need_size=%d, cont %d",
+         ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long unsigned int’ [-Wformat=]
+ #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
+                                                                           ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:364:5: note: in expansion of macro ‘INFO_LOG’
+     INFO_LOG("set inference sizeof(result) =%d", sizeof(result));
+     ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::InferenceFeatureVector(const std::vector<AlignedFace>&, std::vector<FaceImage>&)’:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long unsigned int’ [-Wformat=]
+ #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
+                                                                           ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:423:2: note: in expansion of macro ‘INFO_LOG’
+  INFO_LOG("arrange GetInferenceOutputItem, inference=%d",
+  ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::Process(std::shared_ptr<FaceRecognitionInfo>&)’:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘AppErrorCode’ [-Wformat=]
+ #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
+                                                                           ^
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:465:9: note: in expansion of macro ‘INFO_LOG’
+         INFO_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
+         ^
+[ 83%] Building CXX object CMakeFiles/main.dir/dvpp_jpegd.cpp.o
+[ 88%] Building CXX object CMakeFiles/main.dir/dvpp_cropandpaste.cpp.o
+[ 94%] Building CXX object CMakeFiles/main.dir/main.cpp.o
+[100%] Linking CXX executable /home/niuiic/Documents/Project/Cpp/face_recognition/out/main
+/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
+/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -[100%] Built target main
+lprotobuf
