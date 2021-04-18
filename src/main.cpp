@@ -87,9 +87,9 @@ int main(int argc, char *argv[]) {
   task1.detach();
 
   MindCamera mindCamera;
-  mindCamera.Process(); // NOTE：人脸摄取与识别
+  mindCamera.Process(); // KEY：人脸摄取与识别
 
   ResourceLoad::GetInstance().DestroyResource();
   INFO_LOG("Execute sample success");
   return SUCCESS;
-// }
+}
