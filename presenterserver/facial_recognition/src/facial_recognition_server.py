@@ -69,8 +69,10 @@ FACE_REGISTER_STATUS_WAITING = 1
 FACE_REGISTER_STATUS_SUCCEED = 2
 FACE_REGISTER_STATUS_FAILED = 3
 
+
 class FacialRecognitionServer(PresenterSocketServer):
     '''A server for face recognition'''
+
     def __init__(self, config):
         """
         Description: class init func
@@ -87,6 +89,7 @@ class FacialRecognitionServer(PresenterSocketServer):
         self.register_dict = {}
         self.app_manager = AppManager()
         self.channel_manager = ChannelManager()
+        #  登记人脸数据文件
         self.face_register_file = os.path.join(self.storage_dir,
                                                "registered_faces.json")
         self._init_face_database()
@@ -197,7 +200,6 @@ class FacialRecognitionServer(PresenterSocketServer):
         conns[sock_fileno].close()
         del conns[sock_fileno]
         del msgs[sock_fileno]
-
 
     def _process_msg(self, conn, msg_name, msg_data):
         """
@@ -430,7 +432,7 @@ class FacialRecognitionServer(PresenterSocketServer):
             return self._response_open_channel(conn, channel_name,
                                                response, err_code)
             #ret = self.channel_manager.register_one_channel(channel_name)
-            #if ret != ChannelManager.err_code_ok:
+            # if ret != ChannelManager.err_code_ok:
             #    logging.error("Create the channel %s failed!, and ret is %d", channel_name, ret)
             #    err_code =  pb2.kOpenChannelErrorOther
             #    self._response_open_channel(conn, channel_name, response, err_code)
@@ -549,7 +551,6 @@ class FacialRecognitionServer(PresenterSocketServer):
         square_diff = ((np.linalg.norm(vector1)) * (np.linalg.norm(vector2)))
         score = np.dot(vector1, vector2) / square_diff
         return score
-
 
     def stop_thread(self):
         """
@@ -711,6 +712,7 @@ class FacialRecognitionManager():
             face_list.append(face_info)
 
         return face_list
+
 
 def run():
     '''Face Recognition server startup function'''

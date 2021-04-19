@@ -1,53 +1,59 @@
-来自 https://github.com/niuiic/face_recognition
- * branch            dev        -> FETCH_HEAD
- * [新分支]          dev        -> origin/dev
-更新 907b73a..d700a16
-Fast-forward
- .../index/face_detection.cpp.5D8478C96CB0921B.idx  | Bin 5142 -> 5142 bytes
- .../face_post_process.cpp.684B128B9D625C52.idx     | Bin 3124 -> 3122 bytes
- .cache/clangd/index/main.cpp.4885A62A7CFFAE99.idx  | Bin 1810 -> 1810 bytes
- .../index/mind_camera.cpp.F2D8842340704408.idx     | Bin 5906 -> 5906 bytes
- .../index/resource_load.h.2ABB55DD80AB12C8.idx     | Bin 3634 -> 3634 bytes
- build.log                                          | 100 +----
- build.sh                                           |   4 +-
- commit.sh                                          |   4 -
- inc/resource_load.h                                | 144 +++---
- src/face_detection.cpp                             |   4 +-
- src/face_post_process.cpp                          | 262 +++++------
- src/main.cpp                                       |   2 +-
- src/mind_camera.cpp                                | 490 +++++++++++----------
- 13 files changed, 471 insertions(+), 539 deletions(-)
- delete mode 100755 commit.sh
 sending incremental file list
-inc/
-inc/resource_load.h
-          3,133 100%    0.00kB/s    0:00:00            3,133 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=1/21)
+fatal: unable to access 'https://github.com/niuiic/face_recognition/': Failed to connect to github.com port 443: 没有到主机的路由
 
-sent 1,926 bytes  received 39 bytes  3,930.00 bytes/sec
-total size is 180,742  speedup is 91.98
+sent 637 bytes  received 17 bytes  1,308.00 bytes/sec
+total size is 180,742  speedup is 276.36
+sending incremental file list
+presenterserver/common/__pycache__/
+presenterserver/common/__pycache__/__init__.cpython-37.pyc
+            252 100%    0.00kB/s    0:00:00              252 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=79/96)
+presenterserver/common/__pycache__/app_manager.cpython-37.pyc
+          6,120 100%    5.84MB/s    0:00:00            6,120 100%    2.92MB/s    0:00:00 (xfr#2, to-chk=77/96)
+presenterserver/common/__pycache__/channel_handler.cpython-37.pyc
+          5,370 100%    1.71MB/s    0:00:00            5,370 100%    1.71MB/s    0:00:00 (xfr#3, to-chk=75/96)
+presenterserver/common/__pycache__/channel_manager.cpython-37.pyc
+          9,521 100%   88.55kB/s    0:00:00            9,521 100%   88.55kB/s    0:00:00 (xfr#4, to-chk=73/96)
+presenterserver/common/__pycache__/parameter_validation.cpython-37.pyc
+          1,792 100%   16.20kB/s    0:00:00            1,792 100%   16.06kB/s    0:00:00 (xfr#5, to-chk=71/96)
+presenterserver/common/__pycache__/presenter_message_pb2.cpython-37.pyc
+          8,057 100%   70.88kB/s    0:00:00            8,057 100%   70.88kB/s    0:00:00 (xfr#6, to-chk=69/96)
+presenterserver/common/__pycache__/presenter_socket_server.cpython-37.pyc
+         12,743 100%  107.28kB/s    0:00:00           12,743 100%  107.28kB/s    0:00:00 (xfr#7, to-chk=67/96)
+presenterserver/facial_recognition/config/
+presenterserver/facial_recognition/config/config.conf
+            673 100%    5.30kB/s    0:00:00              673 100%    5.30kB/s    0:00:00 (xfr#8, to-chk=63/96)
+presenterserver/facial_recognition/src/__pycache__/
+presenterserver/facial_recognition/src/__pycache__/__init__.cpython-37.pyc
+            268 100%    2.09kB/s    0:00:00              268 100%    2.09kB/s    0:00:00 (xfr#9, to-chk=53/96)
+presenterserver/facial_recognition/src/__pycache__/config_parser.cpython-37.pyc
+          2,542 100%   19.55kB/s    0:00:00            2,542 100%   19.55kB/s    0:00:00 (xfr#10, to-chk=51/96)
+presenterserver/facial_recognition/src/__pycache__/facial_recognition_handler.cpython-37.pyc
+          2,826 100%   21.39kB/s    0:00:00            2,826 100%   21.39kB/s    0:00:00 (xfr#11, to-chk=49/96)
+presenterserver/facial_recognition/src/__pycache__/facial_recognition_message_pb2.cpython-37.pyc
+          6,764 100%   47.18kB/s    0:00:00            6,764 100%   47.18kB/s    0:00:00 (xfr#12, to-chk=47/96)
+presenterserver/facial_recognition/src/__pycache__/facial_recognition_server.cpython-37.pyc
+         20,080 100%  136.18kB/s    0:00:00           20,080 100%  136.18kB/s    0:00:00 (xfr#13, to-chk=45/96)
+presenterserver/facial_recognition/src/__pycache__/web.cpython-37.pyc
+         11,574 100%   76.89kB/s    0:00:00           11,574 100%   76.89kB/s    0:00:00 (xfr#14, to-chk=43/96)
+
+sent 39,989 bytes  received 316 bytes  80,610.00 bytes/sec
+total size is 1,823,273  speedup is 45.24
 sending incremental file list
 
-sent 2,853 bytes  received 33 bytes  5,772.00 bytes/sec
-total size is 1,823,273  speedup is 631.76
+sent 686 bytes  received 17 bytes  1,406.00 bytes/sec
+total size is 245,943  speedup is 349.85
 sending incremental file list
-src/
-src/face_detection.cpp
-         10,022 100%    0.00kB/s    0:00:00           10,022 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=11/21)
-src/face_post_process.cpp
-          7,391 100%    7.05MB/s    0:00:00            7,391 100%    7.05MB/s    0:00:00 (xfr#2, to-chk=9/21)
-src/main.cpp
-          2,591 100%    2.47MB/s    0:00:00            2,591 100%    2.47MB/s    0:00:00 (xfr#3, to-chk=4/21)
-src/mind_camera.cpp
-         11,159 100%   10.64MB/s    0:00:00           11,159 100%   10.64MB/s    0:00:00 (xfr#4, to-chk=3/21)
+scripts/
+scripts/facial_recognition.log
+         22,841 100%    0.00kB/s    0:00:00           22,841 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=4/6)
 
-sent 11,405 bytes  received 96 bytes  23,002.00 bytes/sec
-total size is 245,943  speedup is 21.38
-Scanning dependencies of target main
-[  5%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
-[ 11%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
-[ 16%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
-[ 22%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
-[ 27%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
+sent 2,329 bytes  received 39 bytes  4,736.00 bytes/sec
+total size is 40,083  speedup is 16.93
+[  5%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
+[ 11%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
+[ 16%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
+[ 22%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
+[ 27%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
 [ 33%] Building CXX object CMakeFiles/main.dir/face_register.cpp.o
 [ 38%] Building CXX object CMakeFiles/main.dir/face_detection.cpp.o
 [ 44%] Building CXX object CMakeFiles/main.dir/face_feature_mask.cpp.o
@@ -72,8 +78,6 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
          INFO_LOG("FaceFeatureMaskProcess::ImageYUV2BGR, push_resized_image = %x", resized_img_iter->data.get());
          ^
 [ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
-[ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
-[ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
 In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition.h:39,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:34:
@@ -110,10 +114,12 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:465:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
          ^
+[ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
+[ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
 [ 83%] Building CXX object CMakeFiles/main.dir/dvpp_jpegd.cpp.o
 [ 88%] Building CXX object CMakeFiles/main.dir/dvpp_cropandpaste.cpp.o
 [ 94%] Building CXX object CMakeFiles/main.dir/main.cpp.o
 [100%] Linking CXX executable /home/niuiic/Documents/Project/Cpp/face_recognition/out/main
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -[100%] Built target main
-lprotobuf
+/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../[100%] Built target main
+../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
