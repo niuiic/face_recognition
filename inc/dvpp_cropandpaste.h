@@ -56,11 +56,11 @@ class DvppCropAndPaste {
     * @brief dvpp process
     * @return result
     */
-    Result Process(ImageData& resizedImage, ImageData& srcImage);
+    Result Process(ImageData1& resizedImage, ImageData1& srcImage);
 
     private:
-    Result InitCropAndPasteResource(ImageData& inputImage);
-    Result InitCropAndPasteInputDesc(ImageData& inputImage);
+    Result InitCropAndPasteResource(ImageData1& inputImage);
+    Result InitCropAndPasteInputDesc(ImageData1& inputImage);
     Result InitCropAndPasteOutputDesc();
 
     void DestroyCropAndPasteResource();
@@ -84,7 +84,7 @@ class DvppCropAndPaste {
     uint32_t vpcOutBufferSize_;
 
     //model [W][H]
-    Resolution size_;
+    Resolution1 size_;
     acldvppPixelFormat format_;
 
     uint32_t lt_horz_;

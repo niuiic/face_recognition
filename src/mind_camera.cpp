@@ -34,6 +34,7 @@
 
 #include "mind_camera.h"
 
+#include "atlasutil/atlas_type.h"
 #include "resource_load.h"
 #include "utils.h"
 #include <chrono>
@@ -51,7 +52,7 @@ extern "C" {
 #include "driver/peripheral_api.h"
 }
 
-// #include "atlasutil/atlas_videocapture.h"
+#include "atlasutil/atlas_videocapture.h"
 
 using namespace std;
 
@@ -301,16 +302,33 @@ bool MindCamera::DoCapProcess() {
 
     // KEY：从摄像头获取图像
     // do read frame from camera, readSize maybe changed when called
-    read_ret =
-        ReadFrameFromCamera(config_->channel_id, (void *)p_data, &read_size);
+    // read_ret =
+    // ReadFrameFromCamera(config_->channel_id, (void *)p_data, &read_size);
 
     // 猜测p_data是图片信息的地址，read_size是图片的大小
 
     // TODO：修改为本地视频输入
 
     // 打开本地视频
+    AtlasVideoCapture cap = AtlasVideoCapture("./test.mp4");
+    if (!cap.IsOpened()) {
+      ERROR_LOG("Open local video failed");
+      return false;
+    }
 
     // 从本地视频中读取图片
+
+    ImageData image;
+    read_ret = cap.Read(image);
+
+    if (!read_ret) {
+      p_obj->org_img.width = image.width;
+      p_obj->org_img.alignWidth = image.alignWidth;
+      p_obj->org_img.alignHeight = image.alignHeight;
+      p_obj->org_img.height = image.height;
+      p_obj->org_img.size = image.size;
+      p_obj->org_img.data = image.data;
+    }
 
     // --------------------------------------------------------------------------------
 

@@ -102,14 +102,14 @@ const __useconds_t kSleepInterval = 200000;
 }
 
 Result FaceRecognition::ResizeImg(const FaceImage &faceImg,
-                                ImageData &resizedImage) {
+                                ImageData1 &resizedImage) {
     // input size is less than zero, return failed
     if (faceImg.image.size <= 0) {
         ERROR_LOG("image size less than or equal zero, size=%d", faceImg.image.size);
         return FAILED;
     }
 
-    Result ret = ResourceLoad::GetInstance().GetDvpp().Resize(resizedImage, const_cast<ImageData &>(faceImg.image), kResizeWidth, kResizeHeight);
+    Result ret = ResourceLoad::GetInstance().GetDvpp().Resize(resizedImage, const_cast<ImageData1 &>(faceImg.image), kResizeWidth, kResizeHeight);
     if (ret == FAILED) {
         ERROR_LOG("Resize image failed\n");
 		return FAILED;
@@ -119,7 +119,7 @@ Result FaceRecognition::ResizeImg(const FaceImage &faceImg,
     return SUCCESS;
 }
 
-Result FaceRecognition::Nv12ToBgr(const ImageData &src_image,
+Result FaceRecognition::Nv12ToBgr(const ImageData1 &src_image,
                                 Mat &dst) {
     // transforming smart pointer data into Mat type data
     // for calling OpenCV interface
@@ -162,7 +162,7 @@ Result FaceRecognition::checkTransfromMat(const Mat &mat) {
 }
 
 Result FaceRecognition::AlignedAndFlipFace(
-    const FaceImage &face_img, const ImageData &resized_image,
+    const FaceImage &face_img, const ImageData1 &resized_image,
     int32_t index, vector<AlignedFace> &aligned_imgs) {
     // Step1: convert NV12 to BGR
     Mat bgr_img;
@@ -283,7 +283,7 @@ void FaceRecognition::PreProcess(const vector<FaceImage> &face_imgs,
         }
 
         // resize image, if failed, skip it
-        ImageData resized_image;
+        ImageData1 resized_image;
         if (!ResizeImg(face_imgs[index], resized_image)) {
             continue;
         }
@@ -434,7 +434,7 @@ Result FaceRecognition::InferenceFeatureVector(
     return SUCCESS;
 }
 
-unsigned char * CopyImageData(ImageData& inputData)
+unsigned char * CopyImageData(ImageData1& inputData)
 {
     void *originalJpegPicBuffer;
     INFO_LOG("CopyImageData inputData.size %d.", inputData.size);

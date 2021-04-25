@@ -147,7 +147,7 @@ struct FaceFeature {
  * @brief: face image
  */
 struct FaceImage {
-  ImageData image;  // cropped image from original image
+  ImageData1 image;  // cropped image from original image
   FaceRectangle rectangle;  // face rectangle
   FaceFeature feature_mask;  // face feature mask
   std::vector<float> feature_vector;  // face feature vector
@@ -159,7 +159,7 @@ struct FaceImage {
 struct FaceRecognitionInfo {
   FrameInfo frame;  // frame information
   ErrorInfo err_info;  // error information
-  ImageData org_img;  // original image
+  ImageData1 org_img;  // original image
   std::vector<FaceImage> face_imgs;  // cropped image
 };
 

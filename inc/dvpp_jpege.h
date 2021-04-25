@@ -44,7 +44,7 @@ public:
     * @brief process encode
     * @return result
     */
-    Result Process(ImageData& destJpegImage, ImageData& srcYuvImage);
+    Result Process(ImageData1& destJpegImage, ImageData1& srcYuvImage);
 
    /**
     * @brief release encode resource
@@ -52,8 +52,8 @@ public:
     void DestroyEncodeResource();
 
 private:
-    Result InitJpegEResource(ImageData& inputImage);
-    Result InitEncodeInputDesc(ImageData& inputImage);
+    Result InitJpegEResource(ImageData1& inputImage);
+    Result InitEncodeInputDesc(ImageData1& inputImage);
     void DestroyResource();
     void DestroyOutputPara();
 

@@ -53,7 +53,7 @@ public:
     ~Camera();
     Result Open(int channelID);
     Result Close(int channelID);
-    Result Read(int channelID, ImageData& frame, QueueNode& image);
+    Result Read(int channelID, ImageData1& frame, QueueNode& image);
     bool IsOpened(int channelID);
     int GetCameraDataSize(int channelID);
     private:

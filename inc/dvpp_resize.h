@@ -64,11 +64,11 @@ public:
     * @brief dvpp process
     * @return result
     */
-    Result Process(ImageData& resizedImage, ImageData& srcImage);
+    Result Process(ImageData1& resizedImage, ImageData1& srcImage);
 
 private:
-    Result InitResizeResource(ImageData& inputImage);
-    Result InitResizeInputDesc(ImageData& inputImage);
+    Result InitResizeResource(ImageData1& inputImage);
+    Result InitResizeInputDesc(ImageData1& inputImage);
     Result InitResizeOutputDesc();
 
     void DestroyResizeResource();
@@ -87,7 +87,7 @@ private:
     uint8_t *inDevBuffer_;  // input pic dev buffer
     void *vpcOutBufferDev_; // vpc output buffer
     uint32_t vpcOutBufferSize_;  // vpc output size
-    Resolution size_;
+    Resolution1 size_;
     acldvppPixelFormat format_;
 };
 

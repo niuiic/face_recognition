@@ -81,7 +81,7 @@ private:
    * @return: true: success; false: failed
    */
     Result ResizeImg(const FaceImage &face_img,
-                 ImageData &resized_image);
+                 ImageData1 &resized_image);
 
   /**
    * @brief Image format conversion, call OpenCV interface to transform
@@ -91,7 +91,7 @@ private:
    * @return true: yuv420spnv12 convert to BGR success
    *         false: yuv420spnv12 convert to BGR failed
    */
-    Result Nv12ToBgr(const ImageData &src_image, cv::Mat &dst);
+    Result Nv12ToBgr(const ImageData1 &src_image, cv::Mat &dst);
 
   /**
    * @brief check transformation matrix for openCV wapAffine
@@ -110,7 +110,7 @@ private:
    * @return: true: success; false: failed
    */
     Result AlignedAndFlipFace(const FaceImage &face_img,
-                          const ImageData &resized_image,
+                          const ImageData1 &resized_image,
                           int32_t index,
                           std::vector<AlignedFace> &aligned_imgs);
 

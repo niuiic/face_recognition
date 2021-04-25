@@ -46,7 +46,7 @@ DvppJpegE::~DvppJpegE() {
     }
 }
 
-Result DvppJpegE::InitEncodeInputDesc(ImageData& inputImage)
+Result DvppJpegE::InitEncodeInputDesc(ImageData1& inputImage)
 {
     uint32_t alignWidth = ALIGN_UP16(inputImage.width);
     uint32_t alignHeight = ALIGN_UP2(inputImage.height);
@@ -67,7 +67,7 @@ Result DvppJpegE::InitEncodeInputDesc(ImageData& inputImage)
     return SUCCESS;
 }
 
-Result DvppJpegE::InitJpegEResource(ImageData& inputImage) {
+Result DvppJpegE::InitJpegEResource(ImageData1& inputImage) {
     uint32_t encodeLevel = 50; // default optimal level (0-100)
 
     if (SUCCESS != InitEncodeInputDesc(inputImage)) {
@@ -91,7 +91,7 @@ Result DvppJpegE::InitJpegEResource(ImageData& inputImage) {
     return SUCCESS;
 }
 #define SHARED_PRT_JPEGE_DVPP_BUF(buf) (shared_ptr<uint8_t>((uint8_t *)(buf), [](uint8_t* p) { memcount--;  acldvppFree(p); }))
-Result DvppJpegE::Process(ImageData& destJpegImage, ImageData& srcYuvImage)
+Result DvppJpegE::Process(ImageData1& destJpegImage, ImageData1& srcYuvImage)
 {
     //INFO_LOG("dvpp Call JpegE");
 

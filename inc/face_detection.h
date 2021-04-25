@@ -106,7 +106,7 @@ private:
    * @return: true: success; false: failed
    */
     Result PreProcess(const std::shared_ptr<FaceRecognitionInfo> &image_handle,
-                  ImageData &resized_image);
+                  ImageData1 &resized_image);
 
   /**
    * @brief: inference
@@ -115,7 +115,7 @@ private:
    * @return: true: success; false: failed
    */
     Result Inference(
-        const ImageData &resized_image,
+        const ImageData1 &resized_image,
         aclmdlDataset*& detection_inference);
 
   /**

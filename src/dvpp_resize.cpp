@@ -47,7 +47,7 @@ DvppResize::~DvppResize()
     }
 }
 int vpcInputcount = 0;
-Result DvppResize::InitResizeInputDesc(ImageData& inputImage)
+Result DvppResize::InitResizeInputDesc(ImageData1& inputImage)
 {
     uint32_t alignWidth = ALIGN_UP16(inputImage.width);
     uint32_t alignHeight = ALIGN_UP2(inputImage.height);
@@ -113,7 +113,7 @@ Result DvppResize::InitResizeOutputDesc()
     return SUCCESS;
 }
 
-Result DvppResize::InitResizeResource(ImageData& inputImage) {
+Result DvppResize::InitResizeResource(ImageData1& inputImage) {
     format_ = static_cast<acldvppPixelFormat>(PIXEL_FORMAT_YUV_SEMIPLANAR_420);
 
     if (SUCCESS != InitResizeInputDesc(inputImage)) {
@@ -131,7 +131,7 @@ Result DvppResize::InitResizeResource(ImageData& inputImage) {
 
 #define SHARED_PRT_SIZE_DVPP_BUF(buf) (shared_ptr<uint8_t>((uint8_t *)(buf), [](uint8_t* p) { memcount--;  acldvppFree(p); }))
 
-Result DvppResize::Process(ImageData& resizedImage, ImageData& srcImage)
+Result DvppResize::Process(ImageData1& resizedImage, ImageData1& srcImage)
 {
     if (SUCCESS != InitResizeResource(srcImage)) {
         ERROR_LOG("Dvpp resize failed for init error\n");

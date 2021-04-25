@@ -103,7 +103,7 @@ Result FaceFeatureMaskProcess::InitNormlizedData() {
     return SUCCESS;
 }
 
-Result Nv12ToBgr1(const ImageData &src_image,
+Result Nv12ToBgr1(const ImageData1 &src_image,
 Mat &dst) {
     // transforming smart pointer data into Mat type data
     // for calling OpenCV interface
@@ -131,7 +131,7 @@ Mat &dst) {
     return SUCCESS;
 }
 
-Result FaceFeatureMaskProcess::Crop(const shared_ptr<FaceRecognitionInfo> &face_recognition_info, const ImageData &org_img,
+Result FaceFeatureMaskProcess::Crop(const shared_ptr<FaceRecognitionInfo> &face_recognition_info, const ImageData1 &org_img,
                                   vector<FaceImage> &face_imgs) {
 
     for (vector<FaceImage>::iterator face_img_iter = face_imgs.begin();
@@ -148,7 +148,7 @@ Result FaceFeatureMaskProcess::Crop(const shared_ptr<FaceRecognitionInfo> &face_
                     lt_horz, lt_vert, rb_horz, rb_vert);
 
         //cout << "iter->ltX" << lt_horz << "iter->ltY" << lt_vert << "iter->rbX" << rb_horz << "iter->rbY" << rb_vert << endl;
-        Result ret = ResourceLoad::GetInstance().GetDvpp().cropimage(face_img_iter->image, const_cast<ImageData &>(org_img),
+        Result ret = ResourceLoad::GetInstance().GetDvpp().cropimage(face_img_iter->image, const_cast<ImageData1 &>(org_img),
                                        lt_horz, lt_vert, rb_horz, rb_vert);
         if (ret == FAILED) {
             ERROR_LOG("crop image failed\n");
@@ -161,7 +161,7 @@ Result FaceFeatureMaskProcess::Crop(const shared_ptr<FaceRecognitionInfo> &face_
 }
 
 Result FaceFeatureMaskProcess::Resize( vector<FaceImage> &face_imgs,
-                                    vector<ImageData> &resized_imgs) {
+                                    vector<ImageData1> &resized_imgs) {
     // Begin to resize all the resize image
     for (vector<FaceImage>::iterator face_img_iter = face_imgs.begin();
         face_img_iter != face_imgs.end(); ++face_img_iter) {
@@ -171,9 +171,9 @@ Result FaceFeatureMaskProcess::Resize( vector<FaceImage> &face_imgs,
             ERROR_LOG("image size less than or equal zero, size=%d", img_size);
             return FAILED;
         }
-        ImageData resized_image;
+        ImageData1 resized_image;
 
-        Result ret = ResourceLoad::GetInstance().GetDvpp().Resize(resized_image, const_cast<ImageData &>(face_img_iter->image), kResizedImgWidth*2, kResizedImgHeight*2);
+        Result ret = ResourceLoad::GetInstance().GetDvpp().Resize(resized_image, const_cast<ImageData1 &>(face_img_iter->image), kResizedImgWidth*2, kResizedImgHeight*2);
         if (ret == FAILED) {
             ERROR_LOG("crop image failed\n");
         }
@@ -186,9 +186,9 @@ Result FaceFeatureMaskProcess::Resize( vector<FaceImage> &face_imgs,
 
 //Mat img_temp;
 Result FaceFeatureMaskProcess::ImageYUV2BGR (
-vector<ImageData> &resized_image,
+vector<ImageData1> &resized_image,
 vector<Mat> &bgr_image) {
-    for (vector<ImageData>::iterator resized_img_iter = resized_image.begin();
+    for (vector<ImageData1>::iterator resized_img_iter = resized_image.begin();
     resized_img_iter != resized_image.end(); ++resized_img_iter) {
 
         int img_height = resized_img_iter->height;
@@ -458,7 +458,7 @@ Result FaceFeatureMaskProcess::Process(shared_ptr<FaceRecognitionInfo> &face_rec
         return SendFailed("Crop all the data failed, all the data failed",
                       face_recognition_info);
     }
-    vector<ImageData> resized_imgs;
+    vector<ImageData1> resized_imgs;
     if (!Resize(face_recognition_info->face_imgs, resized_imgs)) {
         return SendFailed("Resize all the data failed, all the data failed",
                       face_recognition_info);

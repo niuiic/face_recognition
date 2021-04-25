@@ -62,14 +62,14 @@ public:
     * @param [in] inputHeight:height of pic
     */
     void SetInput4JpegD(uint8_t* inDevBuffer, int inDevBufferSize, int inputWidth, int inputHeight);
-    Result InitDecodeOutputDesc(ImageData& inputImage);
+    Result InitDecodeOutputDesc(ImageData1& inputImage);
     /**
     * @brief gett dvpp output
     * @param [in] outputBuffer: pointer which points to dvpp output buffer
     * @param [out] outputSize: output size
     */
     void GetOutput(void **outputBuffer, int &outputSize);
-    Result Process(ImageData& dest, ImageData& src);
+    Result Process(ImageData1& dest, ImageData1& src);
    /**
     * @brief release encode resource
     */

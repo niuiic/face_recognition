@@ -60,7 +60,7 @@ FacePostProcess::CheckSendMessageRes(const PresenterErrorCode &error_code) {
 
 // static ImageData jpgImage;
 Result FacePostProcess::GetOriginPic(
-    const shared_ptr<FaceRecognitionInfo> &image_handle, ImageData &jpgImage,
+    const shared_ptr<FaceRecognitionInfo> &image_handle, ImageData1 &jpgImage,
     facial_recognition::FrameInfo &frame_info) {
   if (image_handle->frame.image_source == 0) {
     Result ret = ResourceLoad::GetInstance().GetDvpp().CvtYuv420spToJpeg(
@@ -94,7 +94,7 @@ FacePostProcess::SendFeature(const shared_ptr<FaceRecognitionInfo> &info) {
     return FAILED;
   }
 
-  ImageData jpgImage;
+  ImageData1 jpgImage;
 
   facial_recognition::FrameInfo frame_info;
   if (GetOriginPic(info, jpgImage, frame_info) != SUCCESS) {

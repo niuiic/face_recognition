@@ -131,7 +131,7 @@ bool Camera::IsOpened(int channelID){
 int Camera::GetCameraDataSize(int channelID) {
     return size_;
 }
-Result Camera::Read(int channelID, ImageData& output, QueueNode& image) {
+Result Camera::Read(int channelID, ImageData1& output, QueueNode& image) {
     int frameSize = (int )size_;
     if ((frameSize == 0) ) {
         ERROR_LOG("Get image from camera %d failed for buffer is nullptr\n", id_);

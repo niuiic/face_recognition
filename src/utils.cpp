@@ -159,7 +159,7 @@ void Utils::SaveBinFile(const char* filename, void* data, uint32_t size) {
     fflush(outFileFp);
     fclose(outFileFp);
 }
-void* Utils::SaveJpegImage(ImageData& image)
+void* Utils::SaveJpegImage(ImageData1& image)
 {
     static uint32_t yuv_cnt = 0;
     char filename[32];
@@ -190,7 +190,7 @@ void* Utils::CopyDataToDVPP(void* data, uint32_t dataSize) {
     return buffer;
 }
 
-Result Utils::CopyImageDataToDVPP(ImageData& imageDevice, ImageData srcImage, aclrtRunMode mode) {
+Result Utils::CopyImageDataToDVPP(ImageData1& imageDevice, ImageData1 srcImage, aclrtRunMode mode) {
     void * buffer;
     if (mode == ACL_HOST)
         buffer = Utils::CopyDataToDVPP(srcImage.data.get(), srcImage.size);
@@ -210,7 +210,7 @@ Result Utils::CopyImageDataToDVPP(ImageData& imageDevice, ImageData srcImage, ac
     return SUCCESS;
 }
 
-Result Utils::CopyDeviceToLocal(ImageData& imageout, ImageData srcImage, aclrtRunMode mode) {
+Result Utils::CopyDeviceToLocal(ImageData1& imageout, ImageData1 srcImage, aclrtRunMode mode) {
     void * buffer;
     if (mode == ACL_HOST)
         buffer = Utils::CopyDataDeviceToLocal(srcImage.data.get(), srcImage.size);
@@ -238,7 +238,7 @@ void* Utils::CopyDataHostToDevice(void* deviceData, uint32_t dataSize) {
     return CopyDataToDevice(deviceData, dataSize, ACL_MEMCPY_HOST_TO_DEVICE);
 }
 
-Result Utils::CopyImageDataToDevice(ImageData& imageDevice, ImageData srcImage, aclrtRunMode mode) {
+Result Utils::CopyImageDataToDevice(ImageData1& imageDevice, ImageData1 srcImage, aclrtRunMode mode) {
     void * buffer;
     if (mode == ACL_HOST)
         buffer = Utils::CopyDataHostToDevice(srcImage.data.get(), srcImage.size);
@@ -258,7 +258,7 @@ Result Utils::CopyImageDataToDevice(ImageData& imageDevice, ImageData srcImage, 
     return SUCCESS;
 }
 
-int Utils::ReadImageFile(ImageData& image, std::string fileName)
+int Utils::ReadImageFile(ImageData1& image, std::string fileName)
 {
     struct stat sBuf;
     int fileStatus = stat(fileName.data(), &sBuf);

@@ -108,7 +108,7 @@ class FaceFeatureMaskProcess {
    *   face_imgs->images Face image data after cropped, NV12
    * @return: Whether init success
    */
-    Result Crop(const std::shared_ptr<FaceRecognitionInfo> &face_recognition_info, const ImageData &org_img,
+    Result Crop(const std::shared_ptr<FaceRecognitionInfo> &face_recognition_info, const ImageData1 &org_img,
             std::vector<FaceImage> &face_imgs);
 
   /*
@@ -119,7 +119,7 @@ class FaceFeatureMaskProcess {
    * @return: Whether init success
    */
     Result Resize( std::vector<FaceImage> &face_imgs,
-              std::vector<ImageData> &resized_image);
+              std::vector<ImageData1> &resized_image);
 
   /*
    * @brief: Transform the image from resized YUV image to BGR image
@@ -128,7 +128,7 @@ class FaceFeatureMaskProcess {
    * @param [in]: bgr_image BGE images after transf
    * @return: Whether init success
    */
-    Result ImageYUV2BGR(std::vector<ImageData> &resized_image,
+    Result ImageYUV2BGR(std::vector<ImageData1> &resized_image,
                     std::vector<cv::Mat> &bgr_image);
 
   /*

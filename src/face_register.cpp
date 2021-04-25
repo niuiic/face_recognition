@@ -114,7 +114,7 @@ bool FaceRegister::DoRegisterProcess() {
             }
 
             // use dvpp convert jpg image to yuv
-            ImageData jpgImage;
+            ImageData1 jpgImage;
             int32_t ch = 0;
             void * buffer = nullptr;
    

@@ -49,7 +49,7 @@ DvppCropAndPaste::~DvppCropAndPaste()
     DestroyCropAndPasteResource();
 }
 
-Result DvppCropAndPaste::InitCropAndPasteInputDesc(ImageData& inputImage)
+Result DvppCropAndPaste::InitCropAndPasteInputDesc(ImageData1& inputImage)
 {
     originalImageWidth_ = inputImage.width;
     originalImageHeight_ = inputImage.height;
@@ -118,7 +118,7 @@ Result DvppCropAndPaste::InitCropAndPasteOutputDesc()
 
 
 // IN/OUT Desc
-Result DvppCropAndPaste::InitCropAndPasteResource(ImageData& inputImage) {
+Result DvppCropAndPaste::InitCropAndPasteResource(ImageData1& inputImage) {
     format_ = static_cast<acldvppPixelFormat>(PIXEL_FORMAT_YUV_SEMIPLANAR_420);
     if (SUCCESS != InitCropAndPasteInputDesc(inputImage)) {
         ERROR_LOG("InitCropAndPasteInputDesc failed");
@@ -136,7 +136,7 @@ Result DvppCropAndPaste::InitCropAndPasteResource(ImageData& inputImage) {
 #define SHARED_PRT_CROP_DVPP_BUF(buf) (shared_ptr<uint8_t>((uint8_t *)(buf), [](uint8_t* p) { memcount--; INFO_LOG("DvppCropAndPaste free RESIZEMALLOC memcount %d\n", memcount); acldvppFree(p); }))
 
 
-Result DvppCropAndPaste::Process(ImageData& resizedImage, ImageData& srcImage)
+Result DvppCropAndPaste::Process(ImageData1& resizedImage, ImageData1& srcImage)
 {
     if (SUCCESS != InitCropAndPasteResource(srcImage)) {
         ERROR_LOG("Dvpp cropandpaste failed for init error");

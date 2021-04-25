@@ -35,7 +35,7 @@ DvppJpegD::~DvppJpegD()
 }
 
 
-Result DvppJpegD::InitDecodeOutputDesc(ImageData& inputImage)
+Result DvppJpegD::InitDecodeOutputDesc(ImageData1& inputImage)
 {
     uint32_t decodeOutWidthStride = ALIGN_UP128(inputImage.width);
     uint32_t decodeOutHeightStride = ALIGN_UP16(inputImage.height);
@@ -71,7 +71,7 @@ Result DvppJpegD::InitDecodeOutputDesc(ImageData& inputImage)
     return SUCCESS;
 }
 
-Result DvppJpegD::Process(ImageData& dest, ImageData& src)
+Result DvppJpegD::Process(ImageData1& dest, ImageData1& src)
 {
     int ret = InitDecodeOutputDesc(src);
     if (ret != SUCCESS) {

@@ -146,7 +146,7 @@ float FaceDetection::CorrectionRatio(float ratio) {
 
 Result FaceDetection::PreProcess(
     const shared_ptr<FaceRecognitionInfo> &image_handle,
-    ImageData &resized_image) {
+    ImageData1 &resized_image) {
     // input size is less than zero, return failed
     int32_t img_size = image_handle->org_img.size;
     if (img_size <= 0) {
@@ -167,7 +167,7 @@ Result FaceDetection::PreProcess(
 }
 
 Result FaceDetection::Inference(
-    const ImageData &resized_image,
+    const ImageData1 &resized_image,
     aclmdlDataset*& detection_inference) {
 
     Result ret = ResourceLoad::GetInstance().GetModel(1).CreateInput(resized_image.data.get(),
@@ -277,7 +277,7 @@ Result FaceDetection::Process(
     clock_gettime(CLOCK_REALTIME, &time1);
 
     // resize image
-    ImageData resized_image;
+    ImageData1 resized_image;
     if (PreProcess(image_handle, resized_image) == FAILED) {
         err_msg = "face_detection call ez_dvpp to resize image failed.";
         HandleErrors(AppErrorCode::kDetection, err_msg, image_handle);

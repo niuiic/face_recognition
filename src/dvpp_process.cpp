@@ -73,24 +73,24 @@ Result DvppProcess::InitResource(aclrtStream& stream)
     return SUCCESS;
 }
 
-Result DvppProcess::Resize(ImageData& dest, ImageData& src,
+Result DvppProcess::Resize(ImageData1& dest, ImageData1& src,
                         uint32_t width, uint32_t height) {
     DvppResize resizeOp(stream_, dvppChannelDesc_, width, height);
     return resizeOp.Process(dest, src);
 }
 
-Result DvppProcess::CvtYuv420spToJpeg(ImageData& dest, ImageData& src) {
+Result DvppProcess::CvtYuv420spToJpeg(ImageData1& dest, ImageData1& src) {
     DvppJpegE jpegE(stream_, dvppChannelDesc_);
     return jpegE.Process(dest, src);
 }
 
-Result DvppProcess::cropimage(ImageData& dest, ImageData& src,
+Result DvppProcess::cropimage(ImageData1& dest, ImageData1& src,
                               uint32_t lt_horz, uint32_t lt_vert,uint32_t rb_horz, uint32_t rb_vert) {
     DvppCropAndPaste crop(stream_, dvppChannelDesc_, lt_horz, lt_vert, rb_horz, rb_vert);
     return crop.Process(dest, src);
 }
 
-Result DvppProcess::CvtJpegToYuv420sp(ImageData& dest, ImageData& src) {
+Result DvppProcess::CvtJpegToYuv420sp(ImageData1& dest, ImageData1& src) {
     DvppJpegD jpegD(stream_, dvppChannelDesc_);
     return jpegD.Process(dest, src);
 }

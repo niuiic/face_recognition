@@ -32,11 +32,11 @@ public:
 
     ~DvppProcess();
 
-    Result Resize(ImageData& src, ImageData& dest,
+    Result Resize(ImageData1& src, ImageData1& dest,
                   uint32_t width, uint32_t height);
-    Result CvtYuv420spToJpeg(ImageData& dest, ImageData& src);
-    Result CvtJpegToYuv420sp(ImageData& dest, ImageData& src);
-    Result cropimage(ImageData& dest, ImageData& src,
+    Result CvtYuv420spToJpeg(ImageData1& dest, ImageData1& src);
+    Result CvtJpegToYuv420sp(ImageData1& dest, ImageData1& src);
+    Result cropimage(ImageData1& dest, ImageData1& src,
                     uint32_t lt_horz, uint32_t lt_vert,
                     uint32_t rb_horz, uint32_t rb_vert);
     Result InitResource(aclrtStream& stream);

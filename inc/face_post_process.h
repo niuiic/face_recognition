@@ -81,7 +81,7 @@ private:
 		
 
     Result GetOriginPic(
-    const shared_ptr<FaceRecognitionInfo> &image_handle, ImageData &jpgImage, facial_recognition::FrameInfo &frame_info);
+    const shared_ptr<FaceRecognitionInfo> &image_handle, ImageData1 &jpgImage, facial_recognition::FrameInfo &frame_info);
 
 };
 
