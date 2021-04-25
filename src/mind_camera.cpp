@@ -34,6 +34,8 @@
 
 #include "mind_camera.h"
 
+#include "resource_load.h"
+#include "utils.h"
 #include <chrono>
 #include <cstdio>
 #include <cstring>
@@ -45,11 +47,11 @@
 #include <string.h>
 #include <time.h>
 
-#include "resource_load.h"
-
 extern "C" {
 #include "driver/peripheral_api.h"
 }
+
+// #include "atlasutil/atlas_videocapture.h"
 
 using namespace std;
 
@@ -297,9 +299,20 @@ bool MindCamera::DoCapProcess() {
     uint8_t *p_data = p_obj->org_img.data.get();
     read_size = (int)p_obj->org_img.size;
 
+    // KEY：从摄像头获取图像
     // do read frame from camera, readSize maybe changed when called
     read_ret =
         ReadFrameFromCamera(config_->channel_id, (void *)p_data, &read_size);
+
+    // 猜测p_data是图片信息的地址，read_size是图片的大小
+
+    // TODO：修改为本地视频输入
+
+    // 打开本地视频
+
+    // 从本地视频中读取图片
+
+    // --------------------------------------------------------------------------------
 
     // indicates failure when readRet is 1
     read_flag = ((read_ret == 1) && (read_size == (int)p_obj->org_img.size));
