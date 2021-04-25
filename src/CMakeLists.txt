@@ -42,7 +42,6 @@ include_directories(
     $ENV{HOME}/Ascend/
     $ENV{HOME}/Ascend/ascenddk/
     /usr/local/include/
-    #$ENV{HOME}/tools/opencv/3rdparty/protobuf/src/
 )
 
 if(target STREQUAL "Simulator_Function")

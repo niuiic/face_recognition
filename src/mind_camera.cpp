@@ -34,7 +34,6 @@
 
 #include "mind_camera.h"
 
-#include "atlasutil/atlas_type.h"
 #include "resource_load.h"
 #include "utils.h"
 #include <chrono>
@@ -52,6 +51,7 @@ extern "C" {
 #include "driver/peripheral_api.h"
 }
 
+#include "atlasutil/atlas_type.h"
 #include "atlasutil/atlas_videocapture.h"
 
 using namespace std;
@@ -310,7 +310,8 @@ bool MindCamera::DoCapProcess() {
     // TODO：修改为本地视频输入
 
     // 打开本地视频
-    AtlasVideoCapture cap = AtlasVideoCapture("./test.mp4");
+    // AtlasVideoCapture cap = AtlasVideoCapture("./test.mp4");
+    AtlasVideoCapture cap = AtlasVideoCapture();
     if (!cap.IsOpened()) {
       ERROR_LOG("Open local video failed");
       return false;
