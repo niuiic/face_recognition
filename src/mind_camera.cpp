@@ -293,7 +293,6 @@ bool MindCamera::DoCapProcess() {
   bool read_flag = false;
   void *buffer = nullptr;
   int size = config_->resolution_width * config_->resolution_height * 3 / 2;
-  // int numcount = 100;
   while (GetExitFlag() == CAMERADATASETS_RUN) {
     clock_gettime(CLOCK_REALTIME, &time1);
     shared_ptr<FaceRecognitionInfo> p_obj = CreateBatchImageParaObj();
@@ -318,41 +317,40 @@ bool MindCamera::DoCapProcess() {
 
     // 从本地视频中读取图片
 
-    ImageData image;
-    read_ret = cap.Read(image);
+    // ImageData image;
+    // read_ret = cap.Read(image);
 
-    if (!read_ret) {
-      p_obj->org_img.width = image.width;
-      p_obj->org_img.alignWidth = image.alignWidth;
-      p_obj->org_img.alignHeight = image.alignHeight;
-      p_obj->org_img.height = image.height;
-      p_obj->org_img.size = image.size;
-      p_obj->org_img.data = image.data;
-    }
+    // if (!read_ret) {
+    // p_obj->org_img.width = image.width;
+    // p_obj->org_img.alignWidth = image.alignWidth;
+    // p_obj->org_img.alignHeight = image.alignHeight;
+    // p_obj->org_img.height = image.height;
+    // p_obj->org_img.size = image.size;
+    // p_obj->org_img.data = image.data;
+    // }
 
     // --------------------------------------------------------------------------------
 
     // indicates failure when readRet is 1
-    read_flag = ((read_ret == 1) && (read_size == (int)p_obj->org_img.size));
+    // read_flag = ((read_ret == 1) && (read_size == (int)p_obj->org_img.size));
 
-    if (!read_flag) {
-      ERROR_LOG("[CameraDatasets] readFrameFromCamera failed "
-                "{camera:%d, ret:%d, size:%d, expectsize:%d} ",
-                config_->channel_id, read_ret, read_size,
-                (int)p_obj->org_img.size);
-      break;
-    }
+    // 错误处理
+    // if (!read_flag) {
+    // ERROR_LOG("[CameraDatasets] readFrameFromCamera failed "
+    // "{camera:%d, ret:%d, size:%d, expectsize:%d} ",
+    // config_->channel_id, read_ret, read_size,
+    // (int)p_obj->org_img.size);
+    // break;
+    // }
 
     // INFO_LOG("MindCamera DoCapProcess  width %d, height %d, al w %d h %d size
-    // %d\n", p_obj->org_img.width, p_obj->org_img.height,
-    // p_obj->org_img.alignWidth, p_obj->org_img.alignHeight,
-    // p_obj->org_img.size);
+    // % d\n ", p_obj->org_img.width, p_obj->org_img.height,
+    // p_obj->org_img.alignWidth,
+    // p_obj->org_img.alignHeight, p_obj->org_img.size);
 
     // KEY：对图像进行处理，进行人脸检测与识别
-    ResourceLoad::GetInstance().SendNextModelProcess("MindCamera", p_obj);
-    clock_gettime(CLOCK_REALTIME, &time2);
-
-    // numcount--;
+    // ResourceLoad::GetInstance().SendNextModelProcess("MindCamera", p_obj);
+    // clock_gettime(CLOCK_REALTIME, &time2);
   }
 
   // close camera

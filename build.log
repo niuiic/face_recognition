@@ -1,26 +1,88 @@
-Warning: Permanently added '192.168.1.102' (ED25519) to the list of known hosts.
+Warning: Permanently added '192.168.1.104' (ED25519) to the list of known hosts.
+已经是最新的。
 sending incremental file list
 
-sent 633 bytes  received 17 bytes  1,300.00 bytes/sec
-total size is 180,742  speedup is 278.06
+sent 676 bytes  received 17 bytes  1,386.00 bytes/sec
+total size is 181,234  speedup is 261.52
+来自 https://github.com/niuiic/face_recognition
+ * branch            dev        -> FETCH_HEAD
 sending incremental file list
 
-sent 2,853 bytes  received 33 bytes  5,772.00 bytes/sec
-total size is 1,823,273  speedup is 631.76
-fatal: unable to access 'https://github.com/niuiic/face_recognition/': Failed to connect to 127.0.0.1 port 10024: 拒绝连接
+sent 2,915 bytes  received 33 bytes  5,896.00 bytes/sec
+total size is 2,102,017  speedup is 713.03
 sending incremental file list
 
-sent 690 bytes  received 17 bytes  1,414.00 bytes/sec
-total size is 245,574  speedup is 347.35
+sent 686 bytes  received 17 bytes  1,406.00 bytes/sec
+total size is 246,593  speedup is 350.77
 sending incremental file list
 
-sent 242 bytes  received 17 bytes  518.00 bytes/sec
-total size is 40,083  speedup is 154.76
-[ 11%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
-[ 11%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
-[ 16%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
+sent 246 bytes  received 17 bytes  526.00 bytes/sec
+total size is 40,083  speedup is 152.41
+-- env INC_PATH: /home/niuiic/Ascend/ascend-toolkit/latest/arm64-linux
+-- env LIB_PATH: /home/niuiic/Ascend/ascend-toolkit/latest/arm64-linux/acllib/lib64/stub
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/niuiic/Documents/Project/Cpp/face_recognition/build/intermediates/host
+[ 16%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
+[ 16%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
+[ 16%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
 [ 22%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
-[ 27%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
+[ 27%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
+In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
+/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:39:0: %WARNING%: "RGBU8_IMAGE_SIZE" redefined
+ #define RGBU8_IMAGE_SIZE(width, height) ((width) * (height) * 3)
+ 
+In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:35:0: note: this is the location of the previous definition
+ #define RGBU8_IMAGE_SIZE(width, height) ((width) * (height)*3)
+ 
+In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
+/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:55:0: %WARNING%: "YUV420SP_SIZE" redefined
+ #define YUV420SP_SIZE(width, height) ((width) * (height) * 3 / 2)
+ 
+In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:36:0: note: this is the location of the previous definition
+ #define YUV420SP_SIZE(width, height) ((width) * (height)*3 / 2)
+ 
+In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
+/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:69:0: %WARNING%: "SHARED_PRT_DVPP_BUF" redefined
+ #define SHARED_PRT_DVPP_BUF(buf) (shared_ptr<uint8_t>((uint8_t *)(buf), [](uint8_t* p) { acldvppFree(p); }))
+ 
+In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:43:0: note: this is the location of the previous definition
+ #define SHARED_PRT_DVPP_BUF(buf)                                               \
+ 
+In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
+/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:83:0: %WARNING%: "SHARED_PRT_U8_BUF" redefined
+ #define SHARED_PRT_U8_BUF(buf) (shared_ptr<uint8_t>((uint8_t *)(buf), [](uint8_t* p) { delete[](p); }))
+ 
+In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:45:0: note: this is the location of the previous definition
+ #define SHARED_PRT_U8_BUF(buf)                                                 \
+ 
+In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
+/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:91:0: %WARNING%: "ALIGN_UP" redefined
+ #define ALIGN_UP(num, align) (((num) + (align) - 1) & ~((align) - 1))
+ 
+In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
+                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:38:0: note: this is the location of the previous definition
+ #define ALIGN_UP(num, align) (((num) + (align)-1) & ~((align)-1))
+ 
 [ 33%] Building CXX object CMakeFiles/main.dir/face_register.cpp.o
 [ 38%] Building CXX object CMakeFiles/main.dir/face_detection.cpp.o
 [ 44%] Building CXX object CMakeFiles/main.dir/face_feature_mask.cpp.o
@@ -30,14 +92,14 @@ total size is 40,083  speedup is 154.76
 In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_feature_mask.h:36,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:33:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::Resize(std::vector<FaceImage>&, std::vector<ImageData>&)’:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::Resize(std::vector<FaceImage>&, std::vector<ImageData1>&)’:
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::__shared_ptr<unsigned char, (__gnu_cxx::_Lock_policy)2>::element_type* {aka unsigned char*}’ [-Wformat=]
  #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
                                                                            ^
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:180:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("FaceFeatureMaskProcess::Resize, push_resized_image = %x", resized_image.data.get());
          ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::ImageYUV2BGR(std::vector<ImageData>&, std::vector<cv::Mat>&)’:
+/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::ImageYUV2BGR(std::vector<ImageData1>&, std::vector<cv::Mat>&)’:
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::__shared_ptr<unsigned char, (__gnu_cxx::_Lock_policy)2>::element_type* {aka unsigned char*}’ [-Wformat=]
  #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
                                                                            ^
@@ -66,6 +128,7 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:364:5: note: in expansion of macro ‘INFO_LOG’
      INFO_LOG("set inference sizeof(result) =%d", sizeof(result));
      ^
+[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::InferenceFeatureVector(const std::vector<AlignedFace>&, std::vector<FaceImage>&)’:
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long unsigned int’ [-Wformat=]
  #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
@@ -80,13 +143,14 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:465:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
          ^
-[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
 [ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
 [ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
 [ 83%] Building CXX object CMakeFiles/main.dir/dvpp_jpegd.cpp.o
 [ 88%] Building CXX object CMakeFiles/main.dir/dvpp_cropandpaste.cpp.o
 [ 94%] Building CXX object CMakeFiles/main.dir/main.cpp.o
 [100%] Linking CXX executable /home/niuiic/Documents/Project/Cpp/face_recognition/out/main
+[100%] Built target main
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索�[100%] Built target main
-��于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
+/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
+/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
+/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
