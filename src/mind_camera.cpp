@@ -321,11 +321,11 @@ bool MindCamera::DoCapProcess() {
     read_ret = cap.Read(image);
 
     if (!read_ret) {
-      p_obj->org_img.width = image.width;
-      p_obj->org_img.alignWidth = image.alignWidth;
-      p_obj->org_img.alignHeight = image.alignHeight;
-      p_obj->org_img.height = image.height;
-      p_obj->org_img.size = image.size;
+      // p_obj->org_img.width = image.width;
+      // p_obj->org_img.alignWidth = image.alignWidth;
+      // p_obj->org_img.alignHeight = image.alignHeight;
+      // p_obj->org_img.height = image.height;
+      // p_obj->org_img.size = image.size;
       p_obj->org_img.data = image.data;
     }
 

@@ -1,18 +1,28 @@
-已经是最新的。
-来自 https://github.com/niuiic/face_recognition
- * branch            dev        -> FETCH_HEAD
+更新 0da9d14..f64b693
+Fast-forward
+ .../index/mind_camera.cpp.F2D8842340704408.idx     | Bin 5846 -> 5862 bytes
+ build.log                                          |  60 ++++++---------------
+ build.sh                                           |   1 +
+ src/mind_camera.cpp                                |  40 +++++++-------
+ 4 files changed, 36 insertions(+), 65 deletions(-)
 sending incremental file list
 
-sent 676 bytes  received 17 bytes  1,386.00 bytes/sec
-total size is 181,234  speedup is 261.52
+sent 672 bytes  received 17 bytes  1,378.00 bytes/sec
+total size is 181,234  speedup is 263.04
+来自 https://github.com/niuiic/face_recognition
+ * branch            dev        -> FETCH_HEAD
+   0da9d14..f64b693  dev        -> origin/dev
 sending incremental file list
 
 sent 2,915 bytes  received 33 bytes  5,896.00 bytes/sec
 total size is 2,102,017  speedup is 713.03
 sending incremental file list
+src/
+src/mind_camera.cpp
+         12,090 100%    0.00kB/s    0:00:00           12,090 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=3/21)
 
-sent 686 bytes  received 17 bytes  1,406.00 bytes/sec
-total size is 246,602  speedup is 350.79
+sent 4,780 bytes  received 39 bytes  9,638.00 bytes/sec
+total size is 246,604  speedup is 51.17
 sending incremental file list
 
 sent 246 bytes  received 17 bytes  526.00 bytes/sec
@@ -22,11 +32,12 @@ total size is 40,083  speedup is 152.41
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/niuiic/Documents/Project/Cpp/face_recognition/build/intermediates/host
-[  5%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
-[ 11%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
+Scanning dependencies of target main
+[  5%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
+[ 11%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
 [ 16%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
-[ 22%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
-[ 27%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
+[ 22%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
+[ 27%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
 In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
 /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:39:0: %WARNING%: "RGBU8_IMAGE_SIZE" redefined
@@ -87,6 +98,7 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 [ 44%] Building CXX object CMakeFiles/main.dir/face_feature_mask.cpp.o
 [ 50%] Building CXX object CMakeFiles/main.dir/face_recognition.cpp.o
 [ 55%] Building CXX object CMakeFiles/main.dir/facial_recognition_message.pb.cc.o
+[ 61%] Building CXX object CMakeFiles/main.dir/face_post_process.cpp.o
 In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_feature_mask.h:36,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:33:
@@ -97,7 +109,6 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:180:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("FaceFeatureMaskProcess::Resize, push_resized_image = %x", resized_image.data.get());
          ^
-[ 61%] Building CXX object CMakeFiles/main.dir/face_post_process.cpp.o
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::ImageYUV2BGR(std::vector<ImageData1>&, std::vector<cv::Mat>&)’:
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::__shared_ptr<unsigned char, (__gnu_cxx::_Lock_policy)2>::element_type* {aka unsigned char*}’ [-Wformat=]
  #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
@@ -107,6 +118,7 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
          ^
 [ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
 [ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
+[ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
 In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition.h:39,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:34:
@@ -143,13 +155,12 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:465:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
          ^
-[ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
 [ 83%] Building CXX object CMakeFiles/main.dir/dvpp_jpegd.cpp.o
 [ 88%] Building CXX object CMakeFiles/main.dir/dvpp_cropandpaste.cpp.o
 [ 94%] Building CXX object CMakeFiles/main.dir/main.cpp.o
 [100%] Linking CXX executable /home/niuiic/Documents/Project/Cpp/face_recognition/out/main
-[100%] Built target main
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
+/[100%] Built target main
+usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
