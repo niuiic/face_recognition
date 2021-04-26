@@ -356,7 +356,10 @@ bool MindCamera::DoCapProcess() {
   }
 
   // close camera
-  CloseCamera(config_->channel_id);
+  // CloseCamera(config_->channel_id);
+
+  // close video
+  cap.Close();
 
   if (ret != true) {
     return false;
