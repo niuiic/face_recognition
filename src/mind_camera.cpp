@@ -320,6 +320,8 @@ bool MindCamera::DoCapProcess() {
     ImageData image;
     read_ret = cap.Read(image);
 
+    ERROR_LOG("read_ret:%d", read_ret);
+
     if (!read_ret) {
       p_obj->org_img.width = image.width;
       p_obj->org_img.alignWidth = image.alignWidth;
