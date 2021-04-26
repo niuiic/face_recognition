@@ -320,8 +320,6 @@ bool MindCamera::DoCapProcess() {
     ImageData image;
     read_ret = cap.Read(image);
 
-    ERROR_LOG("read_ret:%d", read_ret);
-
     if (!read_ret) {
       p_obj->org_img.width = image.width;
       p_obj->org_img.alignWidth = image.alignWidth;
@@ -335,7 +333,7 @@ bool MindCamera::DoCapProcess() {
 
     // indicates failure when readRet is 1
     // read_flag = ((read_ret == 1) && (read_size == (int)p_obj->org_img.size));
-    read_flag = (read_ret == 1);
+    read_flag = (read_ret == 0); // 原本read_ret为1的时候是正确的，现在是0
 
     // 错误处理
     if (!read_flag) {

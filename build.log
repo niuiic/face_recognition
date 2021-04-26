@@ -1,32 +1,41 @@
-已经是最新的。
-sending incremental file list
-
-sent 676 bytes  received 17 bytes  1,386.00 bytes/sec
-total size is 181,234  speedup is 261.52
+更新 b198427..3692633
+Fast-forward
+ build.log           | 37 ++++++++++++++-----------------------
+ src/mind_camera.cpp |  2 ++
+ 2 files changed, 16 insertions(+), 23 deletions(-)
 来自 https://github.com/niuiic/face_recognition
  * branch            dev        -> FETCH_HEAD
+   b198427..3692633  dev        -> origin/dev
+sending incremental file list
+
+sent 676 bytes  received 17 bytes  462.00 bytes/sec
+total size is 181,234  speedup is 261.52
 sending incremental file list
 
 sent 2,915 bytes  received 33 bytes  5,896.00 bytes/sec
 total size is 2,102,017  speedup is 713.03
 sending incremental file list
+src/
+src/mind_camera.cpp
+         12,133 100%    0.00kB/s    0:00:00           12,133 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=3/21)
 
-sent 690 bytes  received 17 bytes  1,414.00 bytes/sec
-total size is 246,606  speedup is 348.81
+sent 4,791 bytes  received 39 bytes  9,660.00 bytes/sec
+total size is 246,647  speedup is 51.07
 sending incremental file list
 
-sent 246 bytes  received 17 bytes  526.00 bytes/sec
-total size is 40,083  speedup is 152.41
+sent 242 bytes  received 17 bytes  518.00 bytes/sec
+total size is 40,083  speedup is 154.76
 -- env INC_PATH: /home/niuiic/Ascend/ascend-toolkit/latest/arm64-linux
 -- env LIB_PATH: /home/niuiic/Ascend/ascend-toolkit/latest/arm64-linux/acllib/lib64/stub
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/niuiic/Documents/Project/Cpp/face_recognition/build/intermediates/host
-[  5%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
-[ 11%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
-[ 16%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
-[ 22%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
-[ 27%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
+Scanning dependencies of target main
+[  5%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
+[ 11%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
+[ 16%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
+[ 22%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
+[ 27%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
 In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
 /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:39:0: %WARNING%: "RGBU8_IMAGE_SIZE" redefined
@@ -127,7 +136,6 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:364:5: note: in expansion of macro ‘INFO_LOG’
      INFO_LOG("set inference sizeof(result) =%d", sizeof(result));
      ^
-[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::InferenceFeatureVector(const std::vector<AlignedFace>&, std::vector<FaceImage>&)’:
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long unsigned int’ [-Wformat=]
  #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
@@ -135,6 +143,7 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:423:2: note: in expansion of macro ‘INFO_LOG’
   INFO_LOG("arrange GetInferenceOutputItem, inference=%d",
   ^
+[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::Process(std::shared_ptr<FaceRecognitionInfo>&)’:
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘AppErrorCode’ [-Wformat=]
  #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
@@ -148,8 +157,8 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 [ 88%] Building CXX object CMakeFiles/main.dir/dvpp_cropandpaste.cpp.o
 [ 94%] Building CXX object CMakeFiles/main.dir/main.cpp.o
 [100%] Linking CXX executable /home/niuiic/Documents/Project/Cpp/face_recognition/out/main
-[100%] Built target main
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
+/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼�[100%] Built target main
+��的 -lprotobuf
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
 /usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
