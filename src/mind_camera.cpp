@@ -293,6 +293,14 @@ bool MindCamera::DoCapProcess() {
   bool read_flag = false;
   void *buffer = nullptr;
   int size = config_->resolution_width * config_->resolution_height * 3 / 2;
+
+  // 打开本地视频
+  AtlasVideoCapture cap = AtlasVideoCapture("./test.mp4");
+  if (!cap.IsOpened()) {
+    ERROR_LOG("Open local video failed");
+    return false;
+  }
+
   while (GetExitFlag() == CAMERADATASETS_RUN) {
     clock_gettime(CLOCK_REALTIME, &time1);
     shared_ptr<FaceRecognitionInfo> p_obj = CreateBatchImageParaObj();
@@ -307,13 +315,6 @@ bool MindCamera::DoCapProcess() {
     // 猜测p_data是图片信息的地址，read_size是图片的大小
 
     // TODO：修改为本地视频输入
-
-    // 打开本地视频
-    AtlasVideoCapture cap = AtlasVideoCapture("./test.mp4");
-    if (!cap.IsOpened()) {
-      ERROR_LOG("Open local video failed");
-      return false;
-    }
 
     // 从本地视频中读取图片
 
