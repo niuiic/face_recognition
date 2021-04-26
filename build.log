@@ -1,48 +1,18 @@
-Warning: Permanently added '192.168.1.106' (ED25519) to the list of known hosts.
-fatal: unable to access 'https://github.com/niuiic/face_recognition/': Failed to connect to 127.0.0.1 port 10024: 拒绝连接
+已经是最新的。
+来自 https://github.com/niuiic/face_recognition
+ * branch            dev        -> FETCH_HEAD
 sending incremental file list
 
-sent 672 bytes  received 17 bytes  1,378.00 bytes/sec
-total size is 181,234  speedup is 263.04
+sent 676 bytes  received 17 bytes  1,386.00 bytes/sec
+total size is 181,234  speedup is 261.52
 sending incremental file list
-presenterserver/common/__pycache__/
-presenterserver/common/__pycache__/__init__.cpython-37.pyc
-            252 100%    0.00kB/s    0:00:00              252 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=79/96)
-presenterserver/common/__pycache__/app_manager.cpython-37.pyc
-          6,120 100%    1.46MB/s    0:00:00            6,120 100%    1.46MB/s    0:00:00 (xfr#2, to-chk=77/96)
-presenterserver/common/__pycache__/channel_handler.cpython-37.pyc
-          5,370 100%  749.16kB/s    0:00:00            5,370 100%  749.16kB/s    0:00:00 (xfr#3, to-chk=75/96)
-presenterserver/common/__pycache__/channel_manager.cpython-37.pyc
-          9,521 100%  546.93kB/s    0:00:00            9,521 100%  516.55kB/s    0:00:00 (xfr#4, to-chk=73/96)
-presenterserver/common/__pycache__/parameter_validation.cpython-37.pyc
-          1,792 100%   92.11kB/s    0:00:00            1,792 100%   92.11kB/s    0:00:00 (xfr#5, to-chk=71/96)
-presenterserver/common/__pycache__/presenter_message_pb2.cpython-37.pyc
-          8,057 100%  374.67kB/s    0:00:00            8,057 100%  357.64kB/s    0:00:00 (xfr#6, to-chk=69/96)
-presenterserver/common/__pycache__/presenter_socket_server.cpython-37.pyc
-         12,743 100%  478.63kB/s    0:00:00           12,743 100%  478.63kB/s    0:00:00 (xfr#7, to-chk=67/96)
-presenterserver/facial_recognition/config/
-presenterserver/facial_recognition/config/config.conf
-            673 100%   18.78kB/s    0:00:00              673 100%   18.78kB/s    0:00:00 (xfr#8, to-chk=63/96)
-presenterserver/facial_recognition/src/__pycache__/
-presenterserver/facial_recognition/src/__pycache__/__init__.cpython-37.pyc
-            268 100%    7.27kB/s    0:00:00              268 100%    7.27kB/s    0:00:00 (xfr#9, to-chk=53/96)
-presenterserver/facial_recognition/src/__pycache__/config_parser.cpython-37.pyc
-          2,542 100%   65.33kB/s    0:00:00            2,542 100%   65.33kB/s    0:00:00 (xfr#10, to-chk=51/96)
-presenterserver/facial_recognition/src/__pycache__/facial_recognition_handler.cpython-37.pyc
-          2,826 100%   68.99kB/s    0:00:00            2,826 100%   68.99kB/s    0:00:00 (xfr#11, to-chk=49/96)
-presenterserver/facial_recognition/src/__pycache__/facial_recognition_message_pb2.cpython-37.pyc
-          6,764 100%  132.11kB/s    0:00:00            6,764 100%  132.11kB/s    0:00:00 (xfr#12, to-chk=47/96)
-presenterserver/facial_recognition/src/__pycache__/facial_recognition_server.cpython-37.pyc
-         20,080 100%  356.53kB/s    0:00:00           20,080 100%  356.53kB/s    0:00:00 (xfr#13, to-chk=45/96)
-presenterserver/facial_recognition/src/__pycache__/web.cpython-37.pyc
-         11,574 100%  185.29kB/s    0:00:00           11,574 100%  185.29kB/s    0:00:00 (xfr#14, to-chk=43/96)
 
-sent 40,051 bytes  received 316 bytes  80,734.00 bytes/sec
-total size is 2,102,017  speedup is 52.07
+sent 2,915 bytes  received 33 bytes  5,896.00 bytes/sec
+total size is 2,102,017  speedup is 713.03
 sending incremental file list
 
 sent 686 bytes  received 17 bytes  1,406.00 bytes/sec
-total size is 246,586  speedup is 350.76
+total size is 246,602  speedup is 350.79
 sending incremental file list
 
 sent 246 bytes  received 17 bytes  526.00 bytes/sec
@@ -52,10 +22,10 @@ total size is 40,083  speedup is 152.41
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/niuiic/Documents/Project/Cpp/face_recognition/build/intermediates/host
-[  5%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
-[ 11%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
-[ 16%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
-[ 22%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
+[  5%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
+[ 11%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
+[ 16%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
+[ 22%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
 [ 27%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
 In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
@@ -127,6 +97,7 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:180:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("FaceFeatureMaskProcess::Resize, push_resized_image = %x", resized_image.data.get());
          ^
+[ 61%] Building CXX object CMakeFiles/main.dir/face_post_process.cpp.o
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::ImageYUV2BGR(std::vector<ImageData1>&, std::vector<cv::Mat>&)’:
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::__shared_ptr<unsigned char, (__gnu_cxx::_Lock_policy)2>::element_type* {aka unsigned char*}’ [-Wformat=]
  #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
@@ -134,7 +105,8 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:196:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("FaceFeatureMaskProcess::ImageYUV2BGR, push_resized_image = %x", resized_img_iter->data.get());
          ^
-[ 61%] Building CXX object CMakeFiles/main.dir/face_post_process.cpp.o
+[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
+[ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
 In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition.h:39,
                  from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:34:
@@ -164,7 +136,6 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:423:2: note: in expansion of macro ‘INFO_LOG’
   INFO_LOG("arrange GetInferenceOutputItem, inference=%d",
   ^
-[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::Process(std::shared_ptr<FaceRecognitionInfo>&)’:
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘AppErrorCode’ [-Wformat=]
  #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
@@ -172,7 +143,6 @@ In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/..
 /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:465:9: note: in expansion of macro ‘INFO_LOG’
          INFO_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
          ^
-[ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
 [ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
 [ 83%] Building CXX object CMakeFiles/main.dir/dvpp_jpegd.cpp.o
 [ 88%] Building CXX object CMakeFiles/main.dir/dvpp_cropandpaste.cpp.o
