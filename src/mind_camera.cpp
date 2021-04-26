@@ -312,6 +312,7 @@ bool MindCamera::DoCapProcess() {
     AtlasVideoCapture cap = AtlasVideoCapture("./test.mp4");
     if (!cap.IsOpened()) {
       ERROR_LOG("Open local video failed");
+      printf("failed");
       return false;
     }
 
