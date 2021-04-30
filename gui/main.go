@@ -140,7 +140,8 @@ func main() {
 			isMP4File                bool
 			isAtTheCorrectResolution bool
 		)
-		cmd := exec.Command("ls", pathToVideo.Text)
+		inputValue := strings.TrimSpace(pathToVideo.Text)
+		cmd := exec.Command("ls", inputValue)
 		_, err := cmd.Output()
 		if err != nil {
 			isExits = false
@@ -148,11 +149,11 @@ func main() {
 			isMP4File = false
 		} else {
 			isExits = true
-			s, _ := os.Lstat(pathToVideo.Text)
+			s, _ := os.Lstat(inputValue)
 			isFile = !s.IsDir()
-			isMP4File = path.Ext(path.Base(pathToVideo.Text)) == ".mp4"
+			isMP4File = path.Ext(path.Base(inputValue)) == ".mp4"
 			if isFile && isMP4File {
-				cmd := exec.Command("mplayer", "-identify", "-frames", "5", "-endpos", "0", "-vo", "null", pathToVideo.Text)
+				cmd := exec.Command("mplayer", "-identify", "-frames", "5", "-endpos", "0", "-vo", "null", inputValue)
 				output, err := cmd.Output()
 				if err != nil {
 					fmt.Println(err)
