@@ -15,6 +15,7 @@ import (
 	"runtime"
 	"strings"
 
+	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
@@ -128,7 +129,6 @@ func main() {
 	)
 
 	form.OnSubmit = func() {
-		// TODO：验证路径是否存在，打开开发板程序
 		var (
 			isExits                  bool
 			isFile                   bool
@@ -167,9 +167,10 @@ func main() {
 		} else if !isMP4File {
 			label.SetText("It is not an MP4 file")
 		} else if !isAtTheCorrectResolution {
-			label.SetText("You video is not at correct resolution, which is 1280 * 720")
+			label.SetText("You video is not at correct resolution. Please set the resolution to 1280 * 720")
 		} else {
-			label.SetText("")
+			label.SetText("Path verification is successful. The video is now being transferred to the development board. Please wait.")
+			// TODO：传输视频，显示打开浏览器按钮，启动开发板程序
 		}
 	}
 
@@ -178,5 +179,6 @@ func main() {
 	localVideoWindow.SetContent(
 		localVideoContainer)
 
+	welcomeWindow.Resize(fyne.NewSize(1000, 1000))
 	welcomeWindow.ShowAndRun()
 }
