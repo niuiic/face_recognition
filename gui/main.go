@@ -64,8 +64,22 @@ func main() {
 			widget.NewLabel("Welcome to the face recognition app"),
 			widget.NewButton("Go", func() {
 				go openServer()
-				welcomeWindow.Hide()
-				switchWindow.Show()
+				// welcomeWindow.Close()
+				// switchWindow.Show()
+				welcomeWindow.SetContent(
+					container.NewVBox(
+						widget.NewLabel("You can choose local video or camera input to recognition face"),
+						widget.NewButton("camera", func() {
+							switchWindow.Hide()
+							// TODO：打开开发板程序
+							cameraWindow.Show()
+						}),
+						widget.NewButton("local video", func() {
+							switchWindow.Hide()
+							localVideoWindow.Show()
+						}),
+					),
+				)
 			}),
 		),
 	)
@@ -179,6 +193,6 @@ func main() {
 	localVideoWindow.SetContent(
 		localVideoContainer)
 
-	welcomeWindow.Resize(fyne.NewSize(1000, 1000))
+	welcomeWindow.Resize(fyne.NewSize(400, 400))
 	welcomeWindow.ShowAndRun()
 }
