@@ -54,74 +54,65 @@ func main() {
 	config := readConfig()
 	faceRecognition := app.New()
 
-	welcomeWindow := faceRecognition.NewWindow("face recognition")
-	switchWindow := faceRecognition.NewWindow("switch")
-	cameraWindow := faceRecognition.NewWindow("camera")
-	localVideoWindow := faceRecognition.NewWindow("local video")
+	mainWindow := faceRecognition.NewWindow("face recognition")
 
-	welcomeWindow.SetContent(
-		container.NewVBox(
-			widget.NewLabel("Welcome to the face recognition app"),
-			widget.NewButton("Go", func() {
-				go openServer()
-				// welcomeWindow.Close()
-				// switchWindow.Show()
-				welcomeWindow.SetContent(
-					container.NewVBox(
-						widget.NewLabel("You can choose local video or camera input to recognition face"),
-						widget.NewButton("camera", func() {
-							switchWindow.Hide()
-							// TODO：打开开发板程序
-							cameraWindow.Show()
-						}),
-						widget.NewButton("local video", func() {
-							switchWindow.Hide()
-							localVideoWindow.Show()
-						}),
-					),
-				)
-			}),
-		),
+	var (
+		welcomePage    *fyne.Container
+		switchPage     *fyne.Container
+		cameraPage     *fyne.Container
+		localVideoPage *fyne.Container
 	)
 
-	switchWindow.SetContent(
-		container.NewVBox(
-			widget.NewLabel("You can choose local video or camera input to recognition face"),
-			widget.NewButton("camera", func() {
-				switchWindow.Hide()
-				// TODO：打开开发板程序
-				cameraWindow.Show()
-			}),
-			widget.NewButton("local video", func() {
-				switchWindow.Hide()
-				localVideoWindow.Show()
-			}),
-		),
+	welcomePage = container.NewVBox(
+		widget.NewLabel("Welcome to the face recognition app"),
+		widget.NewButton("Go", func() {
+			go openServer()
+			mainWindow.SetContent(switchPage)
+		}),
 	)
 
-	cameraWindow.SetContent(
-		container.NewVBox(
-			widget.NewButton("return", func() {
-				cameraWindow.Hide()
-				// TODO：关闭摄像机等
-				switchWindow.Show()
-			}),
-			widget.NewButton("click to open the browser",
-				func() {
-					var commands = map[string]string{
-						"windows": "cmd /c start",
-						"darwin":  "open",
-						"linux":   "xdg-open",
-					}
-					run, ok := commands[runtime.GOOS]
-					if !ok {
-						_ = fmt.Errorf("don't know how to open browser on %s platform", runtime.GOOS)
-					}
+	mainWindow.SetContent(welcomePage)
 
-					cmd := exec.Command(run, config.PresentServerIp)
-					cmd.Start()
-				},
-			),
+	switchPage = container.NewVBox(
+		widget.NewLabel("You can choose local video or camera input to recognition face"),
+		widget.NewButton("camera", func() {
+			// TODO：打开开发板程序
+			mainWindow.SetContent(cameraPage)
+			cameraPage.Show()
+		}),
+		widget.NewButton("local video", func() {
+			mainWindow.SetContent(localVideoPage)
+			localVideoPage.Show()
+		}),
+	)
+
+	cameraPage = container.NewVBox(
+		widget.NewButton("return", func() {
+			// TODO：关闭摄像机等
+			mainWindow.SetContent(switchPage)
+			switchPage.Show()
+		}),
+		widget.NewButton("open browser",
+			func() {
+				var commands = map[string]string{
+					"windows": "cmd /c start",
+					"darwin":  "open",
+					"linux":   "xdg-open",
+				}
+
+				run, ok := commands[runtime.GOOS]
+
+				if !ok {
+					_ = fmt.Errorf("don't know how to open browser on %s platform", runtime.GOOS)
+				}
+
+				cmd := exec.Command(run, "http://"+config.PresentServerIp)
+				fmt.Println(cmd)
+				err := cmd.Start()
+				if err != nil {
+					fmt.Println(err)
+				}
+			},
 		),
 	)
 
@@ -129,12 +120,12 @@ func main() {
 	pathToVideo.SetPlaceHolder("please input the absolute path to your video")
 	var label = widget.NewLabel("")
 
-	localVideoContainer :=
+	localVideoPage =
 		container.NewVBox(
 			widget.NewButton("return", func() {
-				localVideoWindow.Hide()
 				// TODO：关闭摄像机等
-				switchWindow.Show()
+				mainWindow.SetContent(switchPage)
+				switchPage.Show()
 			}), label,
 		)
 
@@ -188,11 +179,8 @@ func main() {
 		}
 	}
 
-	localVideoContainer.Add(form)
+	localVideoPage.Add(form)
 
-	localVideoWindow.SetContent(
-		localVideoContainer)
-
-	welcomeWindow.Resize(fyne.NewSize(400, 400))
-	welcomeWindow.ShowAndRun()
+	mainWindow.Resize(fyne.NewSize(400, 400))
+	mainWindow.ShowAndRun()
 }
