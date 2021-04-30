@@ -181,6 +181,6 @@ func main() {
 
 	localVideoPage.Add(form)
 
-	mainWindow.Resize(fyne.NewSize(600, 600))
+	mainWindow.Resize(fyne.NewSize(1000, 1000))
 	mainWindow.ShowAndRun()
 }
