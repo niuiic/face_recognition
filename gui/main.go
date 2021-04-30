@@ -161,7 +161,7 @@ func main() {
 			isFile = !s.IsDir()
 			isMP4File = path.Ext(path.Base(pathToVideo.Text)) == ".mp4"
 			if isFile && isMP4File {
-				cmd := exec.Command("mplayer", " -identify", " -frames", "5", " -endpos", " 0 ", "-vo", " null", pathToVideo.Text)
+				cmd := exec.Command("mplayer", "-identify", "-frames", "5", "-endpos", "0", "-vo", "null", pathToVideo.Text)
 				output, err := cmd.Output()
 				if err != nil {
 					fmt.Println(err)
