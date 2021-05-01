@@ -144,6 +144,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	session.Stderr = &stdErr
 
 	cmd := config.DevelopBoardProjectPath + `/out/run ` + videoName
+	fmt.Println(cmd)
 	session.Run(cmd)
 	// ret, err := strconv.Atoi(strings.Replace(stdOut.String(), "\n", "", -1))
 	// if err != nil {
