@@ -24,6 +24,7 @@ import (
 
 	"golang.org/x/crypto/ssh"
 
+	"github.com/ThomasRooney/gexpect"
 	"github.com/pkg/sftp"
 )
 
@@ -36,8 +37,10 @@ type Config struct {
 	PresenterServerPath string `json:"presenter_server_path"`
 	// IP address monitored by presenter server
 	PresenterServerIp string `json:"presenter_server_ip"`
-	// Port monitored by presenter server
+	// port monitored by presenter server
 	PresenterServerPort string `json:"presenter_server_port"`
+	// output directory of presenter server
+	PresenterServerOutputDir string `json:"presenter_server_output_dir"`
 	// Ip address of develop board
 	DevelopBoardIP string `json:"develop_board_ip"`
 	// username of develop board
@@ -51,10 +54,14 @@ type Config struct {
 // open presenter server
 
 func openServer(config *Config) {
-	cmd := exec.Command("sh", config.PresenterServerPath)
-	err := cmd.Start()
+	cmd := "sh " + config.PresenterServerPath
+	child, err := gexpect.Spawn(cmd)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal("spawn cmd error ", err)
+	}
+
+	if err := child.SendLine(config.PresenterServerOutputDir); err != nil {
+		log.Fatal("sendLine output dir error ", err)
 	}
 }
 
