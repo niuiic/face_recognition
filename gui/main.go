@@ -6,6 +6,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -14,6 +15,7 @@ import (
 	"os/exec"
 	"path"
 	"runtime"
+	"strconv"
 	"strings"
 	"time"
 
@@ -130,6 +132,27 @@ func transferVideo(localVideoPath string, config *Config, sshClient *ssh.Client)
 	}
 }
 
+func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string) {
+	var stdOut, stdErr bytes.Buffer
+	session, err := sshClient.NewSession()
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer session.Close()
+
+	session.Stdout = &stdOut
+	session.Stderr = &stdErr
+
+	cmd := config.DevelopBoardProjectPath + `/out/run ` + videoName
+	session.Run(cmd)
+	ret, err := strconv.Atoi(strings.Replace(stdOut.String(), "\n", "", -1))
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("%d, %s\n", ret, stdErr.String())
+}
+
 func main() {
 
 	config := readConfig()
@@ -158,7 +181,7 @@ func main() {
 	switchPage = container.NewVBox(
 		widget.NewLabel("You can choose local video or camera input to recognition face"),
 		widget.NewButton("camera", func() {
-			// TODO：打开开发板程序
+			execFaceRecognition(sshClient, &config, "")
 			mainWindow.SetContent(cameraPage)
 			cameraPage.Show()
 		}),
@@ -282,7 +305,8 @@ func main() {
 			transferVideo(inputPath, &config, sshClient)
 			label.SetText("Successfully transfer the video to the development board, you can click the button to open the browser")
 			localVideoPage.Add(btnOpenBrowser)
-			// TODO：启动开发板程序
+			// TODO：修改videoname
+			execFaceRecognition(sshClient, &config, "")
 		}
 	}
 

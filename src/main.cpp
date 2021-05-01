@@ -62,6 +62,15 @@ void CreateRegisterTask(aclrtContext context) {
 
 int main(int argc, char *argv[]) {
 
+  // 判断是否有输入参数，有则获取输入参数
+  if (argc != 0) {
+    cameraOrLocal = false;
+    videoPath = argv[0];
+  } else {
+    cameraOrLocal = true;
+    videoPath = "";
+  }
+
   //实例化目标检测对象,参数为分类模型路径,模型输入要求的宽和高
   ModelInfoParams param;
   param.modelPath1 = kModelPath1;

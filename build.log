@@ -1,166 +1,30 @@
+已经是最新的。
+sending incremental file list
+
+sent 640 bytes  received 17 bytes  1,314.00 bytes/sec
+total size is 181,234  speedup is 275.85
+sending incremental file list
+
+sent 2,931 bytes  received 33 bytes  5,928.00 bytes/sec
+total size is 2,102,017  speedup is 709.18
+sending incremental file list
+
+sent 650 bytes  received 17 bytes  1,334.00 bytes/sec
+total size is 246,687  speedup is 369.85
 来自 https://github.com/niuiic/face_recognition
  * branch            dev        -> FETCH_HEAD
-   3119d89..e0167e6  dev        -> origin/dev
-更新 3119d89..e0167e6
-Fast-forward
- .../index/mind_camera.cpp.F2D8842340704408.idx     | Bin 6092 -> 6298 bytes
- build.log                                          |  77 +++++++++++++--------
- build.sh                                           |   2 +-
- src/mind_camera.cpp                                |  15 ++--
- 4 files changed, 58 insertions(+), 36 deletions(-)
 sending incremental file list
 
-sent 672 bytes  received 17 bytes  1,378.00 bytes/sec
-total size is 181,234  speedup is 263.04
+sent 236 bytes  received 17 bytes  506.00 bytes/sec
+total size is 40,083  speedup is 158.43
 sending incremental file list
+gui/
 
-sent 2,915 bytes  received 33 bytes  5,896.00 bytes/sec
-total size is 2,102,017  speedup is 713.03
-sending incremental file list
-src/
-src/mind_camera.cpp
-         12,137 100%    0.00kB/s    0:00:00           12,137 100%    0.00kB/s    0:00:00 (xfr#1, to-chk=3/21)
-
-sent 4,810 bytes  received 39 bytes  9,698.00 bytes/sec
-total size is 246,651  speedup is 50.87
-sending incremental file list
-
-sent 246 bytes  received 17 bytes  526.00 bytes/sec
-total size is 40,083  speedup is 152.41
--- env INC_PATH: /home/niuiic/Ascend/ascend-toolkit/latest/arm64-linux
--- env LIB_PATH: /home/niuiic/Ascend/ascend-toolkit/latest/arm64-linux/acllib/lib64/stub
--- Configuring done
--- Generating done
--- Build files have been written to: /home/niuiic/Documents/Project/Cpp/face_recognition/build/intermediates/host
-Scanning dependencies of target main
-[  5%] Building CXX object CMakeFiles/main.dir/camera.cpp.o
-[ 16%] Building CXX object CMakeFiles/main.dir/resource_load.cpp.o
-[ 16%] Building CXX object CMakeFiles/main.dir/model_process.cpp.o
-[ 22%] Building CXX object CMakeFiles/main.dir/mind_camera.cpp.o
-[ 27%] Building CXX object CMakeFiles/main.dir/utils.cpp.o
-In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
-/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:39:0: %WARNING%: "RGBU8_IMAGE_SIZE" redefined
- #define RGBU8_IMAGE_SIZE(width, height) ((width) * (height) * 3)
- 
-In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:35:0: note: this is the location of the previous definition
- #define RGBU8_IMAGE_SIZE(width, height) ((width) * (height)*3)
- 
-In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
-/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:55:0: %WARNING%: "YUV420SP_SIZE" redefined
- #define YUV420SP_SIZE(width, height) ((width) * (height) * 3 / 2)
- 
-In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:36:0: note: this is the location of the previous definition
- #define YUV420SP_SIZE(width, height) ((width) * (height)*3 / 2)
- 
-In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
-/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:69:0: %WARNING%: "SHARED_PRT_DVPP_BUF" redefined
- #define SHARED_PRT_DVPP_BUF(buf) (shared_ptr<uint8_t>((uint8_t *)(buf), [](uint8_t* p) { acldvppFree(p); }))
- 
-In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:43:0: note: this is the location of the previous definition
- #define SHARED_PRT_DVPP_BUF(buf)                                               \
- 
-In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
-/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:83:0: %WARNING%: "SHARED_PRT_U8_BUF" redefined
- #define SHARED_PRT_U8_BUF(buf) (shared_ptr<uint8_t>((uint8_t *)(buf), [](uint8_t* p) { delete[](p); }))
- 
-In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:45:0: note: this is the location of the previous definition
- #define SHARED_PRT_U8_BUF(buf)                                                 \
- 
-In file included from /home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_videocapture.h:22:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:55:
-/home/niuiic/ascend_ddk/arm/include/atlasutil/atlas_utils.h:91:0: %WARNING%: "ALIGN_UP" redefined
- #define ALIGN_UP(num, align) (((num) + (align) - 1) & ~((align) - 1))
- 
-In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/mind_camera.h:43,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/mind_camera.cpp:35:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:38:0: note: this is the location of the previous definition
- #define ALIGN_UP(num, align) (((num) + (align)-1) & ~((align)-1))
- 
-[ 33%] Building CXX object CMakeFiles/main.dir/face_register.cpp.o
-[ 38%] Building CXX object CMakeFiles/main.dir/face_detection.cpp.o
-[ 44%] Building CXX object CMakeFiles/main.dir/face_feature_mask.cpp.o
-[ 50%] Building CXX object CMakeFiles/main.dir/face_recognition.cpp.o
-[ 55%] Building CXX object CMakeFiles/main.dir/facial_recognition_message.pb.cc.o
-In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_feature_mask.h:36,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:33:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::Resize(std::vector<FaceImage>&, std::vector<ImageData1>&)’:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::__shared_ptr<unsigned char, (__gnu_cxx::_Lock_policy)2>::element_type* {aka unsigned char*}’ [-Wformat=]
- #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
-                                                                           ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:180:9: note: in expansion of macro ‘INFO_LOG’
-         INFO_LOG("FaceFeatureMaskProcess::Resize, push_resized_image = %x", resized_image.data.get());
-         ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp: In member function ‘Result FaceFeatureMaskProcess::ImageYUV2BGR(std::vector<ImageData1>&, std::vector<cv::Mat>&)’:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%x’ expects argument of type ‘unsigned int’, but argument 3 has type ‘std::__shared_ptr<unsigned char, (__gnu_cxx::_Lock_policy)2>::element_type* {aka unsigned char*}’ [-Wformat=]
- #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
-                                                                           ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_feature_mask.cpp:196:9: note: in expansion of macro ‘INFO_LOG’
-         INFO_LOG("FaceFeatureMaskProcess::ImageYUV2BGR, push_resized_image = %x", resized_img_iter->data.get());
-         ^
-[ 61%] Building CXX object CMakeFiles/main.dir/face_post_process.cpp.o
-In file included from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition_params.h:37:0,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/face_recognition.h:39,
-                 from /home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:34:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::ArrangeResult(int32_t, float*, uint32_t, const std::vector<AlignedFace>&, std::vector<FaceImage>&)’:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 4 has type ‘std::vector<AlignedFace>::size_type {aka long unsigned int}’ [-Wformat=]
- #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
-                                                                           ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:356:9: note: in expansion of macro ‘INFO_LOG’
-         INFO_LOG("inference result size not correct. batch_begin=%d, total_face=%d, inference_size=%d, need_size=%d, cont %d",
-         ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
- #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
-                                                                           ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:356:9: note: in expansion of macro ‘INFO_LOG’
-         INFO_LOG("inference result size not correct. batch_begin=%d, total_face=%d, inference_size=%d, need_size=%d, cont %d",
-         ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long unsigned int’ [-Wformat=]
- #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
-                                                                           ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:364:5: note: in expansion of macro ‘INFO_LOG’
-     INFO_LOG("set inference sizeof(result) =%d", sizeof(result));
-     ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::InferenceFeatureVector(const std::vector<AlignedFace>&, std::vector<FaceImage>&)’:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘long unsigned int’ [-Wformat=]
- #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
-                                                                           ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:423:2: note: in expansion of macro ‘INFO_LOG’
-  INFO_LOG("arrange GetInferenceOutputItem, inference=%d",
-  ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp: In member function ‘Result FaceRecognition::Process(std::shared_ptr<FaceRecognitionInfo>&)’:
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/../inc/utils.h:31:75: %WARNING%: format ‘%d’ expects argument of type ‘int’, but argument 3 has type ‘AppErrorCode’ [-Wformat=]
- #define INFO_LOG(fmt, args...) fprintf(stdout, "[INFO]  " fmt "\n", ##args)
-                                                                           ^
-/home/niuiic/Documents/Project/Cpp/face_recognition/src/face_recognition.cpp:465:9: note: in expansion of macro ‘INFO_LOG’
-         INFO_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
-         ^
-[ 66%] Building CXX object CMakeFiles/main.dir/dvpp_process.cpp.o
-[ 72%] Building CXX object CMakeFiles/main.dir/dvpp_resize.cpp.o
-[ 77%] Building CXX object CMakeFiles/main.dir/dvpp_jpege.cpp.o
-[ 83%] Building CXX object CMakeFiles/main.dir/dvpp_jpegd.cpp.o
-[ 88%] Building CXX object CMakeFiles/main.dir/dvpp_cropandpaste.cpp.o
-[ 94%] Building CXX object CMakeFiles/main.dir/main.cpp.o
-[100%] Linking CXX executable /home/niuiic/Documents/Project/Cpp/face_recognition/out/main
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.so 时跳过不兼容的 -lprotobuf
-[100%] Built target main
-/usr/lib/gcc-cross/aarch64-linux-gnu/7/../../../../aarch64-linux-gnu/bin/ld: 当搜索用于 /usr/local/lib/libprotobuf.a 时跳过不兼容的 -lprotobuf
+sent 189 bytes  received 206 bytes  790.00 bytes/sec
+total size is 13,288,460  speedup is 33,641.67
+go mod tidy
+makefile:2: recipe for target 'exec' failed
+rsync: chgrp "/home/niuiic/Documents/Project/Cpp/face_recognition/gui" failed: Operation not permitted (1)
+rsync %ERROR%: some files/attrs were not transferred (see previous %ERROR%s) (code 23) at main.c(1196) [sender=3.1.2]
+make: go: Command not found
+make: *** [exec] Error 127

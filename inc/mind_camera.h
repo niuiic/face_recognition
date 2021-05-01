@@ -1,7 +1,8 @@
 /**
  * ============================================================================
  *
- * Copyright (C) 2018-2020, Hisilicon Technologies Co., Ltd. All Rights Reserved.
+ * Copyright (C) 2018-2020, Hisilicon Technologies Co., Ltd. All Rights
+ * Reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -35,24 +36,26 @@
 #define MIND_CAMERA_H
 
 #include <iostream>
-#include <string>
-#include <vector>
 #include <stdint.h>
 #include <stdio.h>
+#include <string>
+#include <vector>
 
 #include "face_recognition_params.h"
 
 #define CAMERAL_1 (0)
 #define CAMERAL_2 (1)
 
-
 #define CAMERADATASETS_INIT (0)
-#define CAMERADATASETS_RUN  (1)
+#define CAMERADATASETS_RUN (1)
 #define CAMERADATASETS_STOP (2)
 #define CAMERADATASETS_EXIT (3)
 
 #define PARSEPARAM_FAIL (-1)
 #define MAX_VALUESTRING_LENGTH 25
+
+extern bool cameraOrLocal;
+extern string videoPath;
 
 /**
  * CameraDatasets used to capture image from camera
@@ -78,12 +81,12 @@ public:
   /**
    * @brief   constructor
    */
-      MindCamera();
+  MindCamera();
 
   /**
    * @brief   destructor
    */
-      ~MindCamera();
+  ~MindCamera();
 
   /**
    * @brief  init config of CameraDatasets by AI Config
@@ -91,7 +94,7 @@ public:
    * @param [in]  modelDesc
    * @return  success --> HIAI_OK ; fail --> HIAI_ERROR
    */
-      bool Init();
+  bool Init();
 
   /**
    * @brief  Splite String source by obj and store in tmp
@@ -100,65 +103,64 @@ public:
    * @param [in] vector tmp     used to conserve the value of width and heigth
    * @param [out] vector tmp    value of width and heigth
    */
-      static void SplitString(const std::string& source,
-                          std::vector<std::string>& tmp,
-                          const std::string& obj);
+  static void SplitString(const std::string &source,
+                          std::vector<std::string> &tmp,
+                          const std::string &obj);
 
   /**
    * @brief   translate value to string
    * @param [in] value    channel id of camera
    * @return   string translate by value
    */
-      static std::string IntToString(int value);
+  static std::string IntToString(int value);
 
   /**
    * @brief  Process
    */
-      bool Process();
+  bool Process();
 
 private:
-    Result GetOriginPic(
-    const shared_ptr<FaceRecognitionInfo> &image_handle);
+  Result GetOriginPic(const shared_ptr<FaceRecognitionInfo> &image_handle);
   /**
    * @brief  create Image object
    * @return : shared_ptr of data frame
    */
-    std::shared_ptr<FaceRecognitionInfo> CreateBatchImageParaObj();
+  std::shared_ptr<FaceRecognitionInfo> CreateBatchImageParaObj();
 
   /**
    * @brief : init map params
    */
-    void InitConfigParams();
+  void InitConfigParams();
 
   /**
    * @brief   preprocess for cap camera
    * @return  camera code
    */
-    MindCamera::CameraOperationCode PreCapProcess();
+  MindCamera::CameraOperationCode PreCapProcess();
 
   /**
    * @brief  cap camera
    * @return  success-->true ; fail-->false
    */
-    bool DoCapProcess();
+  bool DoCapProcess();
 
   /**
    * @brief  parse param
    * @return value of config
    */
-    int CommonParseParam(const std::string& val) const;
+  int CommonParseParam(const std::string &val) const;
 
   /**
    * @brief  get exit flag
    * @return the value of exit
    */
-    int GetExitFlag();
+  int GetExitFlag();
 
   /**
    * @brief  set exit flag
    * @param [in]  which value want to set
    */
-    void SetExitFlag(int flag = CAMERADATASETS_STOP);
+  void SetExitFlag(int flag = CAMERADATASETS_STOP);
 
   /**
    * @brief  get width and height from string val
@@ -168,18 +170,17 @@ private:
    * @param [out] width   value of width
    * @param [out] height  value of height
    */
-    void ParseImageSize(const std::string& val, int& width, int& height) const;
+  void ParseImageSize(const std::string &val, int &width, int &height) const;
 
 private:
-    typedef std::unique_lock<std::mutex> TLock;
-    std::shared_ptr<CameraDatasetsConfig> config_;
-    std::map<std::string, std::string> params_;
-    // thread variable to protect exitFlag
-    std::mutex mutex_;
-    // ret of cameradataset
-    int exit_flag_;
-    uint32_t frame_id_;
-
+  typedef std::unique_lock<std::mutex> TLock;
+  std::shared_ptr<CameraDatasetsConfig> config_;
+  std::map<std::string, std::string> params_;
+  // thread variable to protect exitFlag
+  std::mutex mutex_;
+  // ret of cameradataset
+  int exit_flag_;
+  uint32_t frame_id_;
 };
 
 #endif /* MindCamera_H */
