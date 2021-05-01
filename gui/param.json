@@ -1,6 +1,7 @@
 {
   "presenter_server_path": "hello",
   "presenter_server_ip": "127.0.0.1:8080",
+  "presenter_server_port": "20",
   "develop_board_ip": "192.168.2.2",
   "develop_board_user": "HwHiAiUser",
   "develop_board_password": "a",

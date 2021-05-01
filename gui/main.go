@@ -36,6 +36,8 @@ type Config struct {
 	PresenterServerPath string `json:"presenter_server_path"`
 	// IP address monitored by presenter server
 	PresenterServerIp string `json:"presenter_server_ip"`
+	// Port monitored by presenter server
+	PresenterServerPort string `json:"presenter_server_port"`
 	// Ip address of develop board
 	DevelopBoardIP string `json:"develop_board_ip"`
 	// username of develop board
@@ -179,7 +181,7 @@ func main() {
 					_ = fmt.Errorf("don't know how to open browser on %s platform", runtime.GOOS)
 				}
 
-				cmd := exec.Command(run, "http://"+config.PresenterServerIp)
+				cmd := exec.Command(run, "http://"+config.PresenterServerIp+":"+config.PresenterServerPort)
 				err := cmd.Start()
 				if err != nil {
 					fmt.Println(err)
@@ -202,7 +204,7 @@ func main() {
 				_ = fmt.Errorf("don't know how to open browser on %s platform", runtime.GOOS)
 			}
 
-			cmd := exec.Command(run, "http://"+config.PresenterServerIp)
+			cmd := exec.Command(run, "http://"+config.PresenterServerIp+":"+config.PresenterServerPort)
 			err := cmd.Start()
 			if err != nil {
 				fmt.Println(err)
