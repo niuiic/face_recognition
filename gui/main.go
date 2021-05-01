@@ -48,9 +48,12 @@ type Config struct {
 
 // open presenter server
 
-func openServer() {
-	// TODO：打开presentserver
-	println("open server")
+func openServer(config *Config) {
+	cmd := exec.Command("sh", config.PresenterServerPath)
+	err := cmd.Start()
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 // read the config file
@@ -136,7 +139,7 @@ func main() {
 	welcomePage = container.NewVBox(
 		widget.NewLabel("Welcome to the face recognition app"),
 		widget.NewButton("Go", func() {
-			go openServer()
+			go openServer(&config)
 			mainWindow.SetContent(switchPage)
 		}),
 	)
@@ -267,10 +270,10 @@ func main() {
 			label.SetText("You video is not at correct resolution. Please set the resolution to 1280 * 720")
 		} else {
 			label.SetText("Path verification is successful. The video is now being transferred to the development board. Please wait.")
-			// TODO：传输视频，显示打开浏览器按钮，启动开发板程序
 			transferVideo(inputPath, &config, sshClient)
 			label.SetText("Successfully transfer the video to the development board, you can click the button to open the browser")
 			localVideoPage.Add(btnOpenBrowser)
+			// TODO：启动开发板程序
 		}
 	}
 
