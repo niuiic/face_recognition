@@ -9,6 +9,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"os/exec"
 	"path"
@@ -87,6 +88,36 @@ func getSshConnect(config *Config) *ssh.Client {
 	return nil
 }
 
+func transferVideo(localVideoPath string, config *Config, sshClient *ssh.Client) {
+	sftpClient, err := sftp.NewClient(sshClient)
+	defer sftpClient.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	srcFile, err := os.Open(localVideoPath)
+	defer srcFile.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	remoteFileName := path.Base(localVideoPath)
+	dstFile, err := sftpClient.Create(path.Join(config.DevelopBoardProjectPath+`/out`, remoteFileName))
+	defer dstFile.Close()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	buf := make([]byte, 1024)
+	for {
+		n, _ := srcFile.Read(buf)
+		if n == 0 {
+			break
+		}
+		dstFile.Write(buf)
+	}
+}
+
 func main() {
 
 	config := readConfig()
@@ -154,6 +185,28 @@ func main() {
 		),
 	)
 
+	btnOpenBrowser := widget.NewButton("open browser",
+		func() {
+			var commands = map[string]string{
+				"windows": "cmd /c start",
+				"darwin":  "open",
+				"linux":   "xdg-open",
+			}
+
+			run, ok := commands[runtime.GOOS]
+
+			if !ok {
+				_ = fmt.Errorf("don't know how to open browser on %s platform", runtime.GOOS)
+			}
+
+			cmd := exec.Command(run, "http://"+config.PresenterServerIp)
+			err := cmd.Start()
+			if err != nil {
+				fmt.Println(err)
+			}
+		},
+	)
+
 	pathToVideo := widget.NewEntry()
 	pathToVideo.SetPlaceHolder("please input the absolute path to your video")
 	var label = widget.NewLabel("")
@@ -215,31 +268,9 @@ func main() {
 		} else {
 			label.SetText("Path verification is successful. The video is now being transferred to the development board. Please wait.")
 			// TODO：传输视频，显示打开浏览器按钮，启动开发板程序
-			sftpClient, err := sftp.NewClient(sshClient)
-			if err != nil {
-				fmt.Println(err)
-			} else {
-				srcFile, err := os.Open(inputPath)
-				if err != nil {
-					fmt.Println(err)
-				} else {
-					remoteFileName := path.Base(inputPath)
-					dstFile, err := sftpClient.Create(path.Join(config.DevelopBoardProjectPath+`/out`, remoteFileName))
-					if err != nil {
-						fmt.Println(err)
-					} else {
-						buf := make([]byte, 1024)
-						for {
-							n, _ := srcFile.Read(buf)
-							if n == 0 {
-								break
-							}
-							dstFile.Write(buf)
-						}
-					}
-				}
-
-			}
+			transferVideo(inputPath, &config, sshClient)
+			label.SetText("Successfully transfer the video to the development board, you can click the button to open the browser")
+			localVideoPage.Add(btnOpenBrowser)
 		}
 	}
 
