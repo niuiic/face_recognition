@@ -72,6 +72,7 @@ func getSshConnect(config *Config) *ssh.Client {
 		User:            config.DevelopBoardUser,
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
+	clientConfig.Auth = []ssh.AuthMethod{ssh.Password(config.DevelopBoardPassword)}
 	addr := fmt.Sprintf("%s:%d", config.DevelopBoardIP, 22)
 	sshClient, err := ssh.Dial("tcp", addr, clientConfig)
 	if err != nil {
