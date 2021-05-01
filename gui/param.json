@@ -1,7 +1,7 @@
 {
-  "presenter_server_path": "hello",
-  "presenter_server_ip": "127.0.0.1:8080",
-  "presenter_server_port": "20",
+  "presenter_server_path": "/home/niuiic/AscendProjects/samples/cplusplus/level2_simple_inference/n_performance/1_multi_process_thread/face_recognition_camera/scripts/run_presenter_server.sh",
+  "presenter_server_ip": "192.168.2.223",
+  "presenter_server_port": "7009",
   "presenter_server_output_dir": "out",
   "develop_board_ip": "192.168.2.2",
   "develop_board_user": "HwHiAiUser",

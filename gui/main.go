@@ -53,7 +53,7 @@ type Config struct {
 
 // open presenter server
 
-func openServer(config *Config) {
+func openPresenterServer(config *Config) {
 	cmd := "sh " + config.PresenterServerPath
 	child, err := gexpect.Spawn(cmd)
 	if err != nil {
@@ -148,7 +148,7 @@ func main() {
 	welcomePage = container.NewVBox(
 		widget.NewLabel("Welcome to the face recognition app"),
 		widget.NewButton("Go", func() {
-			go openServer(&config)
+			go openPresenterServer(&config)
 			mainWindow.SetContent(switchPage)
 		}),
 	)
