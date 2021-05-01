@@ -16,7 +16,6 @@ import (
 	"path"
 	"path/filepath"
 	"runtime"
-	"strconv"
 	"strings"
 	"time"
 
@@ -146,12 +145,11 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 
 	cmd := config.DevelopBoardProjectPath + `/out/run ` + videoName
 	session.Run(cmd)
-	ret, err := strconv.Atoi(strings.Replace(stdOut.String(), "\n", "", -1))
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Printf("%d, %s\n", ret, stdErr.String())
+	// ret, err := strconv.Atoi(strings.Replace(stdOut.String(), "\n", "", -1))
+	// if err != nil {
+	// panic(err)
+	// }
+	// fmt.Printf("%d, %s\n", ret, stdErr.String())
 }
 
 func main() {
@@ -307,7 +305,7 @@ func main() {
 			label.SetText("Successfully transfer the video to the development board, you can click the button to open the browser")
 			localVideoPage.Add(btnOpenBrowser)
 			_, fileName := filepath.Split(inputPath)
-			execFaceRecognition(sshClient, &config, fileName)
+			go execFaceRecognition(sshClient, &config, fileName)
 		}
 	}
 
