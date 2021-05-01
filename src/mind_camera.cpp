@@ -298,22 +298,67 @@ bool MindCamera::DoCapProcess() {
   int size = config_->resolution_width * config_->resolution_height * 3 / 2;
 
   // 执行从摄像头识别和从本地视频识别人物
-  if (cameraOrLocal) {
+  // if (cameraOrLocal) {
+  // while (GetExitFlag() == CAMERADATASETS_RUN) {
+  // clock_gettime(CLOCK_REALTIME, &time1);
+  // shared_ptr<FaceRecognitionInfo> p_obj = CreateBatchImageParaObj();
+  // uint8_t *p_data = p_obj->org_img.data.get();
+  // read_size = (int)p_obj->org_img.size;
+
+  // // KEY：从摄像头获取图像
+  // // do read frame from camera, readSize maybe changed when called
+  // read_ret =
+  // ReadFrameFromCamera(config_->channel_id, (void *)p_data, &read_size);
+
+  // //
+  // --------------------------------------------------------------------------------
+
+  // // indicates failure when readRet is 1
+  // read_flag = ((read_ret == 1) && (read_size == (int)p_obj->org_img.size));
+
+  // // 错误处理
+  // if (!read_flag) {
+  // ERROR_LOG("[CameraDatasets] readFrameFromCamera failed "
+  // "{camera:%d, ret:%d, size:%d, expectsize:%d} ",
+  // config_->channel_id, read_ret, read_size,
+  // (int)p_obj->org_img.size);
+  // break;
+  // }
+
+  // // KEY：对图像进行处理，进行人脸检测与识别
+  // ResourceLoad::GetInstance().SendNextModelProcess("MindCamera", p_obj);
+  // clock_gettime(CLOCK_REALTIME, &time2);
+  // }
+  // // close camera
+  // CloseCamera(config_->channel_id);
+  // } else {
+  // 打开本地视频
+  AtlasVideoCapture cap = AtlasVideoCapture(videoPath);
+  if (!cap.IsOpened()) {
+    ERROR_LOG("Open local video failed");
+    return false;
+
     while (GetExitFlag() == CAMERADATASETS_RUN) {
       clock_gettime(CLOCK_REALTIME, &time1);
       shared_ptr<FaceRecognitionInfo> p_obj = CreateBatchImageParaObj();
       uint8_t *p_data = p_obj->org_img.data.get();
       read_size = (int)p_obj->org_img.size;
 
-      // KEY：从摄像头获取图像
-      // do read frame from camera, readSize maybe changed when called
-      read_ret =
-          ReadFrameFromCamera(config_->channel_id, (void *)p_data, &read_size);
+      // 从本地视频中读取图片
 
-      // --------------------------------------------------------------------------------
+      ImageData image;
+      read_ret = cap.Read(image);
 
-      // indicates failure when readRet is 1
-      read_flag = ((read_ret == 1) && (read_size == (int)p_obj->org_img.size));
+      if (!read_ret) {
+        p_obj->org_img.width = image.width;
+        p_obj->org_img.alignWidth = image.alignWidth;
+        p_obj->org_img.alignHeight = image.alignHeight;
+        p_obj->org_img.height = image.height;
+        p_obj->org_img.size = image.size;
+        p_obj->org_img.data = image.data;
+      }
+
+      read_flag = (read_ret == 0); // 原本read_ret为1的时候是正确的，现在是0
 
       // 错误处理
       if (!read_flag) {
@@ -328,52 +373,9 @@ bool MindCamera::DoCapProcess() {
       ResourceLoad::GetInstance().SendNextModelProcess("MindCamera", p_obj);
       clock_gettime(CLOCK_REALTIME, &time2);
     }
-    // close camera
-    CloseCamera(config_->channel_id);
-  } else {
-    // 打开本地视频
-    AtlasVideoCapture cap = AtlasVideoCapture(videoPath);
-    if (!cap.IsOpened()) {
-      ERROR_LOG("Open local video failed");
-      return false;
-
-      while (GetExitFlag() == CAMERADATASETS_RUN) {
-        clock_gettime(CLOCK_REALTIME, &time1);
-        shared_ptr<FaceRecognitionInfo> p_obj = CreateBatchImageParaObj();
-        uint8_t *p_data = p_obj->org_img.data.get();
-        read_size = (int)p_obj->org_img.size;
-
-        // 从本地视频中读取图片
-
-        ImageData image;
-        read_ret = cap.Read(image);
-
-        if (!read_ret) {
-          p_obj->org_img.width = image.width;
-          p_obj->org_img.alignWidth = image.alignWidth;
-          p_obj->org_img.alignHeight = image.alignHeight;
-          p_obj->org_img.height = image.height;
-          p_obj->org_img.size = image.size;
-          p_obj->org_img.data = image.data;
-        }
-        read_flag = (read_ret == 0); // 原本read_ret为1的时候是正确的，现在是0
-
-        // 错误处理
-        if (!read_flag) {
-          ERROR_LOG("[CameraDatasets] readFrameFromCamera failed "
-                    "{camera:%d, ret:%d, size:%d, expectsize:%d} ",
-                    config_->channel_id, read_ret, read_size,
-                    (int)p_obj->org_img.size);
-          break;
-        }
-
-        // KEY：对图像进行处理，进行人脸检测与识别
-        ResourceLoad::GetInstance().SendNextModelProcess("MindCamera", p_obj);
-        clock_gettime(CLOCK_REALTIME, &time2);
-      }
-      // close video
-      cap.Close();
-    }
+    // close video
+    cap.Close();
+    // }
   }
 
   if (ret != true) {
