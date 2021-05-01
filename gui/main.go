@@ -22,6 +22,8 @@ import (
 	"fyne.io/fyne/v2/widget"
 
 	"golang.org/x/crypto/ssh"
+
+	"github.com/pkg/sftp"
 )
 
 // TODO：完善配置内容
@@ -39,6 +41,8 @@ type Config struct {
 	DevelopBoardUser string `json:"develop_board_user"`
 	// password of develop board
 	DevelopBoardPassword string `json:"develop_board_password"`
+	// the path to face recognition project on develop board
+	DevelopBoardProjectPath string `json:"develop_board_project_path"`
 }
 
 // open presenter server
@@ -86,6 +90,7 @@ func getSshConnect(config *Config) *ssh.Client {
 func main() {
 
 	config := readConfig()
+	sshClient := getSshConnect(&config)
 	faceRecognition := app.New()
 
 	mainWindow := faceRecognition.NewWindow("face recognition")
@@ -173,8 +178,8 @@ func main() {
 			isMP4File                bool
 			isAtTheCorrectResolution bool
 		)
-		inputValue := strings.TrimSpace(pathToVideo.Text)
-		cmd := exec.Command("ls", inputValue)
+		inputPath := strings.TrimSpace(pathToVideo.Text)
+		cmd := exec.Command("ls", inputPath)
 		_, err := cmd.Output()
 		if err != nil {
 			isExits = false
@@ -182,11 +187,11 @@ func main() {
 			isMP4File = false
 		} else {
 			isExits = true
-			s, _ := os.Lstat(inputValue)
+			s, _ := os.Lstat(inputPath)
 			isFile = !s.IsDir()
-			isMP4File = path.Ext(path.Base(inputValue)) == ".mp4"
+			isMP4File = path.Ext(path.Base(inputPath)) == ".mp4"
 			if isFile && isMP4File {
-				cmd := exec.Command("mplayer", "-identify", "-frames", "5", "-endpos", "0", "-vo", "null", inputValue)
+				cmd := exec.Command("mplayer", "-identify", "-frames", "5", "-endpos", "0", "-vo", "null", inputPath)
 				output, err := cmd.Output()
 				if err != nil {
 					fmt.Println(err)
@@ -210,8 +215,31 @@ func main() {
 		} else {
 			label.SetText("Path verification is successful. The video is now being transferred to the development board. Please wait.")
 			// TODO：传输视频，显示打开浏览器按钮，启动开发板程序
-			client := getSshConnect(&config)
-			fmt.Println(client)
+			sftpClient, err := sftp.NewClient(sshClient)
+			if err != nil {
+				fmt.Println(err)
+			} else {
+				srcFile, err := os.Open(inputPath)
+				if err != nil {
+					fmt.Println(err)
+				} else {
+					remoteFileName := path.Base(inputPath)
+					dstFile, err := sftpClient.Create(path.Join(config.DevelopBoardProjectPath+`/out`, remoteFileName))
+					if err != nil {
+						fmt.Println(err)
+					} else {
+						buf := make([]byte, 1024)
+						for {
+							n, _ := srcFile.Read(buf)
+							if n == 0 {
+								break
+							}
+							dstFile.Write(buf)
+						}
+					}
+				}
+
+			}
 		}
 	}
 

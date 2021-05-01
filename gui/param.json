@@ -3,5 +3,6 @@
   "presenter_server_ip": "127.0.0.1:8080",
   "develop_board_ip": "192.168.2.2",
   "develop_board_user": "HwHiAiUser",
-  "develop_board_password": "a"
+  "develop_board_password": "a",
+  "develop_board_project_path": "/home/HwHiAiUser/AscendSample/face_recognition_camera"
 }
