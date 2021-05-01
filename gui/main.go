@@ -1,7 +1,7 @@
-// @Title			main.go
-// @Description		gui program to call the face recognition program implemented on the atlas platform.
-// @Author 	  		niuiic
-// @Update    		niuiic 2021/04/29
+// @Title : main.go
+// @Description : gui program to call the face recognition program implemented on the atlas platform.
+// @Author : niuiic
+// @Update : 2021/04/29
 
 package main
 
@@ -14,24 +14,41 @@ import (
 	"path"
 	"runtime"
 	"strings"
+	"time"
 
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
+
+	"golang.org/x/crypto/ssh"
 )
 
 // TODO：完善配置内容
 
+// Config : environmental parameter configuration
+
 type Config struct {
-	PresentServerPath string `json:"present_server_path"`
-	PresentServerIp   string `json:"present_server_ip"`
+	// the path to presenter server
+	PresenterServerPath string `json:"presenter_server_path"`
+	// IP address monitored by presenter server
+	PresenterServerIp string `json:"presenter_server_ip"`
+	// Ip address of develop board
+	DevelopBoardIP string `json:"develop_board_ip"`
+	// username of develop board
+	DevelopBoardUser string `json:"develop_board_user"`
+	// password of develop board
+	DevelopBoardPassword string `json:"develop_board_password"`
 }
+
+// open presenter server
 
 func openServer() {
 	// TODO：打开presentserver
 	println("open server")
 }
+
+// read the config file
 
 func readConfig() Config {
 	var config Config
@@ -47,6 +64,22 @@ func readConfig() Config {
 		}
 	}
 	return config
+}
+
+func getSshConnect(config *Config) *ssh.Client {
+	clientConfig := &ssh.ClientConfig{
+		Timeout:         time.Second,
+		User:            config.DevelopBoardUser,
+		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
+	}
+	addr := fmt.Sprintf("%s:%d", config.DevelopBoardIP, 22)
+	sshClient, err := ssh.Dial("tcp", addr, clientConfig)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		return sshClient
+	}
+	return nil
 }
 
 func main() {
@@ -106,8 +139,7 @@ func main() {
 					_ = fmt.Errorf("don't know how to open browser on %s platform", runtime.GOOS)
 				}
 
-				cmd := exec.Command(run, "http://"+config.PresentServerIp)
-				fmt.Println(cmd)
+				cmd := exec.Command(run, "http://"+config.PresenterServerIp)
 				err := cmd.Start()
 				if err != nil {
 					fmt.Println(err)
@@ -177,6 +209,8 @@ func main() {
 		} else {
 			label.SetText("Path verification is successful. The video is now being transferred to the development board. Please wait.")
 			// TODO：传输视频，显示打开浏览器按钮，启动开发板程序
+			client := getSshConnect(&config)
+			fmt.Println(client)
 		}
 	}
 
