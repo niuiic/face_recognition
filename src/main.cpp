@@ -63,9 +63,9 @@ void CreateRegisterTask(aclrtContext context) {
 int main(int argc, char *argv[]) {
 
   // 判断是否有输入参数，有则获取输入参数
-  if (argc != 0) {
+  if (argc > 1) {
     cameraOrLocal = false;
-    videoPath = argv[0];
+    videoPath = argv[1];
   } else {
     cameraOrLocal = true;
     videoPath = "";
