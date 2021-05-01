@@ -331,7 +331,7 @@ bool MindCamera::DoCapProcess() {
     CloseCamera(config_->channel_id);
   } else {
     // 打开本地视频
-    AtlasVideoCapture cap = AtlasVideoCapture("./test.mp4");
+    AtlasVideoCapture cap = AtlasVideoCapture(videoPath);
     if (!cap.IsOpened()) {
       ERROR_LOG("Open local video failed");
       return false;
