@@ -14,6 +14,7 @@ import (
 	"os"
 	"os/exec"
 	"path"
+	"path/filepath"
 	"runtime"
 	"strconv"
 	"strings"
@@ -305,8 +306,8 @@ func main() {
 			transferVideo(inputPath, &config, sshClient)
 			label.SetText("Successfully transfer the video to the development board, you can click the button to open the browser")
 			localVideoPage.Add(btnOpenBrowser)
-			// TODO：修改videoname
-			execFaceRecognition(sshClient, &config, "")
+			_, fileName := filepath.Split(inputPath)
+			execFaceRecognition(sshClient, &config, fileName)
 		}
 	}
 
