@@ -72,7 +72,7 @@ func readConfig() Config {
 
 func getSshConnect(config *Config) *ssh.Client {
 	clientConfig := &ssh.ClientConfig{
-		Timeout:         time.Second,
+		Timeout:         10 * time.Second,
 		User:            config.DevelopBoardUser,
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
