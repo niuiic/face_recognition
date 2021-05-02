@@ -71,13 +71,11 @@ func readConfig() Config {
 	var config Config
 	data, err := ioutil.ReadFile("./param.json")
 	if err != nil {
-		panic("failed to open json config file")
+		log.Fatal("failed to open json config file", err)
 	} else {
-		fmt.Println(string(data))
 		err = json.Unmarshal(data, &config)
 		if err != nil {
-			fmt.Println(err)
-			panic("failed to parse json data")
+			log.Fatal("failed to parse json data", err)
 		}
 	}
 	return config
@@ -95,7 +93,7 @@ func getSshClient(config *Config) *ssh.Client {
 	addr := fmt.Sprintf("%s:%d", config.DevelopBoardIP, 22)
 	sshClient, err := ssh.Dial("tcp", addr, clientConfig)
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal(err)
 	} else {
 		return sshClient
 	}
@@ -246,7 +244,7 @@ func main() {
 				cmd := exec.Command(run, "http://"+config.PresenterServerIp+":"+config.PresenterServerPort)
 				err := cmd.Run()
 				if err != nil {
-					fmt.Println(err)
+					log.Fatal(err)
 				}
 			},
 		),
@@ -269,7 +267,7 @@ func main() {
 			cmd := exec.Command(run, "http://"+config.PresenterServerIp+":"+config.PresenterServerPort)
 			err := cmd.Run()
 			if err != nil {
-				fmt.Println(err)
+				log.Fatal(err)
 			}
 		},
 	)
@@ -314,7 +312,7 @@ func main() {
 				cmd := exec.Command("mplayer", "-identify", "-frames", "5", "-endpos", "0", "-vo", "null", inputPath)
 				output, err := cmd.Output()
 				if err != nil {
-					fmt.Println(err)
+					log.Fatal(err)
 				} else {
 					if strings.Contains(string(output), "ID_VIDEO_WIDTH=1280") && strings.Contains(string(output), "ID_VIDEO_HEIGHT=720") {
 						isAtTheCorrectResolution = true
