@@ -187,7 +187,7 @@ func main() {
 	switchPage = container.NewVBox(
 		widget.NewLabel("You can choose local video or camera input to recognition face"),
 		widget.NewButton("camera", func() {
-			execFaceRecognition(sshClient, &config, "")
+			go execFaceRecognition(sshClient, &config, "")
 			mainWindow.SetContent(cameraPage)
 			cameraPage.Show()
 		}),
