@@ -161,12 +161,12 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	}
 	fmt.Println(string(output))
 
-	match, err := regexp.MatchString("main", string(output))
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		fmt.Println(match)
+	PIDRegexp := regexp.MustCompile(`^ ([\d]{4}) ?[\s]+[\d]{2}:[\d]{2}:[\d]{2} main$`)
+	PID := PIDRegexp.FindStringSubmatch(string(output))
+	for _, pid := range PID {
+		println(pid)
 	}
+
 }
 
 func main() {
