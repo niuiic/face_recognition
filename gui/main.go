@@ -219,7 +219,7 @@ func main() {
 
 	cameraPage = container.NewVBox(
 		widget.NewButton("return", func() {
-			// TODO：关闭摄像机等
+			exitChan <- struct{}{}
 			mainWindow.SetContent(switchPage)
 			switchPage.Show()
 		}),
