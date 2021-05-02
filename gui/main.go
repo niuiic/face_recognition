@@ -162,6 +162,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	fmt.Println(string(output))
 
 	PIDRegexp := regexp.MustCompile(`([\d]{4}) ?[\s]+[\d]{2}:[\d]{2}:[\d]{2} main`)
+	fmt.Println(PIDRegexp)
 	PID := PIDRegexp.FindStringSubmatch(string(output))
 	fmt.Println(PID)
 
