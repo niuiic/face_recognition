@@ -152,7 +152,11 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	}
 
 	<-exitChan
-	sshClient.Close()
+	output, err := session.Output(`ps -A | grep main`)
+	fmt.Println(output)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
