@@ -132,7 +132,7 @@ func transferVideo(localVideoPath string, config *Config, sshClient *ssh.Client)
 	}
 }
 
-func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string) {
+func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string, exitChan chan struct{}) {
 	var stdOut, stdErr bytes.Buffer
 	session, err := sshClient.NewSession()
 	if err != nil {
@@ -147,11 +147,11 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	cmd := "cd " + config.DevelopBoardProjectPath + " && cd " + `./out` + ` && ./main ` + videoName
 	err = session.Start(cmd)
 
-	println("hello")
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	<-exitChan
+	session.Close()
 }
 
 func main() {
@@ -159,6 +159,7 @@ func main() {
 	config := readConfig()
 	sshClient := getSshConnect(&config)
 	faceRecognition := app.New()
+	exitChan := make(chan struct{}, 1)
 
 	mainWindow := faceRecognition.NewWindow("face recognition")
 
@@ -182,7 +183,7 @@ func main() {
 	switchPage = container.NewVBox(
 		widget.NewLabel("You can choose local video or camera input to recognition face"),
 		widget.NewButton("camera", func() {
-			go execFaceRecognition(sshClient, &config, "")
+			go execFaceRecognition(sshClient, &config, "", exitChan)
 			mainWindow.SetContent(cameraPage)
 			cameraPage.Show()
 		}),
@@ -251,6 +252,7 @@ func main() {
 		container.NewVBox(
 			widget.NewButton("return", func() {
 				// TODO：关闭摄像机等
+				exitChan <- struct{}{}
 				mainWindow.SetContent(switchPage)
 				switchPage.Show()
 			}), label,
@@ -307,7 +309,7 @@ func main() {
 			label.SetText("Successfully transfer the video to the development board, you can click the button to open the browser")
 			localVideoPage.Add(btnOpenBrowser)
 			_, fileName := filepath.Split(inputPath)
-			go execFaceRecognition(sshClient, &config, fileName)
+			go execFaceRecognition(sshClient, &config, fileName, exitChan)
 		}
 	}
 
