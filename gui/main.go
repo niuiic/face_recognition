@@ -6,7 +6,6 @@
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
@@ -133,16 +132,12 @@ func transferVideo(localVideoPath string, config *Config, sshClient *ssh.Client)
 }
 
 func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string, exitChan chan struct{}) {
-	var stdOut, stdErr bytes.Buffer
 	session, err := sshClient.NewSession()
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	defer session.Close()
-
-	session.Stdout = &stdOut
-	session.Stderr = &stdErr
 
 	cmd := "cd " + config.DevelopBoardProjectPath + " && cd " + `./out` + ` && ./main ` + videoName
 	err = session.Start(cmd)
@@ -153,7 +148,8 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 
 	<-exitChan
 	output, err := session.Output(`ps -A | grep main`)
-	fmt.Println(output)
+	fmt.Println(string(output))
+
 	if err != nil {
 		log.Fatal(err)
 	}
