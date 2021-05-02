@@ -151,6 +151,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 		log.Fatal(err)
 	}
 	<-exitChan
+	println("hello")
 	session.Close()
 }
 
