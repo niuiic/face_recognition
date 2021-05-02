@@ -138,24 +138,19 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	defer session.Close()
 
 	session.Stdout = &stdOut
 	session.Stderr = &stdErr
 
 	cmd := "cd " + config.DevelopBoardProjectPath + " && cd " + `./out` + ` && ./main ` + videoName
-	fmt.Println(cmd)
 	err = session.Run(cmd)
 
+	println("hello")
 	if err != nil {
-		// log.Fatal(err)
-		fmt.Println(err)
+		log.Fatal(err)
 	}
-
-	// ret, err := strconv.Atoi(strings.Replace(stdOut.String(), "\n", "", -1))
-	// if err != nil {
-	// panic(err)
-	// }
 
 }
 
