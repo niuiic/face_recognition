@@ -1,7 +1,8 @@
 /**
  * ============================================================================
  *
- * Copyright (C) 2018-2020, Hisilicon Technologies Co., Ltd. All Rights Reserved.
+ * Copyright (C) 2018-2020, Hisilicon Technologies Co., Ltd. All Rights
+ * Reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -30,140 +31,131 @@
  * POSSIBILITY OF SUCH DAMAGE.
  * ============================================================================
  */
-#include <stdio.h>
-#include <stdarg.h>
-#include <time.h>
+#include "utils.h"
 #include <memory>
-#include <sys/time.h>
-#include <unistd.h>
+#include <stdarg.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "utils.h"
-
+#include <sys/time.h>
+#include <time.h>
+#include <unistd.h>
 
 using namespace std;
 
 extern "C" {
-#include "driver/peripheral_api.h"
 #include "camera.h"
+#include "driver/peripheral_api.h"
 
-Camera::Camera(uint32_t id, uint32_t fps, uint32_t width, 
-               uint32_t height)
-:id_(id), fps_(fps), width_(width), height_(height) {
-    size_ = YUV420SP_SIZE(width_, height_);
-    isAlign_ = (width%16 == 0) && (height%2 == 0);
+Camera::Camera(uint32_t id, uint32_t fps, uint32_t width, uint32_t height)
+    : id_(id), fps_(fps), width_(width), height_(height) {
+  size_ = YUV420SP_SIZE(width_, height_);
+  isAlign_ = (width % 16 == 0) && (height % 2 == 0);
 }
 
-Camera::~Camera(){
-    if(IsOpened(0))
-        Close(0);
-    if(IsOpened(1))
-        Close(1);
+Camera::~Camera() {
+  if (IsOpened(0))
+    Close(0);
+  if (IsOpened(1))
+    Close(1);
 }
 
 Result Camera::SetProperty(int channelID) {
-    int ret = SetCameraProperty(channelID, CAMERA_PROP_FPS, &(fps_));
-    INFO_LOG("SetProperty  fps %d \n",fps_);
-    if (ret == LIBMEDIA_STATUS_FAILED) {
-        ERROR_LOG("Set camera %d fps failed\n",channelID);
-        return FAILED;
-    }
+  int ret = SetCameraProperty(channelID, CAMERA_PROP_FPS, &(fps_));
+  INFO_LOG("SetProperty  fps %d \n", fps_);
+  if (ret == LIBMEDIA_STATUS_FAILED) {
+    ERROR_LOG("Set camera %d fps failed\n", channelID);
+    return FAILED;
+  }
 
-    int image_format = CAMERA_IMAGE_YUV420_SP;
-    ret = SetCameraProperty(channelID, CAMERA_PROP_IMAGE_FORMAT, &image_format);
-    if (ret == LIBMEDIA_STATUS_FAILED) {
-        ERROR_LOG("Set camera image format to %d  channel %d failed\n",channelID, image_format);
-        return FAILED;
-    }
+  int image_format = CAMERA_IMAGE_YUV420_SP;
+  ret = SetCameraProperty(channelID, CAMERA_PROP_IMAGE_FORMAT, &image_format);
+  if (ret == LIBMEDIA_STATUS_FAILED) {
+    ERROR_LOG("Set camera image format to %d  channel %d failed\n", channelID,
+              image_format);
+    return FAILED;
+  }
 
-    CameraResolution resolution;
-    resolution.width = width_;
-    resolution.height = height_;
-    ret = SetCameraProperty(channelID, CAMERA_PROP_RESOLUTION, &resolution);
-    if (ret == LIBMEDIA_STATUS_FAILED) {
-        ERROR_LOG("Set camera resolution failed channelID %d \n",channelID);
-        return FAILED;
-    }
+  CameraResolution resolution;
+  resolution.width = width_;
+  resolution.height = height_;
+  ret = SetCameraProperty(channelID, CAMERA_PROP_RESOLUTION, &resolution);
+  if (ret == LIBMEDIA_STATUS_FAILED) {
+    ERROR_LOG("Set camera resolution failed channelID %d \n", channelID);
+    return FAILED;
+  }
 
-    CameraCapMode mode = CAMERA_CAP_ACTIVE;
-    ret = SetCameraProperty(channelID, CAMERA_PROP_CAP_MODE, &mode);
-    if (ret == LIBMEDIA_STATUS_FAILED) {
-        ERROR_LOG("Set camera mode:%d failed channel %d\n", mode,channelID);
-        return FAILED;
-    }
+  CameraCapMode mode = CAMERA_CAP_ACTIVE;
+  ret = SetCameraProperty(channelID, CAMERA_PROP_CAP_MODE, &mode);
+  if (ret == LIBMEDIA_STATUS_FAILED) {
+    ERROR_LOG("Set camera mode:%d failed channel %d\n", mode, channelID);
+    return FAILED;
+  }
 
-    return SUCCESS;
+  return SUCCESS;
 }
 
-Result Camera::Open(int channelID ) {
+Result Camera::Open(int channelID) {
 
-    MediaLibInit();
-    CameraStatus status = QueryCameraStatus(channelID);
+  MediaLibInit();
+  CameraStatus status = QueryCameraStatus(channelID);
 
-    if (status == CAMERA_STATUS_CLOSED){
-        // Open Camera
-        if (CAMERA_STATUS_OPEN != OpenCamera(channelID)) {
-            ERROR_LOG("Camera%d closed, and open failed.\n", channelID);
-            return FAILED;
-        }
-    }else if (status != CAMERA_STATUS_OPEN){
-        ERROR_LOG("Invalid camera%d status %d\n", channelID, status);
-        return FAILED;
+  if (status == CAMERA_STATUS_CLOSED) {
+    // Open Camera
+    if (CAMERA_STATUS_OPEN != OpenCamera(channelID)) {
+      ERROR_LOG("Camera%d closed, and open failed.\n", channelID);
+      return FAILED;
     }
+  } else if (status != CAMERA_STATUS_OPEN) {
+    ERROR_LOG("Invalid camera%d status %d\n", channelID, status);
+    return FAILED;
+  }
 
-    //Set camera property
-    if (SUCCESS != SetProperty(channelID)) {
-        CloseCamera(channelID);
-        ERROR_LOG("Set camera%d property failed\n", channelID);
-        return FAILED;
-    }
-    INFO_LOG("Open camera %d success\n", channelID);
-    isOpened_[channelID]=true;
-    return SUCCESS;
+  // Set camera property
+  if (SUCCESS != SetProperty(channelID)) {
+    CloseCamera(channelID);
+    ERROR_LOG("Set camera%d property failed\n", channelID);
+    return FAILED;
+  }
+  INFO_LOG("Open camera %d success\n", channelID);
+  isOpened_[channelID] = true;
+  return SUCCESS;
 }
 
-
-bool Camera::IsOpened(int channelID){
-    if(1 < channelID)
-        return false;
-    return isOpened_[channelID];
+bool Camera::IsOpened(int channelID) {
+  if (1 < channelID)
+    return false;
+  return isOpened_[channelID];
 }
-int Camera::GetCameraDataSize(int channelID) {
-    return size_;
-}
-Result Camera::Read(int channelID, ImageData1& output, QueueNode& image) {
-    int frameSize = (int )size_;
-    if ((frameSize == 0) ) {
-        ERROR_LOG("Get image from camera %d failed for buffer is nullptr\n", id_);
-        return FAILED;
-    }
-    int aclRet = aclrtMemcpy(output.data.get(), frameSize, image.image, frameSize, ACL_MEMCPY_DEVICE_TO_DEVICE);
-    free(image.image);
-    if (aclRet != ACL_ERROR_NONE) {
-        ERROR_LOG("Copy data to device failed, aclRet is %d\n", aclRet);
-        return FAILED;
-    }
-    /*int ret = ReadFrameFromCamera(channelID, output.data.get(), (int *)&frameSize);
-    if ((ret == LIBMEDIA_STATUS_FAILED)||((int )size_ != frameSize)) {
-        ERROR_LOG("Get image from camera %d ,frameSize %d  failed\n", channelID,frameSize);
-        return FAILED;
-    }*/
+int Camera::GetCameraDataSize(int channelID) { return size_; }
+Result Camera::Read(int channelID, ImageData1 &output, QueueNode &image) {
+  int frameSize = (int)size_;
+  if ((frameSize == 0)) {
+    ERROR_LOG("Get image from camera %d failed for buffer is nullptr\n", id_);
+    return FAILED;
+  }
+  int aclRet = aclrtMemcpy(output.data.get(), frameSize, image.image, frameSize,
+                           ACL_MEMCPY_DEVICE_TO_DEVICE);
+  free(image.image);
+  if (aclRet != ACL_ERROR_NONE) {
+    ERROR_LOG("Copy data to device failed, aclRet is %d\n", aclRet);
+    return FAILED;
+  }
 
-    output.width = width_;
-    output.height = height_;
-    output.alignWidth = isAlign_? width_ : 0;
-    output.alignHeight = isAlign_? height_ : 0;
-    output.size = size_;
+  output.width = width_;
+  output.height = height_;
+  output.alignWidth = isAlign_ ? width_ : 0;
+  output.alignHeight = isAlign_ ? height_ : 0;
+  output.size = size_;
 
-    return SUCCESS;
+  return SUCCESS;
 }
 
 Result Camera::Close(int channelID) {
-    if (LIBMEDIA_STATUS_FAILED == CloseCamera(channelID)) {
-        ERROR_LOG("Close camera %d failed\n", id_);
-        return FAILED;
-    }
-    return SUCCESS;
+  if (LIBMEDIA_STATUS_FAILED == CloseCamera(channelID)) {
+    ERROR_LOG("Close camera %d failed\n", id_);
+    return FAILED;
+  }
+  return SUCCESS;
 }
-
 }

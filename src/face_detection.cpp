@@ -1,7 +1,8 @@
 /**
  * ============================================================================
  *
- * Copyright (C) 2018-2020, Hisilicon Technologies Co., Ltd. All Rights Reserved.
+ * Copyright (C) 2018-2020, Hisilicon Technologies Co., Ltd. All Rights
+ * Reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
@@ -31,16 +32,15 @@
  * ============================================================================
  */
 
-#include <vector>
-#include <sstream>
-#include <unistd.h>
 #include "face_detection.h"
 #include "dvpp_process.h"
-#include <fstream>
 #include "resource_load.h"
+#include <fstream>
+#include <sstream>
+#include <unistd.h>
+#include <vector>
 
 using namespace std;
-
 
 namespace {
 
@@ -90,171 +90,178 @@ const uint32_t kRegisterSrc = 1;
 const uint32_t kBBoxDataBufId = 1;
 const uint32_t kBoxNumDataBufId = 0;
 
-enum BBoxIndex {EMPTY = 0, LABEL,SCORE,TOPLEFTX,TOPLEFTY, BOTTOMRIGHTX, BOTTOMRIGHTY};
+enum BBoxIndex {
+  EMPTY = 0,
+  LABEL,
+  SCORE,
+  TOPLEFTX,
+  TOPLEFTY,
+  BOTTOMRIGHTX,
+  BOTTOMRIGHTY
+};
 
 // sleep interval when queue full (unit:microseconds)
 const __useconds_t kSleepInterval = 200000;
 
-}
+} // namespace
 
-FaceDetection::FaceDetection(){
-    confidence_ = -1.0;  // initialized as invalid value
+FaceDetection::FaceDetection() {
+  confidence_ = -1.0; // initialized as invalid value
 }
 
 Result FaceDetection::Init() {
-    confidence_ = 0.9;
-    // validate confidence
-    if (!IsValidConfidence(confidence_)) {
-      ERROR_LOG("confidence invalid, please check your configuration.");
-      return FAILED;
-    }
+  confidence_ = 0.9;
+  // validate confidence
+  if (!IsValidConfidence(confidence_)) {
+    ERROR_LOG("confidence invalid, please check your configuration.");
+    return FAILED;
+  }
 
-    return SUCCESS;
+  return SUCCESS;
 }
 
 Result FaceDetection::IsValidConfidence(float confidence) {
-    if((confidence > kConfidenceMin) && (confidence <= kConfidenceMax) == false) {
-        return FAILED;
-    }
-    return SUCCESS;
+  if ((confidence > kConfidenceMin) &&
+      (confidence <= kConfidenceMax) == false) {
+    return FAILED;
+  }
+  return SUCCESS;
 }
 
 Result FaceDetection::IsValidResults(float attr, float score,
-                                   const FaceRectangle &rectangle) {
-    // attribute is not face (background)
-    if (abs(attr - kAttributeFaceLabelValue) > kAttributeFaceDeviation) {
-        return FAILED;
-    }
+                                     const FaceRectangle &rectangle) {
+  // attribute is not face (background)
+  if (abs(attr - kAttributeFaceLabelValue) > kAttributeFaceDeviation) {
+    return FAILED;
+  }
 
-    // confidence check
-    if ((score < confidence_) || !IsValidConfidence(score)) {
-        return FAILED;
-    }
+  // confidence check
+  if ((score < confidence_) || !IsValidConfidence(score)) {
+    return FAILED;
+  }
 
-    // position check : lt == rb invalid
-    if ((rectangle.lt.x == rectangle.rb.x)
-      && (rectangle.lt.y == rectangle.rb.y)) {
-        return FAILED;
-    }
-    return SUCCESS;
+  // position check : lt == rb invalid
+  if ((rectangle.lt.x == rectangle.rb.x) &&
+      (rectangle.lt.y == rectangle.rb.y)) {
+    return FAILED;
+  }
+  return SUCCESS;
 }
 
 float FaceDetection::CorrectionRatio(float ratio) {
-    float tmp = (ratio < kMinRatio) ? kMinRatio : ratio;
-    return (tmp > kMaxRatio) ? kMaxRatio : tmp;
+  float tmp = (ratio < kMinRatio) ? kMinRatio : ratio;
+  return (tmp > kMaxRatio) ? kMaxRatio : tmp;
 }
 
-Result FaceDetection::PreProcess(
-    const shared_ptr<FaceRecognitionInfo> &image_handle,
-    ImageData1 &resized_image) {
-    // input size is less than zero, return failed
-    int32_t img_size = image_handle->org_img.size;
-    if (img_size <= 0) {
-        ERROR_LOG("original image size less than or equal zero, size=%d",
-                    img_size);
-        return FAILED;
-    }
+Result
+FaceDetection::PreProcess(const shared_ptr<FaceRecognitionInfo> &image_handle,
+                          ImageData1 &resized_image) {
+  // input size is less than zero, return failed
+  int32_t img_size = image_handle->org_img.size;
+  if (img_size <= 0) {
+    ERROR_LOG("original image size less than or equal zero, size=%d", img_size);
+    return FAILED;
+  }
 
-    // call ez_dvpp to resize image
-    Result ret = ResourceLoad::GetInstance().GetDvpp().Resize(resized_image, image_handle->org_img, kResizeWidth, kResizeHeight);
-    if (ret == FAILED) {
-        ERROR_LOG("Resize image failed\n");
-        return FAILED;
-    }
+  // call ez_dvpp to resize image
+  Result ret = ResourceLoad::GetInstance().GetDvpp().Resize(
+      resized_image, image_handle->org_img, kResizeWidth, kResizeHeight);
+  if (ret == FAILED) {
+    ERROR_LOG("Resize image failed\n");
+    return FAILED;
+  }
 
-
-    return SUCCESS;
+  return SUCCESS;
 }
 
-Result FaceDetection::Inference(
-    const ImageData1 &resized_image,
-    aclmdlDataset*& detection_inference) {
+Result FaceDetection::Inference(const ImageData1 &resized_image,
+                                aclmdlDataset *&detection_inference) {
 
-    Result ret = ResourceLoad::GetInstance().GetModel(1).CreateInput(resized_image.data.get(),
-                                    resized_image.size);
-    if (ret != SUCCESS) {
-        ERROR_LOG("Create mode input dataset failed\n");
-        return FAILED;
-    }
+  Result ret = ResourceLoad::GetInstance().GetModel(1).CreateInput(
+      resized_image.data.get(), resized_image.size);
+  if (ret != SUCCESS) {
+    ERROR_LOG("Create mode input dataset failed\n");
+    return FAILED;
+  }
 
-    ret = ResourceLoad::GetInstance().GetModel(1).Execute();
-    if (ret != SUCCESS) {
-        ResourceLoad::GetInstance().GetModel(1).DestroyInput();
-        ERROR_LOG("Execute model inference failed\n");
-        return FAILED;
-    }
+  ret = ResourceLoad::GetInstance().GetModel(1).Execute();
+  if (ret != SUCCESS) {
     ResourceLoad::GetInstance().GetModel(1).DestroyInput();
+    ERROR_LOG("Execute model inference failed\n");
+    return FAILED;
+  }
+  ResourceLoad::GetInstance().GetModel(1).DestroyInput();
 
-    detection_inference = ResourceLoad::GetInstance().GetModel(1).GetModelOutputData();
+  detection_inference =
+      ResourceLoad::GetInstance().GetModel(1).GetModelOutputData();
 
-    return SUCCESS;
+  return SUCCESS;
 }
 
-Result FaceDetection::PostProcess(
-    shared_ptr<FaceRecognitionInfo> &image_handle,
-    aclmdlDataset* detection_inference) {
-    // inference result vector only need get first result
-    // because batch is fixed as 1
-    uint32_t dataSize = 0;
-    float* detectData = (float *)ResourceLoad::GetInstance().GetInferenceOutputItem(dataSize, detection_inference, kBBoxDataBufId);
+Result FaceDetection::PostProcess(shared_ptr<FaceRecognitionInfo> &image_handle,
+                                  aclmdlDataset *detection_inference) {
+  // inference result vector only need get first result
+  // because batch is fixed as 1
+  uint32_t dataSize = 0;
+  float *detectData =
+      (float *)ResourceLoad::GetInstance().GetInferenceOutputItem(
+          dataSize, detection_inference, kBBoxDataBufId);
 
+  if (detectData == nullptr)
+    return FAILED;
 
-    if (detectData == nullptr)
-        return FAILED;
+  uint32_t width = image_handle->org_img.width;
+  uint32_t height = image_handle->org_img.height;
+  float *ptr = detectData;
+  for (int32_t i = 0; i < dataSize - kEachResultSize; i += kEachResultSize) {
+    ptr = detectData + i;
 
-    uint32_t width = image_handle->org_img.width;
-    uint32_t height = image_handle->org_img.height;
-    float *ptr = detectData;
-    for (int32_t i = 0; i < dataSize - kEachResultSize; i += kEachResultSize) {
-        ptr = detectData + i;
+    // Point point_lt, point_rb;
+    uint32_t score_int = uint32_t(ptr[SCORE] * 100);
+    if (score_int < 70.0)
+      break;
 
-    //for (uint32_t i = 0; i < totalBox; i++) {
+    // attribute
+    float attr = ptr[LABEL];
+    // confidence
+    float score = ptr[SCORE];
 
-        //Point point_lt, point_rb;
-        uint32_t score_int = uint32_t(ptr[SCORE] * 100);
-        if (score_int < 70.0)
-            break;
-		
-		// attribute
-        float attr = ptr[LABEL];
-        // confidence
-        float score = ptr[SCORE];
-
-	    // position
-        FaceRectangle rectangle;
-        rectangle.lt.x = CorrectionRatio(ptr[TOPLEFTX]) * width;
-        rectangle.lt.y = CorrectionRatio(ptr[TOPLEFTY]) * height;
-        rectangle.rb.x = CorrectionRatio(ptr[BOTTOMRIGHTX]) * width;
-        rectangle.rb.y = CorrectionRatio(ptr[BOTTOMRIGHTY]) * height;	
-		cout << "ltX " << rectangle.lt.x << "ltY " << rectangle.lt.y << "rbX " << rectangle.rb.x << "rbY " << rectangle.rb.y << endl;
-        // check results is invalid, skip it
-        if (!IsValidResults(attr, score, rectangle)) {
-            continue;
-        }
-
-        // push back to image_handle
-        FaceImage faceImage;
-        faceImage.rectangle = rectangle;
-        image_handle->face_imgs.emplace_back(faceImage);
+    // position
+    FaceRectangle rectangle;
+    rectangle.lt.x = CorrectionRatio(ptr[TOPLEFTX]) * width;
+    rectangle.lt.y = CorrectionRatio(ptr[TOPLEFTY]) * height;
+    rectangle.rb.x = CorrectionRatio(ptr[BOTTOMRIGHTX]) * width;
+    rectangle.rb.y = CorrectionRatio(ptr[BOTTOMRIGHTY]) * height;
+    cout << "ltX " << rectangle.lt.x << "ltY " << rectangle.lt.y << "rbX "
+         << rectangle.rb.x << "rbY " << rectangle.rb.y << endl;
+    // check results is invalid, skip it
+    if (!IsValidResults(attr, score, rectangle)) {
+      continue;
     }
-    return SUCCESS;
+
+    // push back to image_handle
+    FaceImage faceImage;
+    faceImage.rectangle = rectangle;
+    image_handle->face_imgs.emplace_back(faceImage);
+  }
+  return SUCCESS;
 }
 
 void FaceDetection::HandleErrors(
     AppErrorCode err_code, const string &err_msg,
     shared_ptr<FaceRecognitionInfo> &image_handle) {
 
-    // set error information
-    image_handle->err_info.err_code = err_code;
-    image_handle->err_info.err_msg = err_msg;
+  // set error information
+  image_handle->err_info.err_code = err_code;
+  image_handle->err_info.err_msg = err_msg;
 
-    // send data
-    SendResult(image_handle);
+  // send data
+  SendResult(image_handle);
 }
 
-void FaceDetection::SendResult(
-    shared_ptr<FaceRecognitionInfo> &image_handle) {
-    ResourceLoad::GetInstance().SendNextModelProcess("FaceDetection", image_handle);
+void FaceDetection::SendResult(shared_ptr<FaceRecognitionInfo> &image_handle) {
+  ResourceLoad::GetInstance().SendNextModelProcess("FaceDetection",
+                                                   image_handle);
 }
 
 static struct timespec time1 = {0, 0};
@@ -263,46 +270,45 @@ static struct timespec time2 = {0, 0};
 static struct timespec time3 = {0, 0};
 static struct timespec time4 = {0, 0};
 
-Result FaceDetection::Process(
-    shared_ptr<FaceRecognitionInfo> &image_handle) {
-    string err_msg = "";
-    if (image_handle->err_info.err_code != AppErrorCode::kNone) {
-        ERROR_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
-                    int(image_handle->err_info.err_code),
-                    image_handle->err_info.err_msg.c_str());
+Result FaceDetection::Process(shared_ptr<FaceRecognitionInfo> &image_handle) {
+  string err_msg = "";
+  if (image_handle->err_info.err_code != AppErrorCode::kNone) {
+    ERROR_LOG("front engine dealing failed, err_code=%d, err_msg=%s",
+              int(image_handle->err_info.err_code),
+              image_handle->err_info.err_msg.c_str());
 
-        SendResult(image_handle);
-        return FAILED;
-    }
-    clock_gettime(CLOCK_REALTIME, &time1);
-
-    // resize image
-    ImageData1 resized_image;
-    if (PreProcess(image_handle, resized_image) == FAILED) {
-        err_msg = "face_detection call ez_dvpp to resize image failed.";
-        HandleErrors(AppErrorCode::kDetection, err_msg, image_handle);
-        return FAILED;
-    }
-    clock_gettime(CLOCK_REALTIME, &time2);
-
-    // inference
-    aclmdlDataset* detection_inference;
-    if (Inference(resized_image, detection_inference) == FAILED) {
-        err_msg = "face_detection inference failed.";
-        HandleErrors(AppErrorCode::kDetection, err_msg, image_handle);
-        return FAILED;
-    }
-    clock_gettime(CLOCK_REALTIME, &time3);
-
-    // post process
-    if (PostProcess(image_handle, detection_inference) == FAILED) {
-        err_msg = "face_detection deal result failed.";
-        HandleErrors(AppErrorCode::kDetection, err_msg, image_handle);
-        return FAILED;
-    }
-    clock_gettime(CLOCK_REALTIME, &time4);
-
-    // send result
     SendResult(image_handle);
-    return SUCCESS;
+    return FAILED;
+  }
+  clock_gettime(CLOCK_REALTIME, &time1);
+
+  // resize image
+  ImageData1 resized_image;
+  if (PreProcess(image_handle, resized_image) == FAILED) {
+    err_msg = "face_detection call ez_dvpp to resize image failed.";
+    HandleErrors(AppErrorCode::kDetection, err_msg, image_handle);
+    return FAILED;
+  }
+  clock_gettime(CLOCK_REALTIME, &time2);
+
+  // inference
+  aclmdlDataset *detection_inference;
+  if (Inference(resized_image, detection_inference) == FAILED) {
+    err_msg = "face_detection inference failed.";
+    HandleErrors(AppErrorCode::kDetection, err_msg, image_handle);
+    return FAILED;
+  }
+  clock_gettime(CLOCK_REALTIME, &time3);
+
+  // post process
+  if (PostProcess(image_handle, detection_inference) == FAILED) {
+    err_msg = "face_detection deal result failed.";
+    HandleErrors(AppErrorCode::kDetection, err_msg, image_handle);
+    return FAILED;
+  }
+  clock_gettime(CLOCK_REALTIME, &time4);
+
+  // send result
+  SendResult(image_handle);
+  return SUCCESS;
 }

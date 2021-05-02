@@ -57,7 +57,7 @@ extern "C" {
 using namespace std;
 
 namespace {
-// initial value of frameId
+// Initialize the value of frameId
 const uint32_t kInitFrameId = 0;
 
 } // namespace
@@ -87,20 +87,19 @@ string MindCamera::CameraDatasetsConfig::ToString() const {
 bool MindCamera::Init() {
   INFO_LOG("[CameraDatasets] start init!");
   if (config_ == nullptr) {
-    // 创建配置
+    // Create configuration
     config_ = make_shared<CameraDatasetsConfig>();
   }
 
-  // 设置配置
+  // Set configuration
   config_->fps = 10;
   config_->image_format = CommonParseParam("YUV420SP");
   config_->channel_id = CommonParseParam("Channel-1");
   ParseImageSize("1280x720", config_->resolution_width,
-                 // ParseImageSize("352x288", config_->resolution_width,
                  config_->resolution_height);
   bool ret = true;
 
-  // 配置设置失败标志
+  // Configuration setting failure flag
   bool failed_flag =
       (config_->image_format == PARSEPARAM_FAIL ||
        config_->channel_id == PARSEPARAM_FAIL ||
@@ -125,7 +124,6 @@ void MindCamera::InitConfigParams() {
 
 string MindCamera::IntToString(int value) {
   char msg[MAX_VALUESTRING_LENGTH] = {0};
-  // MAX_VALUESTRING_LENGTH ensure no error occurred
   sprintf(msg, "%d", value);
   string ret = msg;
 
@@ -161,9 +159,6 @@ void MindCamera::ParseImageSize(const string &val, int &width,
                                 int &height) const {
   vector<string> tmp;
   SplitString(val, tmp, "x");
-
-  // val is not a format of resolution ratio(*x*),correct should have 2 array
-  // in this wrong case,set width and height zero
   if (tmp.size() != 2) {
     width = 0;
     height = 0;
@@ -177,7 +172,7 @@ MindCamera::CameraOperationCode MindCamera::PreCapProcess() {
   MediaLibInit();
 
   CameraStatus status =
-      QueryCameraStatus(config_->channel_id); // 获取摄像头状态
+      QueryCameraStatus(config_->channel_id); // Get camera status
   if (status != CAMERA_STATUS_CLOSED) {
     ERROR_LOG("[CameraDatasets] PreCapProcess.QueryCameraStatus "
               "{status:%d} failed.",
@@ -185,9 +180,9 @@ MindCamera::CameraOperationCode MindCamera::PreCapProcess() {
     return kCameraNotClosed;
   }
 
-  // Open Camera
+  // Open camera
   int ret = OpenCamera(config_->channel_id);
-  // return 0 indicates failure
+  // Return 0 to indicate failure
   if (ret == 0) {
     ERROR_LOG("[CameraDatasets] PreCapProcess OpenCamera {%d} "
               "failed.",
@@ -195,10 +190,10 @@ MindCamera::CameraOperationCode MindCamera::PreCapProcess() {
     return kCameraOpenFailed;
   }
 
-  // set fps
+  // Set fps
   ret =
       SetCameraProperty(config_->channel_id, CAMERA_PROP_FPS, &(config_->fps));
-  // return 0 indicates failure
+  // Return 0 to indicate failure
   if (ret == 0) {
     ERROR_LOG("[CameraDatasets] PreCapProcess set fps {fps:%d} "
               "failed.",
@@ -206,10 +201,10 @@ MindCamera::CameraOperationCode MindCamera::PreCapProcess() {
     return kCameraSetPropertyFailed;
   }
 
-  // set image format
+  // Set frame format
   ret = SetCameraProperty(config_->channel_id, CAMERA_PROP_IMAGE_FORMAT,
                           &(config_->image_format));
-  // return 0 indicates failure
+  // Return 0 to indicate failure
   if (ret == 0) {
     ERROR_LOG("[CameraDatasets] PreCapProcess set image_fromat "
               "{format:%d} failed.",
@@ -217,13 +212,13 @@ MindCamera::CameraOperationCode MindCamera::PreCapProcess() {
     return kCameraSetPropertyFailed;
   }
 
-  // set image resolution.
+  // set frame resolution
   CameraResolution resolution;
   resolution.width = config_->resolution_width;
   resolution.height = config_->resolution_height;
   ret = SetCameraProperty(config_->channel_id, CAMERA_PROP_RESOLUTION,
                           &resolution);
-  // return 0 indicates failure
+  // Return 0 to indicate failure
   if (ret == 0) {
     ERROR_LOG("[CameraDatasets] PreCapProcess set resolution "
               "{width:%d, height:%d } failed.",
@@ -231,10 +226,10 @@ MindCamera::CameraOperationCode MindCamera::PreCapProcess() {
     return kCameraSetPropertyFailed;
   }
 
-  // set work mode
+  // Set work mode
   CameraCapMode mode = CAMERA_CAP_ACTIVE;
   ret = SetCameraProperty(config_->channel_id, CAMERA_PROP_CAP_MODE, &mode);
-  // return 0 indicates failure
+  // Return 0 to indicate failure
   if (ret == 0) {
     ERROR_LOG("[CameraDatasets] PreCapProcess set cap mode {mode:%d}"
               " failed.",
@@ -249,7 +244,7 @@ shared_ptr<FaceRecognitionInfo> MindCamera::CreateBatchImageParaObj() {
   shared_ptr<FaceRecognitionInfo> pObj = make_shared<FaceRecognitionInfo>();
 
   pObj->frame.image_source = 0;
-  // handle one image frame every time
+  // handle one frame every time
   pObj->frame.channel_id = config_->channel_id;
   pObj->frame.frame_id = frame_id_++;
   pObj->frame.timestamp = time(nullptr);
@@ -257,7 +252,6 @@ shared_ptr<FaceRecognitionInfo> MindCamera::CreateBatchImageParaObj() {
   pObj->org_img.height = config_->resolution_height;
   pObj->org_img.alignWidth = ALIGN_UP16(config_->resolution_width);
   pObj->org_img.alignHeight = ALIGN_UP2(config_->resolution_height);
-  // YUV size in memory is width*height*3/2
   pObj->org_img.size =
       config_->resolution_width * config_->resolution_height * 3 / 2;
 
@@ -273,8 +267,9 @@ static struct timespec time2 = {0, 0};
 
 bool MindCamera::DoCapProcess() {
   CameraOperationCode ret_code =
-      PreCapProcess(); // 初始化摄像头，获取摄像头状态码
-  // 摄像头出错情况处理
+      PreCapProcess(); // Initialize the camera and get the camera status code
+
+  // Camera error handling
   if (ret_code == kCameraSetPropertyFailed) {
     CloseCamera(config_->channel_id);
 
@@ -287,7 +282,7 @@ bool MindCamera::DoCapProcess() {
     return false;
   }
 
-  // 设置任务正在执行的标志
+  // Set the flag that the task is being executed
   SetExitFlag(CAMERADATASETS_RUN);
 
   bool ret = true;
@@ -304,17 +299,16 @@ bool MindCamera::DoCapProcess() {
       uint8_t *p_data = p_obj->org_img.data.get();
       read_size = (int)p_obj->org_img.size;
 
-      // KEY：从摄像头获取图像
-      // do read frame from camera, readSize maybe changed when called
+      // KEY：Get frame from the camera
       read_ret =
           ReadFrameFromCamera(config_->channel_id, (void *)p_data, &read_size);
 
       // --------------------------------------------------------------------------------
 
-      // indicates failure when readRet is 1
+      // Return 1 to indicate failure
       read_flag = ((read_ret == 1) && (read_size == (int)p_obj->org_img.size));
 
-      // 错误处理
+      // error handling
       if (!read_flag) {
         ERROR_LOG("[CameraDatasets] readFrameFromCamera failed "
                   "{camera:%d, ret:%d, size:%d, expectsize:%d} ",
@@ -323,14 +317,14 @@ bool MindCamera::DoCapProcess() {
         break;
       }
 
-      // KEY：对图像进行处理，进行人脸检测与识别
+      // KEY：Process the image for face detection and recognition
       ResourceLoad::GetInstance().SendNextModelProcess("MindCamera", p_obj);
       clock_gettime(CLOCK_REALTIME, &time2);
     }
-    // close camera
+    // Close the camera
     CloseCamera(config_->channel_id);
   } else {
-    // 打开本地视频
+    // Open local video
     AtlasVideoCapture cap = AtlasVideoCapture(videoPath);
     if (!cap.IsOpened()) {
       ERROR_LOG("Open local video failed");
@@ -343,7 +337,7 @@ bool MindCamera::DoCapProcess() {
       uint8_t *p_data = p_obj->org_img.data.get();
       read_size = (int)p_obj->org_img.size;
 
-      // 从本地视频中读取图片
+      // Read frame from local video
 
       ImageData image;
       read_ret = cap.Read(image);
@@ -359,9 +353,10 @@ bool MindCamera::DoCapProcess() {
 
       // --------------------------------------------------------------------------------
 
-      read_flag = (read_ret == 0); // 原本read_ret为1的时候是正确的，现在是0
+      // failure flag
+      read_flag = (read_ret == 0);
 
-      // 错误处理
+      // error handling
       if (!read_flag) {
         ERROR_LOG("[CameraDatasets] readFrameFromCamera failed "
                   "{camera:%d, ret:%d, size:%d, expectsize:%d} ",
@@ -370,12 +365,12 @@ bool MindCamera::DoCapProcess() {
         break;
       }
 
-      // KEY：对图像进行处理，进行人脸检测与识别
+      // KEY：Process the image for face detection and recognition
       ResourceLoad::GetInstance().SendNextModelProcess("MindCamera", p_obj);
       clock_gettime(CLOCK_REALTIME, &time2);
     }
 
-    // close video
+    // Close video
     cap.Close();
   }
   if (ret != true) {
@@ -397,8 +392,8 @@ int MindCamera::GetExitFlag() {
 
 bool MindCamera::Process() {
   INFO_LOG("[CameraDatasets] start process!");
-  Init();         // KEY：初始化MindCamerea
-  DoCapProcess(); // KEY：执行摄像头进程
+  Init();         // KEY：Initialize MindCamerea
+  DoCapProcess(); // KEY：Execute camera process
   INFO_LOG("[CameraDatasets] end process!");
   return true;
 }

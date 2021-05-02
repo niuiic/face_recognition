@@ -62,7 +62,7 @@ void CreateRegisterTask(aclrtContext context) {
 
 int main(int argc, char *argv[]) {
 
-  // 判断是否有输入参数，有则获取输入参数
+  // Determine whether there are input parameters, and get the input parameters
   if (argc > 1) {
     cameraOrLocal = false;
     videoPath = argv[1];
@@ -71,7 +71,9 @@ int main(int argc, char *argv[]) {
     videoPath = "";
   }
 
-  //实例化目标检测对象,参数为分类模型路径,模型输入要求的宽和高
+  // Instantiate the target detection object, the parameter is the
+  // classification model path, and the width and height required by the model
+  // input
   ModelInfoParams param;
   param.modelPath1 = kModelPath1;
   param.modelWidth1 = kModelWidth1;
@@ -83,7 +85,8 @@ int main(int argc, char *argv[]) {
   param.modelWidth3 = kModelWidth3;
   param.modelHeight3 = kModelHeight3;
 
-  //初始化分类推理的acl资源, 模型和内存
+  // Initialize the acl resources, models and memory for classification
+  // inference
   Result ret = ResourceLoad::GetInstance().Init(param);
   if (ret != SUCCESS) {
     ERROR_LOG("Classification Init resource failed\n");
@@ -96,7 +99,7 @@ int main(int argc, char *argv[]) {
   task1.detach();
 
   MindCamera mindCamera;
-  mindCamera.Process(); // KEY：人脸摄取与识别
+  mindCamera.Process(); // KEY：Face capture and recognition
 
   ResourceLoad::GetInstance().DestroyResource();
   INFO_LOG("Execute sample success");

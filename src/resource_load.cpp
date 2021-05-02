@@ -37,9 +37,7 @@ FaceFeatureMaskProcess ResourceLoad::faceFeatureMask;
 FaceRecognition ResourceLoad::faceRecognition;
 FacePostProcess ResourceLoad::facePostProcess;
 
-ResourceLoad::~ResourceLoad() {
-  // DestroyResource();
-}
+ResourceLoad::~ResourceLoad() {}
 
 void ResourceLoad::InitModelInfo(const ModelInfoParams &param) {
   modelPath1_ = param.modelPath1;
@@ -174,9 +172,6 @@ Result ResourceLoad::OpenPresenterChannel() {
     } else if (mIter->first == "channel_name") {
       register_param.app_id = mIter->second;
     }
-    /*else if (mIter->first == "content_type") {
-        register_param.app_type = mIter->second;
-    }*/
   }
 
   INFO_LOG("host_ip = %s,port = %d,app_name = %s,app_type %s",
@@ -308,13 +303,13 @@ Result ResourceLoad::SendNextModelProcess(
   if (objStr == "FaceRegister") {
     faceDetection.Process(image_handle);
   } else if (objStr == "MindCamera") {
-    faceDetection.Process(image_handle); // 处理图像，检测人脸
+    faceDetection.Process(image_handle);
   } else if (objStr == "FaceDetection") {
-    faceFeatureMask.Process(image_handle); // 人脸遮罩
+    faceFeatureMask.Process(image_handle);
   } else if (objStr == "FaceFeatureMaskProcess") {
-    faceRecognition.Process(image_handle); // 人脸识别
+    faceRecognition.Process(image_handle);
   } else if (objStr == "FaceRecognition") {
-    facePostProcess.Process(image_handle); // 后处理
+    facePostProcess.Process(image_handle);
   } else {
     ERROR_LOG("SendNextModelProcess error Object ");
     return FAILED;

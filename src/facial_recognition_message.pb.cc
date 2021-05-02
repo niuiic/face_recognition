@@ -5,331 +5,472 @@
 
 #include <algorithm>
 
-#include <google/protobuf/stubs/common.h>
-#include <google/protobuf/io/coded_stream.h>
-#include <google/protobuf/extension_set.h>
-#include <google/protobuf/wire_format_lite.h>
 #include <google/protobuf/descriptor.h>
+#include <google/protobuf/extension_set.h>
 #include <google/protobuf/generated_message_reflection.h>
+#include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/reflection_ops.h>
+#include <google/protobuf/stubs/common.h>
 #include <google/protobuf/wire_format.h>
+#include <google/protobuf/wire_format_lite.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
-extern PROTOBUF_INTERNAL_EXPORT_facial_5frecognition_5fmessage_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Box_facial_5frecognition_5fmessage_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_facial_5frecognition_5fmessage_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_facial_5frecognition_5fmessage_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_facial_5frecognition_5fmessage_2eproto ::
+    PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0>
+        scc_info_Box_facial_5frecognition_5fmessage_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_facial_5frecognition_5fmessage_2eproto ::
+    PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0>
+        scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_facial_5frecognition_5fmessage_2eproto ::
+    PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1>
+        scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto;
 namespace ascend {
 namespace presenter {
 namespace facial_recognition {
 class CommonResponseDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CommonResponse> _instance;
+public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CommonResponse>
+      _instance;
 } _CommonResponse_default_instance_;
 class RegisterAppDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RegisterApp> _instance;
+public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<RegisterApp>
+      _instance;
 } _RegisterApp_default_instance_;
 class BoxDefaultTypeInternal {
- public:
+public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Box> _instance;
 } _Box_default_instance_;
 class FaceFeatureDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FaceFeature> _instance;
+public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FaceFeature>
+      _instance;
 } _FaceFeature_default_instance_;
 class FaceInfoDefaultTypeInternal {
- public:
+public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FaceInfo> _instance;
 } _FaceInfo_default_instance_;
 class FaceResultDefaultTypeInternal {
- public:
-  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FaceResult> _instance;
+public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FaceResult>
+      _instance;
 } _FaceResult_default_instance_;
 class FrameInfoDefaultTypeInternal {
- public:
+public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<FrameInfo> _instance;
 } _FrameInfo_default_instance_;
-}  // namespace facial_recognition
-}  // namespace presenter
-}  // namespace ascend
+} // namespace facial_recognition
+} // namespace presenter
+} // namespace ascend
 static void InitDefaultsscc_info_Box_facial_5frecognition_5fmessage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::ascend::presenter::facial_recognition::_Box_default_instance_;
-    new (ptr) ::ascend::presenter::facial_recognition::Box();
+    void *ptr =
+        &::ascend::presenter::facial_recognition::_Box_default_instance_;
+    new (ptr)::ascend::presenter::facial_recognition::Box();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ascend::presenter::facial_recognition::Box::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Box_facial_5frecognition_5fmessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_Box_facial_5frecognition_5fmessage_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0>
+    scc_info_Box_facial_5frecognition_5fmessage_2eproto = {
+        {ATOMIC_VAR_INIT(
+             ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized),
+         0, InitDefaultsscc_info_Box_facial_5frecognition_5fmessage_2eproto},
+        {}};
 
-static void InitDefaultsscc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto() {
+static void
+InitDefaultsscc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::ascend::presenter::facial_recognition::_CommonResponse_default_instance_;
-    new (ptr) ::ascend::presenter::facial_recognition::CommonResponse();
+    void *ptr = &::ascend::presenter::facial_recognition::
+                    _CommonResponse_default_instance_;
+    new (ptr)::ascend::presenter::facial_recognition::CommonResponse();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
-  ::ascend::presenter::facial_recognition::CommonResponse::InitAsDefaultInstance();
+  ::ascend::presenter::facial_recognition::CommonResponse::
+      InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0>
+    scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto = {
+        {ATOMIC_VAR_INIT(
+             ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized),
+         0,
+         InitDefaultsscc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto},
+        {}};
 
-static void InitDefaultsscc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto() {
+static void
+InitDefaultsscc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::ascend::presenter::facial_recognition::_FaceFeature_default_instance_;
-    new (ptr) ::ascend::presenter::facial_recognition::FaceFeature();
+    void *ptr = &::ascend::presenter::facial_recognition::
+                    _FaceFeature_default_instance_;
+    new (ptr)::ascend::presenter::facial_recognition::FaceFeature();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ascend::presenter::facial_recognition::FaceFeature::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto}, {
-      &scc_info_Box_facial_5frecognition_5fmessage_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1>
+    scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto = {
+        {ATOMIC_VAR_INIT(
+             ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized),
+         1,
+         InitDefaultsscc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto},
+        {
+            &scc_info_Box_facial_5frecognition_5fmessage_2eproto.base,
+        }};
 
-static void InitDefaultsscc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto() {
+static void
+InitDefaultsscc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::ascend::presenter::facial_recognition::_FaceInfo_default_instance_;
-    new (ptr) ::ascend::presenter::facial_recognition::FaceInfo();
+    void *ptr =
+        &::ascend::presenter::facial_recognition::_FaceInfo_default_instance_;
+    new (ptr)::ascend::presenter::facial_recognition::FaceInfo();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ascend::presenter::facial_recognition::FaceInfo::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0>
+    scc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto = {
+        {ATOMIC_VAR_INIT(
+             ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized),
+         0,
+         InitDefaultsscc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto},
+        {}};
 
-static void InitDefaultsscc_info_FaceResult_facial_5frecognition_5fmessage_2eproto() {
+static void
+InitDefaultsscc_info_FaceResult_facial_5frecognition_5fmessage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::ascend::presenter::facial_recognition::_FaceResult_default_instance_;
-    new (ptr) ::ascend::presenter::facial_recognition::FaceResult();
+    void *ptr =
+        &::ascend::presenter::facial_recognition::_FaceResult_default_instance_;
+    new (ptr)::ascend::presenter::facial_recognition::FaceResult();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ascend::presenter::facial_recognition::FaceResult::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_FaceResult_facial_5frecognition_5fmessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsscc_info_FaceResult_facial_5frecognition_5fmessage_2eproto}, {
-      &scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto.base,
-      &scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2>
+    scc_info_FaceResult_facial_5frecognition_5fmessage_2eproto = {
+        {ATOMIC_VAR_INIT(
+             ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized),
+         2,
+         InitDefaultsscc_info_FaceResult_facial_5frecognition_5fmessage_2eproto},
+        {
+            &scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto
+                 .base,
+            &scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base,
+        }};
 
-static void InitDefaultsscc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto() {
+static void
+InitDefaultsscc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::ascend::presenter::facial_recognition::_FrameInfo_default_instance_;
-    new (ptr) ::ascend::presenter::facial_recognition::FrameInfo();
+    void *ptr =
+        &::ascend::presenter::facial_recognition::_FrameInfo_default_instance_;
+    new (ptr)::ascend::presenter::facial_recognition::FrameInfo();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ascend::presenter::facial_recognition::FrameInfo::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsscc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto}, {
-      &scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base,}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1>
+    scc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto = {
+        {ATOMIC_VAR_INIT(
+             ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized),
+         1,
+         InitDefaultsscc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto},
+        {
+            &scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base,
+        }};
 
-static void InitDefaultsscc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto() {
+static void
+InitDefaultsscc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
-    void* ptr = &::ascend::presenter::facial_recognition::_RegisterApp_default_instance_;
-    new (ptr) ::ascend::presenter::facial_recognition::RegisterApp();
+    void *ptr = &::ascend::presenter::facial_recognition::
+                    _RegisterApp_default_instance_;
+    new (ptr)::ascend::presenter::facial_recognition::RegisterApp();
     ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
   }
   ::ascend::presenter::facial_recognition::RegisterApp::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto}, {}};
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0>
+    scc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto = {
+        {ATOMIC_VAR_INIT(
+             ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized),
+         0,
+         InitDefaultsscc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto},
+        {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_facial_5frecognition_5fmessage_2eproto[7];
-static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_facial_5frecognition_5fmessage_2eproto[1];
-static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_facial_5frecognition_5fmessage_2eproto = nullptr;
+static ::PROTOBUF_NAMESPACE_ID::Metadata
+    file_level_metadata_facial_5frecognition_5fmessage_2eproto[7];
+static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor
+    *file_level_enum_descriptors_facial_5frecognition_5fmessage_2eproto[1];
+static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const *
+    *file_level_service_descriptors_facial_5frecognition_5fmessage_2eproto =
+        nullptr;
 
-const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_facial_5frecognition_5fmessage_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::CommonResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::CommonResponse, ret_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::CommonResponse, message_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::RegisterApp, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::RegisterApp, id_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::RegisterApp, type_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box, lt_x_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box, lt_y_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box, rb_x_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box, rb_y_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceFeature, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceFeature, box_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceFeature, vector_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceInfo, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceInfo, id_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceInfo, image_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceResult, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceResult, id_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceResult, response_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FaceResult, feature_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FrameInfo, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FrameInfo, image_),
-  PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::FrameInfo, feature_),
+const ::PROTOBUF_NAMESPACE_ID::uint32
+    TableStruct_facial_5frecognition_5fmessage_2eproto::offsets
+        [] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+            ~0u, // no _has_bits_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::CommonResponse,
+                _internal_metadata_),
+            ~0u, // no _extensions_
+            ~0u, // no _oneof_case_
+            ~0u, // no _weak_field_map_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::CommonResponse, ret_),
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::CommonResponse,
+                message_),
+            ~0u, // no _has_bits_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::RegisterApp,
+                _internal_metadata_),
+            ~0u, // no _extensions_
+            ~0u, // no _oneof_case_
+            ~0u, // no _weak_field_map_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::RegisterApp, id_),
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::RegisterApp, type_),
+            ~0u, // no _has_bits_
+            PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box,
+                                  _internal_metadata_),
+            ~0u, // no _extensions_
+            ~0u, // no _oneof_case_
+            ~0u, // no _weak_field_map_
+            PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box,
+                                  lt_x_),
+            PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box,
+                                  lt_y_),
+            PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box,
+                                  rb_x_),
+            PROTOBUF_FIELD_OFFSET(::ascend::presenter::facial_recognition::Box,
+                                  rb_y_),
+            ~0u, // no _has_bits_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceFeature,
+                _internal_metadata_),
+            ~0u, // no _extensions_
+            ~0u, // no _oneof_case_
+            ~0u, // no _weak_field_map_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceFeature, box_),
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceFeature, vector_),
+            ~0u, // no _has_bits_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceInfo,
+                _internal_metadata_),
+            ~0u, // no _extensions_
+            ~0u, // no _oneof_case_
+            ~0u, // no _weak_field_map_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceInfo, id_),
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceInfo, image_),
+            ~0u, // no _has_bits_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceResult,
+                _internal_metadata_),
+            ~0u, // no _extensions_
+            ~0u, // no _oneof_case_
+            ~0u, // no _weak_field_map_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceResult, id_),
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceResult, response_),
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FaceResult, feature_),
+            ~0u, // no _has_bits_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FrameInfo,
+                _internal_metadata_),
+            ~0u, // no _extensions_
+            ~0u, // no _oneof_case_
+            ~0u, // no _weak_field_map_
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FrameInfo, image_),
+            PROTOBUF_FIELD_OFFSET(
+                ::ascend::presenter::facial_recognition::FrameInfo, feature_),
 };
-static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, sizeof(::ascend::presenter::facial_recognition::CommonResponse)},
-  { 7, -1, sizeof(::ascend::presenter::facial_recognition::RegisterApp)},
-  { 14, -1, sizeof(::ascend::presenter::facial_recognition::Box)},
-  { 23, -1, sizeof(::ascend::presenter::facial_recognition::FaceFeature)},
-  { 30, -1, sizeof(::ascend::presenter::facial_recognition::FaceInfo)},
-  { 37, -1, sizeof(::ascend::presenter::facial_recognition::FaceResult)},
-  { 45, -1, sizeof(::ascend::presenter::facial_recognition::FrameInfo)},
+static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema
+    schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+        {0, -1,
+         sizeof(::ascend::presenter::facial_recognition::CommonResponse)},
+        {7, -1, sizeof(::ascend::presenter::facial_recognition::RegisterApp)},
+        {14, -1, sizeof(::ascend::presenter::facial_recognition::Box)},
+        {23, -1, sizeof(::ascend::presenter::facial_recognition::FaceFeature)},
+        {30, -1, sizeof(::ascend::presenter::facial_recognition::FaceInfo)},
+        {37, -1, sizeof(::ascend::presenter::facial_recognition::FaceResult)},
+        {45, -1, sizeof(::ascend::presenter::facial_recognition::FrameInfo)},
 };
 
-static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ascend::presenter::facial_recognition::_CommonResponse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ascend::presenter::facial_recognition::_RegisterApp_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ascend::presenter::facial_recognition::_Box_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ascend::presenter::facial_recognition::_FaceFeature_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ascend::presenter::facial_recognition::_FaceInfo_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ascend::presenter::facial_recognition::_FaceResult_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::ascend::presenter::facial_recognition::_FrameInfo_default_instance_),
+static ::PROTOBUF_NAMESPACE_ID::Message const *const file_default_instances[] =
+    {
+        reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message *>(
+            &::ascend::presenter::facial_recognition::
+                _CommonResponse_default_instance_),
+        reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message *>(
+            &::ascend::presenter::facial_recognition::
+                _RegisterApp_default_instance_),
+        reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message *>(
+            &::ascend::presenter::facial_recognition::_Box_default_instance_),
+        reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message *>(
+            &::ascend::presenter::facial_recognition::
+                _FaceFeature_default_instance_),
+        reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message *>(
+            &::ascend::presenter::facial_recognition::
+                _FaceInfo_default_instance_),
+        reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message *>(
+            &::ascend::presenter::facial_recognition::
+                _FaceResult_default_instance_),
+        reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message *>(
+            &::ascend::presenter::facial_recognition::
+                _FrameInfo_default_instance_),
 };
 
 const char descriptor_table_protodef_facial_5frecognition_5fmessage_2eproto[] =
-  "\n facial_recognition_message.proto\022#asce"
-  "nd.presenter.facial_recognition\"^\n\016Commo"
-  "nResponse\022;\n\003ret\030\001 \001(\0162..ascend.presente"
-  "r.facial_recognition.ErrorCode\022\017\n\007messag"
-  "e\030\002 \001(\t\"\'\n\013RegisterApp\022\n\n\002id\030\001 \001(\t\022\014\n\004ty"
-  "pe\030\002 \001(\t\"=\n\003Box\022\014\n\004lt_x\030\001 \001(\r\022\014\n\004lt_y\030\002 "
-  "\001(\r\022\014\n\004rb_x\030\003 \001(\r\022\014\n\004rb_y\030\004 \001(\r\"T\n\013FaceF"
-  "eature\0225\n\003box\030\001 \001(\0132(.ascend.presenter.f"
-  "acial_recognition.Box\022\016\n\006vector\030\002 \003(\002\"%\n"
-  "\010FaceInfo\022\n\n\002id\030\001 \001(\t\022\r\n\005image\030\002 \001(\014\"\242\001\n"
-  "\nFaceResult\022\n\n\002id\030\001 \001(\t\022E\n\010response\030\002 \001("
-  "\01323.ascend.presenter.facial_recognition."
-  "CommonResponse\022A\n\007feature\030\003 \003(\01320.ascend"
-  ".presenter.facial_recognition.FaceFeatur"
-  "e\"]\n\tFrameInfo\022\r\n\005image\030\001 \001(\014\022A\n\007feature"
-  "\030\002 \003(\01320.ascend.presenter.facial_recogni"
-  "tion.FaceFeature*\177\n\tErrorCode\022\016\n\nkErrorN"
-  "one\020\000\022\032\n\026kErrorAppRegisterExist\020\001\022\031\n\025kEr"
-  "rorAppRegisterType\020\002\022\032\n\026kErrorAppRegiste"
-  "rLimit\020\003\022\017\n\013kErrorOther\020\005b\006proto3"
-  ;
-static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_facial_5frecognition_5fmessage_2eproto_deps[1] = {
+    "\n facial_recognition_message.proto\022#asce"
+    "nd.presenter.facial_recognition\"^\n\016Commo"
+    "nResponse\022;\n\003ret\030\001 \001(\0162..ascend.presente"
+    "r.facial_recognition.ErrorCode\022\017\n\007messag"
+    "e\030\002 \001(\t\"\'\n\013RegisterApp\022\n\n\002id\030\001 "
+    "\001(\t\022\014\n\004ty"
+    "pe\030\002 \001(\t\"=\n\003Box\022\014\n\004lt_x\030\001 "
+    "\001(\r\022\014\n\004lt_y\030\002 "
+    "\001(\r\022\014\n\004rb_x\030\003 \001(\r\022\014\n\004rb_y\030\004 "
+    "\001(\r\"T\n\013FaceF"
+    "eature\0225\n\003box\030\001 \001(\0132(.ascend.presenter.f"
+    "acial_recognition.Box\022\016\n\006vector\030\002 \003(\002\"%\n"
+    "\010FaceInfo\022\n\n\002id\030\001 \001(\t\022\r\n\005image\030\002 "
+    "\001(\014\"\242\001\n"
+    "\nFaceResult\022\n\n\002id\030\001 \001(\t\022E\n\010response\030\002 "
+    "\001("
+    "\01323.ascend.presenter.facial_recognition."
+    "CommonResponse\022A\n\007feature\030\003 \003(\01320.ascend"
+    ".presenter.facial_recognition.FaceFeatur"
+    "e\"]\n\tFrameInfo\022\r\n\005image\030\001 \001(\014\022A\n\007feature"
+    "\030\002 \003(\01320.ascend.presenter.facial_recogni"
+    "tion.FaceFeature*\177\n\tErrorCode\022\016\n\nkErrorN"
+    "one\020\000\022\032\n\026kErrorAppRegisterExist\020\001\022\031\n\025kEr"
+    "rorAppRegisterType\020\002\022\032\n\026kErrorAppRegiste"
+    "rLimit\020\003\022\017\n\013kErrorOther\020\005b\006proto3";
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
+    *const descriptor_table_facial_5frecognition_5fmessage_2eproto_deps[1] = {};
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase
+    *const descriptor_table_facial_5frecognition_5fmessage_2eproto_sccs[7] = {
+        &scc_info_Box_facial_5frecognition_5fmessage_2eproto.base,
+        &scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto.base,
+        &scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base,
+        &scc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto.base,
+        &scc_info_FaceResult_facial_5frecognition_5fmessage_2eproto.base,
+        &scc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto.base,
+        &scc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto.base,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_facial_5frecognition_5fmessage_2eproto_sccs[7] = {
-  &scc_info_Box_facial_5frecognition_5fmessage_2eproto.base,
-  &scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto.base,
-  &scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base,
-  &scc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto.base,
-  &scc_info_FaceResult_facial_5frecognition_5fmessage_2eproto.base,
-  &scc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto.base,
-  &scc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto.base,
-};
-static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_facial_5frecognition_5fmessage_2eproto_once;
-static bool descriptor_table_facial_5frecognition_5fmessage_2eproto_initialized = false;
-const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_facial_5frecognition_5fmessage_2eproto = {
-  &descriptor_table_facial_5frecognition_5fmessage_2eproto_initialized, descriptor_table_protodef_facial_5frecognition_5fmessage_2eproto, "facial_recognition_message.proto", 793,
-  &descriptor_table_facial_5frecognition_5fmessage_2eproto_once, descriptor_table_facial_5frecognition_5fmessage_2eproto_sccs, descriptor_table_facial_5frecognition_5fmessage_2eproto_deps, 7, 0,
-  schemas, file_default_instances, TableStruct_facial_5frecognition_5fmessage_2eproto::offsets,
-  file_level_metadata_facial_5frecognition_5fmessage_2eproto, 7, file_level_enum_descriptors_facial_5frecognition_5fmessage_2eproto, file_level_service_descriptors_facial_5frecognition_5fmessage_2eproto,
+static ::PROTOBUF_NAMESPACE_ID::internal::once_flag
+    descriptor_table_facial_5frecognition_5fmessage_2eproto_once;
+static bool
+    descriptor_table_facial_5frecognition_5fmessage_2eproto_initialized = false;
+const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
+    descriptor_table_facial_5frecognition_5fmessage_2eproto = {
+        &descriptor_table_facial_5frecognition_5fmessage_2eproto_initialized,
+        descriptor_table_protodef_facial_5frecognition_5fmessage_2eproto,
+        "facial_recognition_message.proto",
+        793,
+        &descriptor_table_facial_5frecognition_5fmessage_2eproto_once,
+        descriptor_table_facial_5frecognition_5fmessage_2eproto_sccs,
+        descriptor_table_facial_5frecognition_5fmessage_2eproto_deps,
+        7,
+        0,
+        schemas,
+        file_default_instances,
+        TableStruct_facial_5frecognition_5fmessage_2eproto::offsets,
+        file_level_metadata_facial_5frecognition_5fmessage_2eproto,
+        7,
+        file_level_enum_descriptors_facial_5frecognition_5fmessage_2eproto,
+        file_level_service_descriptors_facial_5frecognition_5fmessage_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_facial_5frecognition_5fmessage_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_facial_5frecognition_5fmessage_2eproto), true);
+static bool dynamic_init_dummy_facial_5frecognition_5fmessage_2eproto =
+    (::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(
+         &descriptor_table_facial_5frecognition_5fmessage_2eproto),
+     true);
 namespace ascend {
 namespace presenter {
 namespace facial_recognition {
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ErrorCode_descriptor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_facial_5frecognition_5fmessage_2eproto);
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor *ErrorCode_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_facial_5frecognition_5fmessage_2eproto);
   return file_level_enum_descriptors_facial_5frecognition_5fmessage_2eproto[0];
 }
 bool ErrorCode_IsValid(int value) {
   switch (value) {
-    case 0:
-    case 1:
-    case 2:
-    case 3:
-    case 5:
-      return true;
-    default:
-      return false;
+  case 0:
+  case 1:
+  case 2:
+  case 3:
+  case 5:
+    return true;
+  default:
+    return false;
   }
 }
 
-
 // ===================================================================
 
-void CommonResponse::InitAsDefaultInstance() {
-}
+void CommonResponse::InitAsDefaultInstance() {}
 class CommonResponse::HasBitSetters {
- public:
+public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int CommonResponse::kRetFieldNumber;
 const int CommonResponse::kMessageFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 CommonResponse::CommonResponse()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ascend.presenter.facial_recognition.CommonResponse)
 }
-CommonResponse::CommonResponse(const CommonResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+CommonResponse::CommonResponse(const CommonResponse &from)
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from.message().size() > 0) {
-    message_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_);
+    message_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.message_);
   }
   ret_ = from.ret_;
   // @@protoc_insertion_point(copy_constructor:ascend.presenter.facial_recognition.CommonResponse)
 }
 
 void CommonResponse::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto.base);
-  message_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto.base);
+  message_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ret_ = 0;
 }
 
@@ -339,64 +480,75 @@ CommonResponse::~CommonResponse() {
 }
 
 void CommonResponse::SharedDtor() {
-  message_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_.DestroyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void CommonResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const CommonResponse& CommonResponse::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto.base);
+void CommonResponse::SetCachedSize(int size) const { _cached_size_.Set(size); }
+const CommonResponse &CommonResponse::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &::scc_info_CommonResponse_facial_5frecognition_5fmessage_2eproto.base);
   return *internal_default_instance();
 }
 
-
 void CommonResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.CommonResponse)
+  // @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.CommonResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
-  message_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  message_.ClearToEmptyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ret_ = 0;
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* CommonResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+const char *CommonResponse::_InternalParse(
+    const char *ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext *ctx) {
+#define CHK_(x)                                                                \
+  if (PROTOBUF_PREDICT_FALSE(!(x)))                                            \
+  goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .ascend.presenter.facial_recognition.ErrorCode ret = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-          set_ret(static_cast<::ascend::presenter::facial_recognition::ErrorCode>(val));
-        } else goto handle_unusual;
-        continue;
-      // string message = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_message(), ptr, ctx, "ascend.presenter.facial_recognition.CommonResponse.message");
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    // .ascend.presenter.facial_recognition.ErrorCode ret = 1;
+    case 1:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        ::PROTOBUF_NAMESPACE_ID::uint64 val =
+            ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        CHK_(ptr);
+        set_ret(static_cast<::ascend::presenter::facial_recognition::ErrorCode>(
+            val));
+      } else
+        goto handle_unusual;
+      continue;
+    // string message = 2;
+    case 2:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(
+            mutable_message(), ptr, ctx,
+            "ascend.presenter.facial_recognition.CommonResponse.message");
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    default: {
+    handle_unusual:
+      if ((tag & 7) == 4 || tag == 0) {
+        ctx->SetLastTag(tag);
+        goto success;
       }
-    }  // switch
-  }  // while
+      ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+      CHK_(ptr != nullptr);
+      continue;
+    }
+    } // switch
+  }   // while
 success:
   return ptr;
 failure:
@@ -404,55 +556,62 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#else // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool CommonResponse::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream *input) {
+#define DO_(EXPRESSION)                                                        \
+  if (!PROTOBUF_PREDICT_TRUE(EXPRESSION))                                      \
+  goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:ascend.presenter.facial_recognition.CommonResponse)
   for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p =
+        input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .ascend.presenter.facial_recognition.ErrorCode ret = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
-          int value = 0;
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
-                 input, &value)));
-          set_ret(static_cast< ::ascend::presenter::facial_recognition::ErrorCode >(value));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(
+            tag)) {
+    // .ascend.presenter.facial_recognition.ErrorCode ret = 1;
+    case 1: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
+        int value = 0;
+        DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+             int, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_ENUM>(
+            input, &value)));
+        set_ret(static_cast<::ascend::presenter::facial_recognition::ErrorCode>(
+            value));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // string message = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_message()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+    // string message = 2;
+    case 2: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+            input, this->mutable_message()));
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
             this->message().data(), static_cast<int>(this->message().length()),
             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
             "ascend.presenter.facial_recognition.CommonResponse.message"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+    default: {
+    handle_unusual:
+      if (tag == 0) {
+        goto success;
       }
+      DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+      break;
+    }
     }
   }
 success:
@@ -463,28 +622,28 @@ failure:
   return false;
 #undef DO_
 }
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#endif // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void CommonResponse::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream *output) const {
   // @@protoc_insertion_point(serialize_start:ascend.presenter.facial_recognition.CommonResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // .ascend.presenter.facial_recognition.ErrorCode ret = 1;
   if (this->ret() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(
-      1, this->ret(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnum(1, this->ret(),
+                                                                 output);
   }
 
   // string message = 2;
   if (this->message().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->message().data(), static_cast<int>(this->message().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.CommonResponse.message");
+        this->message().data(), static_cast<int>(this->message().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.CommonResponse.message");
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->message(), output);
+        2, this->message(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -494,61 +653,65 @@ void CommonResponse::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:ascend.presenter.facial_recognition.CommonResponse)
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* CommonResponse::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8 *
+CommonResponse::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8 *target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ascend.presenter.facial_recognition.CommonResponse)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // .ascend.presenter.facial_recognition.ErrorCode ret = 1;
   if (this->ret() != 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
-      1, this->ret(), target);
+    target =
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteEnumToArray(
+            1, this->ret(), target);
   }
 
   // string message = 2;
   if (this->message().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->message().data(), static_cast<int>(this->message().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.CommonResponse.message");
+        this->message().data(), static_cast<int>(this->message().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.CommonResponse.message");
     target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        2, this->message(), target);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+            2, this->message(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::
+        SerializeUnknownFieldsToArray(_internal_metadata_.unknown_fields(),
+                                      target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ascend.presenter.facial_recognition.CommonResponse)
   return target;
 }
 
 size_t CommonResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.CommonResponse)
+  // @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.CommonResponse)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+            _internal_metadata_.unknown_fields());
   }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string message = 2;
   if (this->message().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->message());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                this->message());
   }
 
   // .ascend.presenter.facial_recognition.ErrorCode ret = 1;
   if (this->ret() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(this->ret());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::EnumSize(
+                this->ret());
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -556,64 +719,68 @@ size_t CommonResponse::ByteSizeLong() const {
   return total_size;
 }
 
-void CommonResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.CommonResponse)
+void CommonResponse::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.CommonResponse)
   GOOGLE_DCHECK_NE(&from, this);
-  const CommonResponse* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CommonResponse>(
-          &from);
+  const CommonResponse *source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<CommonResponse>(&from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.CommonResponse)
+    // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.CommonResponse)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.CommonResponse)
+    // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.CommonResponse)
     MergeFrom(*source);
   }
 }
 
-void CommonResponse::MergeFrom(const CommonResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.CommonResponse)
+void CommonResponse::MergeFrom(const CommonResponse &from) {
+  // @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.CommonResponse)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   if (from.message().size() > 0) {
 
-    message_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.message_);
+    message_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.message_);
   }
   if (from.ret() != 0) {
     set_ret(from.ret());
   }
 }
 
-void CommonResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.CommonResponse)
-  if (&from == this) return;
+void CommonResponse::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.CommonResponse)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void CommonResponse::CopyFrom(const CommonResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.CommonResponse)
-  if (&from == this) return;
+void CommonResponse::CopyFrom(const CommonResponse &from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.CommonResponse)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool CommonResponse::IsInitialized() const {
-  return true;
-}
+bool CommonResponse::IsInitialized() const { return true; }
 
-void CommonResponse::Swap(CommonResponse* other) {
-  if (other == this) return;
+void CommonResponse::Swap(CommonResponse *other) {
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void CommonResponse::InternalSwap(CommonResponse* other) {
+void CommonResponse::InternalSwap(CommonResponse *other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  message_.Swap(&other->message_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  message_.Swap(
+      &other->message_,
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArenaNoVirtual());
   swap(ret_, other->ret_);
 }
 
@@ -621,44 +788,50 @@ void CommonResponse::InternalSwap(CommonResponse* other) {
   return GetMetadataStatic();
 }
 
-
 // ===================================================================
 
-void RegisterApp::InitAsDefaultInstance() {
-}
+void RegisterApp::InitAsDefaultInstance() {}
 class RegisterApp::HasBitSetters {
- public:
+public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int RegisterApp::kIdFieldNumber;
 const int RegisterApp::kTypeFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 RegisterApp::RegisterApp()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ascend.presenter.facial_recognition.RegisterApp)
 }
-RegisterApp::RegisterApp(const RegisterApp& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+RegisterApp::RegisterApp(const RegisterApp &from)
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.id_);
   }
-  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from.type().size() > 0) {
-    type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.type_);
+    type_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.type_);
   }
   // @@protoc_insertion_point(copy_constructor:ascend.presenter.facial_recognition.RegisterApp)
 }
 
 void RegisterApp::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &scc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto.base);
+  id_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 RegisterApp::~RegisterApp() {
@@ -667,64 +840,77 @@ RegisterApp::~RegisterApp() {
 }
 
 void RegisterApp::SharedDtor() {
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.DestroyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void RegisterApp::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const RegisterApp& RegisterApp::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto.base);
+void RegisterApp::SetCachedSize(int size) const { _cached_size_.Set(size); }
+const RegisterApp &RegisterApp::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &::scc_info_RegisterApp_facial_5frecognition_5fmessage_2eproto.base);
   return *internal_default_instance();
 }
 
-
 void RegisterApp::Clear() {
-// @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.RegisterApp)
+  // @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.RegisterApp)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
-  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  type_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.ClearToEmptyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.ClearToEmptyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* RegisterApp::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+const char *RegisterApp::_InternalParse(
+    const char *ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext *ctx) {
+#define CHK_(x)                                                                \
+  if (PROTOBUF_PREDICT_FALSE(!(x)))                                            \
+  goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_id(), ptr, ctx, "ascend.presenter.facial_recognition.RegisterApp.id");
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string type = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_type(), ptr, ctx, "ascend.presenter.facial_recognition.RegisterApp.type");
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    // string id = 1;
+    case 1:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(
+            mutable_id(), ptr, ctx,
+            "ascend.presenter.facial_recognition.RegisterApp.id");
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // string type = 2;
+    case 2:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(
+            mutable_type(), ptr, ctx,
+            "ascend.presenter.facial_recognition.RegisterApp.type");
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    default: {
+    handle_unusual:
+      if ((tag & 7) == 4 || tag == 0) {
+        ctx->SetLastTag(tag);
+        goto success;
       }
-    }  // switch
-  }  // while
+      ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+      CHK_(ptr != nullptr);
+      continue;
+    }
+    } // switch
+  }   // while
 success:
   return ptr;
 failure:
@@ -732,56 +918,62 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#else // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool RegisterApp::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream *input) {
+#define DO_(EXPRESSION)                                                        \
+  if (!PROTOBUF_PREDICT_TRUE(EXPRESSION))                                      \
+  goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:ascend.presenter.facial_recognition.RegisterApp)
   for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p =
+        input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string id = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(
+            tag)) {
+    // string id = 1;
+    case 1: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+            input, this->mutable_id()));
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
             this->id().data(), static_cast<int>(this->id().length()),
             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
             "ascend.presenter.facial_recognition.RegisterApp.id"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // string type = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_type()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+    // string type = 2;
+    case 2: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+            input, this->mutable_type()));
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
             this->type().data(), static_cast<int>(this->type().length()),
             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
             "ascend.presenter.facial_recognition.RegisterApp.type"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+    default: {
+    handle_unusual:
+      if (tag == 0) {
+        goto success;
       }
+      DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+      break;
+    }
     }
   }
 success:
@@ -792,32 +984,32 @@ failure:
   return false;
 #undef DO_
 }
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#endif // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void RegisterApp::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream *output) const {
   // @@protoc_insertion_point(serialize_start:ascend.presenter.facial_recognition.RegisterApp)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.RegisterApp.id");
+        this->id().data(), static_cast<int>(this->id().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.RegisterApp.id");
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
+        1, this->id(), output);
   }
 
   // string type = 2;
   if (this->type().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->type().data(), static_cast<int>(this->type().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.RegisterApp.type");
+        this->type().data(), static_cast<int>(this->type().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.RegisterApp.type");
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      2, this->type(), output);
+        2, this->type(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -827,67 +1019,69 @@ void RegisterApp::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:ascend.presenter.facial_recognition.RegisterApp)
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* RegisterApp::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8 *
+RegisterApp::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8 *target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ascend.presenter.facial_recognition.RegisterApp)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.RegisterApp.id");
+        this->id().data(), static_cast<int>(this->id().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.RegisterApp.id");
     target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+            1, this->id(), target);
   }
 
   // string type = 2;
   if (this->type().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->type().data(), static_cast<int>(this->type().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.RegisterApp.type");
+        this->type().data(), static_cast<int>(this->type().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.RegisterApp.type");
     target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        2, this->type(), target);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+            2, this->type(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::
+        SerializeUnknownFieldsToArray(_internal_metadata_.unknown_fields(),
+                                      target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ascend.presenter.facial_recognition.RegisterApp)
   return target;
 }
 
 size_t RegisterApp::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.RegisterApp)
+  // @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.RegisterApp)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+            _internal_metadata_.unknown_fields());
   }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->id());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                this->id());
   }
 
   // string type = 2;
   if (this->type().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->type());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                this->type());
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -895,80 +1089,84 @@ size_t RegisterApp::ByteSizeLong() const {
   return total_size;
 }
 
-void RegisterApp::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.RegisterApp)
+void RegisterApp::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.RegisterApp)
   GOOGLE_DCHECK_NE(&from, this);
-  const RegisterApp* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RegisterApp>(
-          &from);
+  const RegisterApp *source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<RegisterApp>(&from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.RegisterApp)
+    // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.RegisterApp)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.RegisterApp)
+    // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.RegisterApp)
     MergeFrom(*source);
   }
 }
 
-void RegisterApp::MergeFrom(const RegisterApp& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.RegisterApp)
+void RegisterApp::MergeFrom(const RegisterApp &from) {
+  // @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.RegisterApp)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   if (from.id().size() > 0) {
 
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.id_);
   }
   if (from.type().size() > 0) {
 
-    type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.type_);
+    type_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.type_);
   }
 }
 
-void RegisterApp::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.RegisterApp)
-  if (&from == this) return;
+void RegisterApp::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.RegisterApp)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void RegisterApp::CopyFrom(const RegisterApp& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.RegisterApp)
-  if (&from == this) return;
+void RegisterApp::CopyFrom(const RegisterApp &from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.RegisterApp)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool RegisterApp::IsInitialized() const {
-  return true;
-}
+bool RegisterApp::IsInitialized() const { return true; }
 
-void RegisterApp::Swap(RegisterApp* other) {
-  if (other == this) return;
+void RegisterApp::Swap(RegisterApp *other) {
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void RegisterApp::InternalSwap(RegisterApp* other) {
+void RegisterApp::InternalSwap(RegisterApp *other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  type_.Swap(&other->type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  id_.Swap(&other->id_,
+           &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+           GetArenaNoVirtual());
+  type_.Swap(&other->type_,
+             &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+             GetArenaNoVirtual());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RegisterApp::GetMetadata() const {
   return GetMetadataStatic();
 }
 
-
 // ===================================================================
 
-void Box::InitAsDefaultInstance() {
-}
+void Box::InitAsDefaultInstance() {}
 class Box::HasBitSetters {
- public:
+public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
@@ -976,27 +1174,27 @@ const int Box::kLtXFieldNumber;
 const int Box::kLtYFieldNumber;
 const int Box::kRbXFieldNumber;
 const int Box::kRbYFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
-Box::Box()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Box::Box() : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ascend.presenter.facial_recognition.Box)
 }
-Box::Box(const Box& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+Box::Box(const Box &from)
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&lt_x_, &from.lt_x_,
-    static_cast<size_t>(reinterpret_cast<char*>(&rb_y_) -
-    reinterpret_cast<char*>(&lt_x_)) + sizeof(rb_y_));
+           static_cast<size_t>(reinterpret_cast<char *>(&rb_y_) -
+                               reinterpret_cast<char *>(&lt_x_)) +
+               sizeof(rb_y_));
   // @@protoc_insertion_point(copy_constructor:ascend.presenter.facial_recognition.Box)
 }
 
 void Box::SharedCtor() {
-  ::memset(&lt_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rb_y_) -
-      reinterpret_cast<char*>(&lt_x_)) + sizeof(rb_y_));
+  ::memset(&lt_x_, 0,
+           static_cast<size_t>(reinterpret_cast<char *>(&rb_y_) -
+                               reinterpret_cast<char *>(&lt_x_)) +
+               sizeof(rb_y_));
 }
 
 Box::~Box() {
@@ -1004,78 +1202,88 @@ Box::~Box() {
   SharedDtor();
 }
 
-void Box::SharedDtor() {
-}
+void Box::SharedDtor() {}
 
-void Box::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const Box& Box::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Box_facial_5frecognition_5fmessage_2eproto.base);
+void Box::SetCachedSize(int size) const { _cached_size_.Set(size); }
+const Box &Box::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &::scc_info_Box_facial_5frecognition_5fmessage_2eproto.base);
   return *internal_default_instance();
 }
 
-
 void Box::Clear() {
-// @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.Box)
+  // @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.Box)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
-  ::memset(&lt_x_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&rb_y_) -
-      reinterpret_cast<char*>(&lt_x_)) + sizeof(rb_y_));
+  ::memset(&lt_x_, 0,
+           static_cast<size_t>(reinterpret_cast<char *>(&rb_y_) -
+                               reinterpret_cast<char *>(&lt_x_)) +
+               sizeof(rb_y_));
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* Box::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+const char *
+Box::_InternalParse(const char *ptr,
+                    ::PROTOBUF_NAMESPACE_ID::internal::ParseContext *ctx) {
+#define CHK_(x)                                                                \
+  if (PROTOBUF_PREDICT_FALSE(!(x)))                                            \
+  goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // uint32 lt_x = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          lt_x_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 lt_y = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          lt_y_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 rb_x = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          rb_x_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // uint32 rb_y = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          rb_y_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    // uint32 lt_x = 1;
+    case 1:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+        lt_x_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // uint32 lt_y = 2;
+    case 2:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+        lt_y_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // uint32 rb_x = 3;
+    case 3:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+        rb_x_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // uint32 rb_y = 4;
+    case 4:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
+        rb_y_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    default: {
+    handle_unusual:
+      if ((tag & 7) == 4 || tag == 0) {
+        ctx->SetLastTag(tag);
+        goto success;
       }
-    }  // switch
-  }  // while
+      ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+      CHK_(ptr != nullptr);
+      continue;
+    }
+    } // switch
+  }   // while
 success:
   return ptr;
 failure:
@@ -1083,78 +1291,88 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#else // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool Box::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream *input) {
+#define DO_(EXPRESSION)                                                        \
+  if (!PROTOBUF_PREDICT_TRUE(EXPRESSION))                                      \
+  goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:ascend.presenter.facial_recognition.Box)
   for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p =
+        input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // uint32 lt_x = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(
+            tag)) {
+    // uint32 lt_x = 1;
+    case 1: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (8 & 0xFF)) {
 
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   ::PROTOBUF_NAMESPACE_ID::uint32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &lt_x_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+        DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+             ::PROTOBUF_NAMESPACE_ID::uint32,
+             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
+            input, &lt_x_)));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // uint32 lt_y = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
+    // uint32 lt_y = 2;
+    case 2: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (16 & 0xFF)) {
 
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   ::PROTOBUF_NAMESPACE_ID::uint32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &lt_y_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+        DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+             ::PROTOBUF_NAMESPACE_ID::uint32,
+             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
+            input, &lt_y_)));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // uint32 rb_x = 3;
-      case 3: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (24 & 0xFF)) {
+    // uint32 rb_x = 3;
+    case 3: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (24 & 0xFF)) {
 
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   ::PROTOBUF_NAMESPACE_ID::uint32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &rb_x_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+        DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+             ::PROTOBUF_NAMESPACE_ID::uint32,
+             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
+            input, &rb_x_)));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // uint32 rb_y = 4;
-      case 4: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (32 & 0xFF)) {
+    // uint32 rb_y = 4;
+    case 4: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (32 & 0xFF)) {
 
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
-                   ::PROTOBUF_NAMESPACE_ID::uint32, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
-                 input, &rb_y_)));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+        DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+             ::PROTOBUF_NAMESPACE_ID::uint32,
+             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_UINT32>(
+            input, &rb_y_)));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+    default: {
+    handle_unusual:
+      if (tag == 0) {
+        goto success;
       }
+      DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+      break;
+    }
     }
   }
 success:
@@ -1165,32 +1383,36 @@ failure:
   return false;
 #undef DO_
 }
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#endif // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void Box::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream *output) const {
   // @@protoc_insertion_point(serialize_start:ascend.presenter.facial_recognition.Box)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // uint32 lt_x = 1;
   if (this->lt_x() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(1, this->lt_x(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(
+        1, this->lt_x(), output);
   }
 
   // uint32 lt_y = 2;
   if (this->lt_y() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(2, this->lt_y(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(
+        2, this->lt_y(), output);
   }
 
   // uint32 rb_x = 3;
   if (this->rb_x() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(3, this->rb_x(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(
+        3, this->rb_x(), output);
   }
 
   // uint32 rb_y = 4;
   if (this->rb_y() != 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(4, this->rb_y(), output);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32(
+        4, this->rb_y(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1200,79 +1422,88 @@ void Box::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:ascend.presenter.facial_recognition.Box)
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* Box::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8 *Box::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8 *target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ascend.presenter.facial_recognition.Box)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // uint32 lt_x = 1;
   if (this->lt_x() != 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->lt_x(), target);
+    target =
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(
+            1, this->lt_x(), target);
   }
 
   // uint32 lt_y = 2;
   if (this->lt_y() != 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->lt_y(), target);
+    target =
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(
+            2, this->lt_y(), target);
   }
 
   // uint32 rb_x = 3;
   if (this->rb_x() != 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(3, this->rb_x(), target);
+    target =
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(
+            3, this->rb_x(), target);
   }
 
   // uint32 rb_y = 4;
   if (this->rb_y() != 0) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(4, this->rb_y(), target);
+    target =
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(
+            4, this->rb_y(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::
+        SerializeUnknownFieldsToArray(_internal_metadata_.unknown_fields(),
+                                      target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ascend.presenter.facial_recognition.Box)
   return target;
 }
 
 size_t Box::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.Box)
+  // @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.Box)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+            _internal_metadata_.unknown_fields());
   }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // uint32 lt_x = 1;
   if (this->lt_x() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->lt_x());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+                this->lt_x());
   }
 
   // uint32 lt_y = 2;
   if (this->lt_y() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->lt_y());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+                this->lt_y());
   }
 
   // uint32 rb_x = 3;
   if (this->rb_x() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->rb_x());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+                this->rb_x());
   }
 
   // uint32 rb_y = 4;
   if (this->rb_y() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->rb_y());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+                this->rb_y());
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -1280,27 +1511,26 @@ size_t Box::ByteSizeLong() const {
   return total_size;
 }
 
-void Box::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.Box)
+void Box::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.Box)
   GOOGLE_DCHECK_NE(&from, this);
-  const Box* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Box>(
-          &from);
+  const Box *source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Box>(&from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.Box)
+    // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.Box)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.Box)
+    // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.Box)
     MergeFrom(*source);
   }
 }
 
-void Box::MergeFrom(const Box& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.Box)
+void Box::MergeFrom(const Box &from) {
+  // @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.Box)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   if (from.lt_x() != 0) {
     set_lt_x(from.lt_x());
@@ -1316,29 +1546,30 @@ void Box::MergeFrom(const Box& from) {
   }
 }
 
-void Box::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.Box)
-  if (&from == this) return;
+void Box::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.Box)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void Box::CopyFrom(const Box& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.Box)
-  if (&from == this) return;
+void Box::CopyFrom(const Box &from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.Box)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool Box::IsInitialized() const {
-  return true;
-}
+bool Box::IsInitialized() const { return true; }
 
-void Box::Swap(Box* other) {
-  if (other == this) return;
+void Box::Swap(Box *other) {
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void Box::InternalSwap(Box* other) {
+void Box::InternalSwap(Box *other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(lt_x_, other->lt_x_);
@@ -1351,35 +1582,37 @@ void Box::InternalSwap(Box* other) {
   return GetMetadataStatic();
 }
 
-
 // ===================================================================
 
 void FaceFeature::InitAsDefaultInstance() {
-  ::ascend::presenter::facial_recognition::_FaceFeature_default_instance_._instance.get_mutable()->box_ = const_cast< ::ascend::presenter::facial_recognition::Box*>(
-      ::ascend::presenter::facial_recognition::Box::internal_default_instance());
+  ::ascend::presenter::facial_recognition::_FaceFeature_default_instance_
+      ._instance.get_mutable()
+      ->box_ = const_cast<::ascend::presenter::facial_recognition::Box *>(
+      ::ascend::presenter::facial_recognition::Box::
+          internal_default_instance());
 }
 class FaceFeature::HasBitSetters {
- public:
-  static const ::ascend::presenter::facial_recognition::Box& box(const FaceFeature* msg);
+public:
+  static const ::ascend::presenter::facial_recognition::Box &
+  box(const FaceFeature *msg);
 };
 
-const ::ascend::presenter::facial_recognition::Box&
-FaceFeature::HasBitSetters::box(const FaceFeature* msg) {
+const ::ascend::presenter::facial_recognition::Box &
+FaceFeature::HasBitSetters::box(const FaceFeature *msg) {
   return *msg->box_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int FaceFeature::kBoxFieldNumber;
 const int FaceFeature::kVectorFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 FaceFeature::FaceFeature()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ascend.presenter.facial_recognition.FaceFeature)
 }
-FaceFeature::FaceFeature(const FaceFeature& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
+FaceFeature::FaceFeature(const FaceFeature &from)
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr),
       vector_(from.vector_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   if (from.has_box()) {
@@ -1391,7 +1624,8 @@ FaceFeature::FaceFeature(const FaceFeature& from)
 }
 
 void FaceFeature::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base);
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base);
   box_ = nullptr;
 }
 
@@ -1401,23 +1635,22 @@ FaceFeature::~FaceFeature() {
 }
 
 void FaceFeature::SharedDtor() {
-  if (this != internal_default_instance()) delete box_;
+  if (this != internal_default_instance())
+    delete box_;
 }
 
-void FaceFeature::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const FaceFeature& FaceFeature::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base);
+void FaceFeature::SetCachedSize(int size) const { _cached_size_.Set(size); }
+const FaceFeature &FaceFeature::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &::scc_info_FaceFeature_facial_5frecognition_5fmessage_2eproto.base);
   return *internal_default_instance();
 }
 
-
 void FaceFeature::Clear() {
-// @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.FaceFeature)
+  // @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.FaceFeature)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   vector_.Clear();
   if (GetArenaNoVirtual() == nullptr && box_ != nullptr) {
@@ -1428,42 +1661,51 @@ void FaceFeature::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* FaceFeature::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+const char *FaceFeature::_InternalParse(
+    const char *ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext *ctx) {
+#define CHK_(x)                                                                \
+  if (PROTOBUF_PREDICT_FALSE(!(x)))                                            \
+  goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // .ascend.presenter.facial_recognition.Box box = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ctx->ParseMessage(mutable_box(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated float vector = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(mutable_vector(), ptr, ctx);
-          CHK_(ptr);
-        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21) {
-          add_vector(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
-          ptr += sizeof(float);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    // .ascend.presenter.facial_recognition.Box box = 1;
+    case 1:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        ptr = ctx->ParseMessage(mutable_box(), ptr);
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // repeated float vector = 2;
+    case 2:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedFloatParser(
+            mutable_vector(), ptr, ctx);
+        CHK_(ptr);
+      } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 21) {
+        add_vector(
+            ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr));
+        ptr += sizeof(float);
+      } else
+        goto handle_unusual;
+      continue;
+    default: {
+    handle_unusual:
+      if ((tag & 7) == 4 || tag == 0) {
+        ctx->SetLastTag(tag);
+        goto success;
       }
-    }  // switch
-  }  // while
+      ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+      CHK_(ptr != nullptr);
+      continue;
+    }
+    } // switch
+  }   // while
 success:
   return ptr;
 failure:
@@ -1471,53 +1713,63 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#else // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool FaceFeature::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream *input) {
+#define DO_(EXPRESSION)                                                        \
+  if (!PROTOBUF_PREDICT_TRUE(EXPRESSION))                                      \
+  goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:ascend.presenter.facial_recognition.FaceFeature)
   for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p =
+        input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // .ascend.presenter.facial_recognition.Box box = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_box()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(
+            tag)) {
+    // .ascend.presenter.facial_recognition.Box box = 1;
+    case 1: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+            input, mutable_box()));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // repeated float vector = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPackedPrimitive<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, this->mutable_vector())));
-        } else if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (21 & 0xFF)) {
-          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
-                   float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_FLOAT>(
-                 1, 18u, input, this->mutable_vector())));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+    // repeated float vector = 2;
+    case 2: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+        DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+                 ReadPackedPrimitive<float, ::PROTOBUF_NAMESPACE_ID::internal::
+                                                WireFormatLite::TYPE_FLOAT>(
+                     input, this->mutable_vector())));
+      } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) ==
+                 (21 & 0xFF)) {
+        DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+                 ReadRepeatedPrimitiveNoInline<
+                     float, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+                                TYPE_FLOAT>(1, 18u, input,
+                                            this->mutable_vector())));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+    default: {
+    handle_unusual:
+      if (tag == 0) {
+        goto success;
       }
+      DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+      break;
+    }
     }
   }
 success:
@@ -1528,27 +1780,31 @@ failure:
   return false;
 #undef DO_
 }
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#endif // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void FaceFeature::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream *output) const {
   // @@protoc_insertion_point(serialize_start:ascend.presenter.facial_recognition.FaceFeature)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // .ascend.presenter.facial_recognition.Box box = 1;
   if (this->has_box()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      1, HasBitSetters::box(this), output);
+        1, HasBitSetters::box(this), output);
   }
 
   // repeated float vector = 2;
   if (this->vector_size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteTag(2, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(_vector_cached_byte_size_.load(
-        std::memory_order_relaxed));
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteTag(
+        2,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+            WIRETYPE_LENGTH_DELIMITED,
+        output);
+    output->WriteVarint32(
+        _vector_cached_byte_size_.load(std::memory_order_relaxed));
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteFloatArray(
-      this->vector().data(), this->vector_size(), output);
+        this->vector().data(), this->vector_size(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1558,73 +1814,75 @@ void FaceFeature::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:ascend.presenter.facial_recognition.FaceFeature)
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FaceFeature::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8 *
+FaceFeature::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8 *target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ascend.presenter.facial_recognition.FaceFeature)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // .ascend.presenter.facial_recognition.Box box = 1;
   if (this->has_box()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        1, HasBitSetters::box(this), target);
+        InternalWriteMessageToArray(1, HasBitSetters::box(this), target);
   }
 
   // repeated float vector = 2;
   if (this->vector_size() > 0) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteTagToArray(
-      2,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
-      target);
-    target = ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream::WriteVarint32ToArray(
-        _vector_cached_byte_size_.load(std::memory_order_relaxed),
-         target);
+        2,
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+            WIRETYPE_LENGTH_DELIMITED,
+        target);
+    target =
+        ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream::WriteVarint32ToArray(
+            _vector_cached_byte_size_.load(std::memory_order_relaxed), target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      WriteFloatNoTagToArray(this->vector_, target);
+        WriteFloatNoTagToArray(this->vector_, target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::
+        SerializeUnknownFieldsToArray(_internal_metadata_.unknown_fields(),
+                                      target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ascend.presenter.facial_recognition.FaceFeature)
   return target;
 }
 
 size_t FaceFeature::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.FaceFeature)
+  // @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.FaceFeature)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+            _internal_metadata_.unknown_fields());
   }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // repeated float vector = 2;
   {
     unsigned int count = static_cast<unsigned int>(this->vector_size());
     size_t data_size = 4UL * count;
     if (data_size > 0) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+      total_size +=
+          1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+                  static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
     }
-    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
-    _vector_cached_byte_size_.store(cached_size,
-                                    std::memory_order_relaxed);
+    int cached_size =
+        ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _vector_cached_byte_size_.store(cached_size, std::memory_order_relaxed);
     total_size += data_size;
   }
 
   // .ascend.presenter.facial_recognition.Box box = 1;
   if (this->has_box()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *box_);
+    total_size +=
+        1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(*box_);
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -1632,57 +1890,58 @@ size_t FaceFeature::ByteSizeLong() const {
   return total_size;
 }
 
-void FaceFeature::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.FaceFeature)
+void FaceFeature::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.FaceFeature)
   GOOGLE_DCHECK_NE(&from, this);
-  const FaceFeature* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FaceFeature>(
-          &from);
+  const FaceFeature *source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FaceFeature>(&from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.FaceFeature)
+    // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.FaceFeature)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.FaceFeature)
+    // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.FaceFeature)
     MergeFrom(*source);
   }
 }
 
-void FaceFeature::MergeFrom(const FaceFeature& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.FaceFeature)
+void FaceFeature::MergeFrom(const FaceFeature &from) {
+  // @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.FaceFeature)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   vector_.MergeFrom(from.vector_);
   if (from.has_box()) {
-    mutable_box()->::ascend::presenter::facial_recognition::Box::MergeFrom(from.box());
+    mutable_box()->::ascend::presenter::facial_recognition::Box::MergeFrom(
+        from.box());
   }
 }
 
-void FaceFeature::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.FaceFeature)
-  if (&from == this) return;
+void FaceFeature::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.FaceFeature)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void FaceFeature::CopyFrom(const FaceFeature& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.FaceFeature)
-  if (&from == this) return;
+void FaceFeature::CopyFrom(const FaceFeature &from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.FaceFeature)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool FaceFeature::IsInitialized() const {
-  return true;
-}
+bool FaceFeature::IsInitialized() const { return true; }
 
-void FaceFeature::Swap(FaceFeature* other) {
-  if (other == this) return;
+void FaceFeature::Swap(FaceFeature *other) {
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void FaceFeature::InternalSwap(FaceFeature* other) {
+void FaceFeature::InternalSwap(FaceFeature *other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   vector_.InternalSwap(&other->vector_);
@@ -1693,44 +1952,50 @@ void FaceFeature::InternalSwap(FaceFeature* other) {
   return GetMetadataStatic();
 }
 
-
 // ===================================================================
 
-void FaceInfo::InitAsDefaultInstance() {
-}
+void FaceInfo::InitAsDefaultInstance() {}
 class FaceInfo::HasBitSetters {
- public:
+public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int FaceInfo::kIdFieldNumber;
 const int FaceInfo::kImageFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 FaceInfo::FaceInfo()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ascend.presenter.facial_recognition.FaceInfo)
 }
-FaceInfo::FaceInfo(const FaceInfo& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
+FaceInfo::FaceInfo(const FaceInfo &from)
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.id_);
   }
-  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from.image().size() > 0) {
-    image_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.image_);
+    image_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.image_);
   }
   // @@protoc_insertion_point(copy_constructor:ascend.presenter.facial_recognition.FaceInfo)
 }
 
 void FaceInfo::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &scc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto.base);
+  id_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 FaceInfo::~FaceInfo() {
@@ -1739,64 +2004,77 @@ FaceInfo::~FaceInfo() {
 }
 
 void FaceInfo::SharedDtor() {
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.DestroyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void FaceInfo::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const FaceInfo& FaceInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto.base);
+void FaceInfo::SetCachedSize(int size) const { _cached_size_.Set(size); }
+const FaceInfo &FaceInfo::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &::scc_info_FaceInfo_facial_5frecognition_5fmessage_2eproto.base);
   return *internal_default_instance();
 }
 
-
 void FaceInfo::Clear() {
-// @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.FaceInfo)
+  // @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.FaceInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
-  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  image_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.ClearToEmptyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.ClearToEmptyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* FaceInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+const char *
+FaceInfo::_InternalParse(const char *ptr,
+                         ::PROTOBUF_NAMESPACE_ID::internal::ParseContext *ctx) {
+#define CHK_(x)                                                                \
+  if (PROTOBUF_PREDICT_FALSE(!(x)))                                            \
+  goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_id(), ptr, ctx, "ascend.presenter.facial_recognition.FaceInfo.id");
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // bytes image = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(mutable_image(), ptr, ctx);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+    // string id = 1;
+    case 1:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(
+            mutable_id(), ptr, ctx,
+            "ascend.presenter.facial_recognition.FaceInfo.id");
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // bytes image = 2;
+    case 2:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(
+            mutable_image(), ptr, ctx);
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    default: {
+    handle_unusual:
+      if ((tag & 7) == 4 || tag == 0) {
+        ctx->SetLastTag(tag);
+        goto success;
       }
-    }  // switch
-  }  // while
+      ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+      CHK_(ptr != nullptr);
+      continue;
+    }
+    } // switch
+  }   // while
 success:
   return ptr;
 failure:
@@ -1804,52 +2082,58 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#else // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool FaceInfo::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream *input) {
+#define DO_(EXPRESSION)                                                        \
+  if (!PROTOBUF_PREDICT_TRUE(EXPRESSION))                                      \
+  goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:ascend.presenter.facial_recognition.FaceInfo)
   for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p =
+        input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string id = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(
+            tag)) {
+    // string id = 1;
+    case 1: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+            input, this->mutable_id()));
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
             this->id().data(), static_cast<int>(this->id().length()),
             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
             "ascend.presenter.facial_recognition.FaceInfo.id"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // bytes image = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_image()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+    // bytes image = 2;
+    case 2: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadBytes(
+            input, this->mutable_image()));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+    default: {
+    handle_unusual:
+      if (tag == 0) {
+        goto success;
       }
+      DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+      break;
+    }
     }
   }
 success:
@@ -1860,28 +2144,28 @@ failure:
   return false;
 #undef DO_
 }
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#endif // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void FaceInfo::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream *output) const {
   // @@protoc_insertion_point(serialize_start:ascend.presenter.facial_recognition.FaceInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.FaceInfo.id");
+        this->id().data(), static_cast<int>(this->id().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.FaceInfo.id");
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
+        1, this->id(), output);
   }
 
   // bytes image = 2;
   if (this->image().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBytesMaybeAliased(
-      2, this->image(), output);
+        2, this->image(), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -1891,63 +2175,65 @@ void FaceInfo::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:ascend.presenter.facial_recognition.FaceInfo)
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FaceInfo::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8 *
+FaceInfo::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8 *target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ascend.presenter.facial_recognition.FaceInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.FaceInfo.id");
+        this->id().data(), static_cast<int>(this->id().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.FaceInfo.id");
     target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+            1, this->id(), target);
   }
 
   // bytes image = 2;
   if (this->image().size() > 0) {
     target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBytesToArray(
-        2, this->image(), target);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBytesToArray(
+            2, this->image(), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::
+        SerializeUnknownFieldsToArray(_internal_metadata_.unknown_fields(),
+                                      target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ascend.presenter.facial_recognition.FaceInfo)
   return target;
 }
 
 size_t FaceInfo::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.FaceInfo)
+  // @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.FaceInfo)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+            _internal_metadata_.unknown_fields());
   }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->id());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                this->id());
   }
 
   // bytes image = 2;
   if (this->image().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->image());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+                this->image());
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -1955,111 +2241,124 @@ size_t FaceInfo::ByteSizeLong() const {
   return total_size;
 }
 
-void FaceInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.FaceInfo)
+void FaceInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.FaceInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  const FaceInfo* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FaceInfo>(
-          &from);
+  const FaceInfo *source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FaceInfo>(&from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.FaceInfo)
+    // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.FaceInfo)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.FaceInfo)
+    // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.FaceInfo)
     MergeFrom(*source);
   }
 }
 
-void FaceInfo::MergeFrom(const FaceInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.FaceInfo)
+void FaceInfo::MergeFrom(const FaceInfo &from) {
+  // @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.FaceInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   if (from.id().size() > 0) {
 
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.id_);
   }
   if (from.image().size() > 0) {
 
-    image_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.image_);
+    image_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.image_);
   }
 }
 
-void FaceInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.FaceInfo)
-  if (&from == this) return;
+void FaceInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.FaceInfo)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void FaceInfo::CopyFrom(const FaceInfo& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.FaceInfo)
-  if (&from == this) return;
+void FaceInfo::CopyFrom(const FaceInfo &from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.FaceInfo)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool FaceInfo::IsInitialized() const {
-  return true;
-}
+bool FaceInfo::IsInitialized() const { return true; }
 
-void FaceInfo::Swap(FaceInfo* other) {
-  if (other == this) return;
+void FaceInfo::Swap(FaceInfo *other) {
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void FaceInfo::InternalSwap(FaceInfo* other) {
+void FaceInfo::InternalSwap(FaceInfo *other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  image_.Swap(&other->image_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  id_.Swap(&other->id_,
+           &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+           GetArenaNoVirtual());
+  image_.Swap(&other->image_,
+              &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+              GetArenaNoVirtual());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FaceInfo::GetMetadata() const {
   return GetMetadataStatic();
 }
 
-
 // ===================================================================
 
 void FaceResult::InitAsDefaultInstance() {
-  ::ascend::presenter::facial_recognition::_FaceResult_default_instance_._instance.get_mutable()->response_ = const_cast< ::ascend::presenter::facial_recognition::CommonResponse*>(
-      ::ascend::presenter::facial_recognition::CommonResponse::internal_default_instance());
+  ::ascend::presenter::facial_recognition::_FaceResult_default_instance_
+      ._instance.get_mutable()
+      ->response_ =
+      const_cast<::ascend::presenter::facial_recognition::CommonResponse *>(
+          ::ascend::presenter::facial_recognition::CommonResponse::
+              internal_default_instance());
 }
 class FaceResult::HasBitSetters {
- public:
-  static const ::ascend::presenter::facial_recognition::CommonResponse& response(const FaceResult* msg);
+public:
+  static const ::ascend::presenter::facial_recognition::CommonResponse &
+  response(const FaceResult *msg);
 };
 
-const ::ascend::presenter::facial_recognition::CommonResponse&
-FaceResult::HasBitSetters::response(const FaceResult* msg) {
+const ::ascend::presenter::facial_recognition::CommonResponse &
+FaceResult::HasBitSetters::response(const FaceResult *msg) {
   return *msg->response_;
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int FaceResult::kIdFieldNumber;
 const int FaceResult::kResponseFieldNumber;
 const int FaceResult::kFeatureFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 FaceResult::FaceResult()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ascend.presenter.facial_recognition.FaceResult)
 }
-FaceResult::FaceResult(const FaceResult& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
+FaceResult::FaceResult(const FaceResult &from)
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr),
       feature_(from.feature_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from.id().size() > 0) {
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.id_);
   }
   if (from.has_response()) {
-    response_ = new ::ascend::presenter::facial_recognition::CommonResponse(*from.response_);
+    response_ = new ::ascend::presenter::facial_recognition::CommonResponse(
+        *from.response_);
   } else {
     response_ = nullptr;
   }
@@ -2067,8 +2366,10 @@ FaceResult::FaceResult(const FaceResult& from)
 }
 
 void FaceResult::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FaceResult_facial_5frecognition_5fmessage_2eproto.base);
-  id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &scc_info_FaceResult_facial_5frecognition_5fmessage_2eproto.base);
+  id_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   response_ = nullptr;
 }
 
@@ -2078,27 +2379,28 @@ FaceResult::~FaceResult() {
 }
 
 void FaceResult::SharedDtor() {
-  id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (this != internal_default_instance()) delete response_;
+  id_.DestroyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance())
+    delete response_;
 }
 
-void FaceResult::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const FaceResult& FaceResult::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FaceResult_facial_5frecognition_5fmessage_2eproto.base);
+void FaceResult::SetCachedSize(int size) const { _cached_size_.Set(size); }
+const FaceResult &FaceResult::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &::scc_info_FaceResult_facial_5frecognition_5fmessage_2eproto.base);
   return *internal_default_instance();
 }
 
-
 void FaceResult::Clear() {
-// @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.FaceResult)
+  // @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.FaceResult)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   feature_.Clear();
-  id_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  id_.ClearToEmptyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (GetArenaNoVirtual() == nullptr && response_ != nullptr) {
     delete response_;
   }
@@ -2107,51 +2409,64 @@ void FaceResult::Clear() {
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* FaceResult::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+const char *FaceResult::_InternalParse(
+    const char *ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext *ctx) {
+#define CHK_(x)                                                                \
+  if (PROTOBUF_PREDICT_FALSE(!(x)))                                            \
+  goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_id(), ptr, ctx, "ascend.presenter.facial_recognition.FaceResult.id");
+    // string id = 1;
+    case 1:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(
+            mutable_id(), ptr, ctx,
+            "ascend.presenter.facial_recognition.FaceResult.id");
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // .ascend.presenter.facial_recognition.CommonResponse response = 2;
+    case 2:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        ptr = ctx->ParseMessage(mutable_response(), ptr);
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 3;
+    case 3:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+        ptr -= 1;
+        do {
+          ptr += 1;
+          ptr = ctx->ParseMessage(add_feature(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // .ascend.presenter.facial_recognition.CommonResponse response = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr = ctx->ParseMessage(mutable_response(), ptr);
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(add_feature(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 26);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+          if (!ctx->DataAvailable(ptr))
+            break;
+        } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<
+                     ::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 26);
+      } else
+        goto handle_unusual;
+      continue;
+    default: {
+    handle_unusual:
+      if ((tag & 7) == 4 || tag == 0) {
+        ctx->SetLastTag(tag);
+        goto success;
       }
-    }  // switch
-  }  // while
+      ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+      CHK_(ptr != nullptr);
+      continue;
+    }
+    } // switch
+  }   // while
 success:
   return ptr;
 failure:
@@ -2159,63 +2474,69 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#else // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool FaceResult::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream *input) {
+#define DO_(EXPRESSION)                                                        \
+  if (!PROTOBUF_PREDICT_TRUE(EXPRESSION))                                      \
+  goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:ascend.presenter.facial_recognition.FaceResult)
   for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p =
+        input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // string id = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
-                input, this->mutable_id()));
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(
+            tag)) {
+    // string id = 1;
+    case 1: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+            input, this->mutable_id()));
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
             this->id().data(), static_cast<int>(this->id().length()),
             ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
             "ascend.presenter.facial_recognition.FaceResult.id"));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // .ascend.presenter.facial_recognition.CommonResponse response = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-               input, mutable_response()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+    // .ascend.presenter.facial_recognition.CommonResponse response = 2;
+    case 2: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+            input, mutable_response()));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 3;
-      case 3: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (26 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-                input, add_feature()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+    // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 3;
+    case 3: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (26 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+            input, add_feature()));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+    default: {
+    handle_unusual:
+      if (tag == 0) {
+        goto success;
       }
+      DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+      break;
+    }
     }
   }
 success:
@@ -2226,37 +2547,35 @@ failure:
   return false;
 #undef DO_
 }
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#endif // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void FaceResult::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream *output) const {
   // @@protoc_insertion_point(serialize_start:ascend.presenter.facial_recognition.FaceResult)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.FaceResult.id");
+        this->id().data(), static_cast<int>(this->id().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.FaceResult.id");
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
-      1, this->id(), output);
+        1, this->id(), output);
   }
 
   // .ascend.presenter.facial_recognition.CommonResponse response = 2;
   if (this->has_response()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2, HasBitSetters::response(this), output);
+        2, HasBitSetters::response(this), output);
   }
 
   // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->feature_size()); i < n; i++) {
+  for (unsigned int i = 0, n = static_cast<unsigned int>(this->feature_size());
+       i < n; i++) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      3,
-      this->feature(static_cast<int>(i)),
-      output);
+        3, this->feature(static_cast<int>(i)), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2266,58 +2585,59 @@ void FaceResult::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:ascend.presenter.facial_recognition.FaceResult)
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FaceResult::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8 *
+FaceResult::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8 *target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ascend.presenter.facial_recognition.FaceResult)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // string id = 1;
   if (this->id().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->id().data(), static_cast<int>(this->id().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ascend.presenter.facial_recognition.FaceResult.id");
+        this->id().data(), static_cast<int>(this->id().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+        "ascend.presenter.facial_recognition.FaceResult.id");
     target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
-        1, this->id(), target);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+            1, this->id(), target);
   }
 
   // .ascend.presenter.facial_recognition.CommonResponse response = 2;
   if (this->has_response()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, HasBitSetters::response(this), target);
+        InternalWriteMessageToArray(2, HasBitSetters::response(this), target);
   }
 
   // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 3;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->feature_size()); i < n; i++) {
+  for (unsigned int i = 0, n = static_cast<unsigned int>(this->feature_size());
+       i < n; i++) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        3, this->feature(static_cast<int>(i)), target);
+        InternalWriteMessageToArray(3, this->feature(static_cast<int>(i)),
+                                    target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::
+        SerializeUnknownFieldsToArray(_internal_metadata_.unknown_fields(),
+                                      target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ascend.presenter.facial_recognition.FaceResult)
   return target;
 }
 
 size_t FaceResult::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.FaceResult)
+  // @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.FaceResult)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+            _internal_metadata_.unknown_fields());
   }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 3;
   {
@@ -2325,23 +2645,23 @@ size_t FaceResult::ByteSizeLong() const {
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          this->feature(static_cast<int>(i)));
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+              this->feature(static_cast<int>(i)));
     }
   }
 
   // string id = 1;
   if (this->id().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->id());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+                this->id());
   }
 
   // .ascend.presenter.facial_recognition.CommonResponse response = 2;
   if (this->has_response()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *response_);
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+                *response_);
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -2349,66 +2669,71 @@ size_t FaceResult::ByteSizeLong() const {
   return total_size;
 }
 
-void FaceResult::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.FaceResult)
+void FaceResult::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.FaceResult)
   GOOGLE_DCHECK_NE(&from, this);
-  const FaceResult* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FaceResult>(
-          &from);
+  const FaceResult *source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FaceResult>(&from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.FaceResult)
+    // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.FaceResult)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.FaceResult)
+    // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.FaceResult)
     MergeFrom(*source);
   }
 }
 
-void FaceResult::MergeFrom(const FaceResult& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.FaceResult)
+void FaceResult::MergeFrom(const FaceResult &from) {
+  // @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.FaceResult)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   feature_.MergeFrom(from.feature_);
   if (from.id().size() > 0) {
 
-    id_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.id_);
+    id_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.id_);
   }
   if (from.has_response()) {
-    mutable_response()->::ascend::presenter::facial_recognition::CommonResponse::MergeFrom(from.response());
+    mutable_response()
+        ->::ascend::presenter::facial_recognition::CommonResponse::MergeFrom(
+            from.response());
   }
 }
 
-void FaceResult::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.FaceResult)
-  if (&from == this) return;
+void FaceResult::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.FaceResult)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void FaceResult::CopyFrom(const FaceResult& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.FaceResult)
-  if (&from == this) return;
+void FaceResult::CopyFrom(const FaceResult &from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.FaceResult)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool FaceResult::IsInitialized() const {
-  return true;
-}
+bool FaceResult::IsInitialized() const { return true; }
 
-void FaceResult::Swap(FaceResult* other) {
-  if (other == this) return;
+void FaceResult::Swap(FaceResult *other) {
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void FaceResult::InternalSwap(FaceResult* other) {
+void FaceResult::InternalSwap(FaceResult *other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&feature_)->InternalSwap(CastToBase(&other->feature_));
-  id_.Swap(&other->id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  id_.Swap(&other->id_,
+           &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+           GetArenaNoVirtual());
   swap(response_, other->response_);
 }
 
@@ -2416,40 +2741,42 @@ void FaceResult::InternalSwap(FaceResult* other) {
   return GetMetadataStatic();
 }
 
-
 // ===================================================================
 
-void FrameInfo::InitAsDefaultInstance() {
-}
+void FrameInfo::InitAsDefaultInstance() {}
 class FrameInfo::HasBitSetters {
- public:
+public:
 };
 
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int FrameInfo::kImageFieldNumber;
 const int FrameInfo::kFeatureFieldNumber;
-#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 FrameInfo::FrameInfo()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
   SharedCtor();
   // @@protoc_insertion_point(constructor:ascend.presenter.facial_recognition.FrameInfo)
 }
-FrameInfo::FrameInfo(const FrameInfo& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
+FrameInfo::FrameInfo(const FrameInfo &from)
+    : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr),
       feature_(from.feature_) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
-  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (from.image().size() > 0) {
-    image_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.image_);
+    image_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.image_);
   }
   // @@protoc_insertion_point(copy_constructor:ascend.presenter.facial_recognition.FrameInfo)
 }
 
 void FrameInfo::SharedCtor() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto.base);
-  image_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &scc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto.base);
+  image_.UnsafeSetDefault(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 FrameInfo::~FrameInfo() {
@@ -2458,68 +2785,78 @@ FrameInfo::~FrameInfo() {
 }
 
 void FrameInfo::SharedDtor() {
-  image_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.DestroyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
-void FrameInfo::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-const FrameInfo& FrameInfo::default_instance() {
-  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto.base);
+void FrameInfo::SetCachedSize(int size) const { _cached_size_.Set(size); }
+const FrameInfo &FrameInfo::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(
+      &::scc_info_FrameInfo_facial_5frecognition_5fmessage_2eproto.base);
   return *internal_default_instance();
 }
 
-
 void FrameInfo::Clear() {
-// @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.FrameInfo)
+  // @@protoc_insertion_point(message_clear_start:ascend.presenter.facial_recognition.FrameInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   feature_.Clear();
-  image_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  image_.ClearToEmptyNoArena(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   _internal_metadata_.Clear();
 }
 
 #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
-const char* FrameInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+const char *FrameInfo::_InternalParse(
+    const char *ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext *ctx) {
+#define CHK_(x)                                                                \
+  if (PROTOBUF_PREDICT_FALSE(!(x)))                                            \
+  goto failure
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // bytes image = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(mutable_image(), ptr, ctx);
+    // bytes image = 1;
+    case 1:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+        ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(
+            mutable_image(), ptr, ctx);
+        CHK_(ptr);
+      } else
+        goto handle_unusual;
+      continue;
+    // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 2;
+    case 2:
+      if (PROTOBUF_PREDICT_TRUE(
+              static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+        ptr -= 1;
+        do {
+          ptr += 1;
+          ptr = ctx->ParseMessage(add_feature(), ptr);
           CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(add_feature(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 18);
-        } else goto handle_unusual;
-        continue;
-      default: {
-      handle_unusual:
-        if ((tag & 7) == 4 || tag == 0) {
-          ctx->SetLastTag(tag);
-          goto success;
-        }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
-        CHK_(ptr != nullptr);
-        continue;
+          if (!ctx->DataAvailable(ptr))
+            break;
+        } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<
+                     ::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 18);
+      } else
+        goto handle_unusual;
+      continue;
+    default: {
+    handle_unusual:
+      if ((tag & 7) == 4 || tag == 0) {
+        ctx->SetLastTag(tag);
+        goto success;
       }
-    }  // switch
-  }  // while
+      ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+      CHK_(ptr != nullptr);
+      continue;
+    }
+    } // switch
+  }   // while
 success:
   return ptr;
 failure:
@@ -2527,48 +2864,54 @@ failure:
   goto success;
 #undef CHK_
 }
-#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#else // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool FrameInfo::MergePartialFromCodedStream(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream *input) {
+#define DO_(EXPRESSION)                                                        \
+  if (!PROTOBUF_PREDICT_TRUE(EXPRESSION))                                      \
+  goto failure
   ::PROTOBUF_NAMESPACE_ID::uint32 tag;
   // @@protoc_insertion_point(parse_start:ascend.presenter.facial_recognition.FrameInfo)
   for (;;) {
-    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p =
+        input->ReadTagWithCutoffNoLastTag(127u);
     tag = p.first;
-    if (!p.second) goto handle_unusual;
-    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // bytes image = 1;
-      case 1: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadBytes(
-                input, this->mutable_image()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+    if (!p.second)
+      goto handle_unusual;
+    switch (
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(
+            tag)) {
+    // bytes image = 1;
+    case 1: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadBytes(
+            input, this->mutable_image()));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 2;
-      case 2: {
-        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
-          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
-                input, add_feature()));
-        } else {
-          goto handle_unusual;
-        }
-        break;
+    // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 2;
+    case 2: {
+      if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+            input, add_feature()));
+      } else {
+        goto handle_unusual;
       }
+      break;
+    }
 
-      default: {
-      handle_unusual:
-        if (tag == 0) {
-          goto success;
-        }
-        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
-              input, tag, _internal_metadata_.mutable_unknown_fields()));
-        break;
+    default: {
+    handle_unusual:
+      if (tag == 0) {
+        goto success;
       }
+      DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+      break;
+    }
     }
   }
 success:
@@ -2579,27 +2922,25 @@ failure:
   return false;
 #undef DO_
 }
-#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+#endif // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void FrameInfo::SerializeWithCachedSizes(
-    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream *output) const {
   // @@protoc_insertion_point(serialize_start:ascend.presenter.facial_recognition.FrameInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // bytes image = 1;
   if (this->image().size() > 0) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBytesMaybeAliased(
-      1, this->image(), output);
+        1, this->image(), output);
   }
 
   // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->feature_size()); i < n; i++) {
+  for (unsigned int i = 0, n = static_cast<unsigned int>(this->feature_size());
+       i < n; i++) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
-      2,
-      this->feature(static_cast<int>(i)),
-      output);
+        2, this->feature(static_cast<int>(i)), output);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -2609,47 +2950,49 @@ void FrameInfo::SerializeWithCachedSizes(
   // @@protoc_insertion_point(serialize_end:ascend.presenter.facial_recognition.FrameInfo)
 }
 
-::PROTOBUF_NAMESPACE_ID::uint8* FrameInfo::InternalSerializeWithCachedSizesToArray(
-    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+::PROTOBUF_NAMESPACE_ID::uint8 *
+FrameInfo::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8 *target) const {
   // @@protoc_insertion_point(serialize_to_array_start:ascend.presenter.facial_recognition.FrameInfo)
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // bytes image = 1;
   if (this->image().size() > 0) {
     target =
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBytesToArray(
-        1, this->image(), target);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBytesToArray(
+            1, this->image(), target);
   }
 
   // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 2;
-  for (unsigned int i = 0,
-      n = static_cast<unsigned int>(this->feature_size()); i < n; i++) {
+  for (unsigned int i = 0, n = static_cast<unsigned int>(this->feature_size());
+       i < n; i++) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessageToArray(
-        2, this->feature(static_cast<int>(i)), target);
+        InternalWriteMessageToArray(2, this->feature(static_cast<int>(i)),
+                                    target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::
+        SerializeUnknownFieldsToArray(_internal_metadata_.unknown_fields(),
+                                      target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:ascend.presenter.facial_recognition.FrameInfo)
   return target;
 }
 
 size_t FrameInfo::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.FrameInfo)
+  // @@protoc_insertion_point(message_byte_size_start:ascend.presenter.facial_recognition.FrameInfo)
   size_t total_size = 0;
 
   if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
-        _internal_metadata_.unknown_fields());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+            _internal_metadata_.unknown_fields());
   }
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   // repeated .ascend.presenter.facial_recognition.FaceFeature feature = 2;
   {
@@ -2657,16 +3000,16 @@ size_t FrameInfo::ByteSizeLong() const {
     total_size += 1UL * count;
     for (unsigned int i = 0; i < count; i++) {
       total_size +=
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          this->feature(static_cast<int>(i)));
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+              this->feature(static_cast<int>(i)));
     }
   }
 
   // bytes image = 1;
   if (this->image().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->image());
+    total_size +=
+        1 + ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+                this->image());
   }
 
   int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
@@ -2674,95 +3017,125 @@ size_t FrameInfo::ByteSizeLong() const {
   return total_size;
 }
 
-void FrameInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.FrameInfo)
+void FrameInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_merge_from_start:ascend.presenter.facial_recognition.FrameInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  const FrameInfo* source =
-      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FrameInfo>(
-          &from);
+  const FrameInfo *source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<FrameInfo>(&from);
   if (source == nullptr) {
-  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.FrameInfo)
+    // @@protoc_insertion_point(generalized_merge_from_cast_fail:ascend.presenter.facial_recognition.FrameInfo)
     ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
   } else {
-  // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.FrameInfo)
+    // @@protoc_insertion_point(generalized_merge_from_cast_success:ascend.presenter.facial_recognition.FrameInfo)
     MergeFrom(*source);
   }
 }
 
-void FrameInfo::MergeFrom(const FrameInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.FrameInfo)
+void FrameInfo::MergeFrom(const FrameInfo &from) {
+  // @@protoc_insertion_point(class_specific_merge_from_start:ascend.presenter.facial_recognition.FrameInfo)
   GOOGLE_DCHECK_NE(&from, this);
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
-  (void) cached_has_bits;
+  (void)cached_has_bits;
 
   feature_.MergeFrom(from.feature_);
   if (from.image().size() > 0) {
 
-    image_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.image_);
+    image_.AssignWithDefault(
+        &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+        from.image_);
   }
 }
 
-void FrameInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-// @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.FrameInfo)
-  if (&from == this) return;
+void FrameInfo::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message &from) {
+  // @@protoc_insertion_point(generalized_copy_from_start:ascend.presenter.facial_recognition.FrameInfo)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-void FrameInfo::CopyFrom(const FrameInfo& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.FrameInfo)
-  if (&from == this) return;
+void FrameInfo::CopyFrom(const FrameInfo &from) {
+  // @@protoc_insertion_point(class_specific_copy_from_start:ascend.presenter.facial_recognition.FrameInfo)
+  if (&from == this)
+    return;
   Clear();
   MergeFrom(from);
 }
 
-bool FrameInfo::IsInitialized() const {
-  return true;
-}
+bool FrameInfo::IsInitialized() const { return true; }
 
-void FrameInfo::Swap(FrameInfo* other) {
-  if (other == this) return;
+void FrameInfo::Swap(FrameInfo *other) {
+  if (other == this)
+    return;
   InternalSwap(other);
 }
-void FrameInfo::InternalSwap(FrameInfo* other) {
+void FrameInfo::InternalSwap(FrameInfo *other) {
   using std::swap;
   _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&feature_)->InternalSwap(CastToBase(&other->feature_));
-  image_.Swap(&other->image_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  image_.Swap(&other->image_,
+              &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+              GetArenaNoVirtual());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata FrameInfo::GetMetadata() const {
   return GetMetadataStatic();
 }
 
-
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace facial_recognition
-}  // namespace presenter
-}  // namespace ascend
+} // namespace facial_recognition
+} // namespace presenter
+} // namespace ascend
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::CommonResponse* Arena::CreateMaybeMessage< ::ascend::presenter::facial_recognition::CommonResponse >(Arena* arena) {
-  return Arena::CreateInternal< ::ascend::presenter::facial_recognition::CommonResponse >(arena);
+template <>
+PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::CommonResponse *
+Arena::CreateMaybeMessage<
+    ::ascend::presenter::facial_recognition::CommonResponse>(Arena *arena) {
+  return Arena::CreateInternal<
+      ::ascend::presenter::facial_recognition::CommonResponse>(arena);
 }
-template<> PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::RegisterApp* Arena::CreateMaybeMessage< ::ascend::presenter::facial_recognition::RegisterApp >(Arena* arena) {
-  return Arena::CreateInternal< ::ascend::presenter::facial_recognition::RegisterApp >(arena);
+template <>
+PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::RegisterApp *
+Arena::CreateMaybeMessage<::ascend::presenter::facial_recognition::RegisterApp>(
+    Arena *arena) {
+  return Arena::CreateInternal<
+      ::ascend::presenter::facial_recognition::RegisterApp>(arena);
 }
-template<> PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::Box* Arena::CreateMaybeMessage< ::ascend::presenter::facial_recognition::Box >(Arena* arena) {
-  return Arena::CreateInternal< ::ascend::presenter::facial_recognition::Box >(arena);
+template <>
+PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::Box *
+Arena::CreateMaybeMessage<::ascend::presenter::facial_recognition::Box>(
+    Arena *arena) {
+  return Arena::CreateInternal<::ascend::presenter::facial_recognition::Box>(
+      arena);
 }
-template<> PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::FaceFeature* Arena::CreateMaybeMessage< ::ascend::presenter::facial_recognition::FaceFeature >(Arena* arena) {
-  return Arena::CreateInternal< ::ascend::presenter::facial_recognition::FaceFeature >(arena);
+template <>
+PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::FaceFeature *
+Arena::CreateMaybeMessage<::ascend::presenter::facial_recognition::FaceFeature>(
+    Arena *arena) {
+  return Arena::CreateInternal<
+      ::ascend::presenter::facial_recognition::FaceFeature>(arena);
 }
-template<> PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::FaceInfo* Arena::CreateMaybeMessage< ::ascend::presenter::facial_recognition::FaceInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::ascend::presenter::facial_recognition::FaceInfo >(arena);
+template <>
+PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::FaceInfo *
+Arena::CreateMaybeMessage<::ascend::presenter::facial_recognition::FaceInfo>(
+    Arena *arena) {
+  return Arena::CreateInternal<
+      ::ascend::presenter::facial_recognition::FaceInfo>(arena);
 }
-template<> PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::FaceResult* Arena::CreateMaybeMessage< ::ascend::presenter::facial_recognition::FaceResult >(Arena* arena) {
-  return Arena::CreateInternal< ::ascend::presenter::facial_recognition::FaceResult >(arena);
+template <>
+PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::FaceResult *
+Arena::CreateMaybeMessage<::ascend::presenter::facial_recognition::FaceResult>(
+    Arena *arena) {
+  return Arena::CreateInternal<
+      ::ascend::presenter::facial_recognition::FaceResult>(arena);
 }
-template<> PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::FrameInfo* Arena::CreateMaybeMessage< ::ascend::presenter::facial_recognition::FrameInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::ascend::presenter::facial_recognition::FrameInfo >(arena);
+template <>
+PROTOBUF_NOINLINE ::ascend::presenter::facial_recognition::FrameInfo *
+Arena::CreateMaybeMessage<::ascend::presenter::facial_recognition::FrameInfo>(
+    Arena *arena) {
+  return Arena::CreateInternal<
+      ::ascend::presenter::facial_recognition::FrameInfo>(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

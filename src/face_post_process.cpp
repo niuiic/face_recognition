@@ -136,7 +136,7 @@ FacePostProcess::SendFeature(const shared_ptr<FaceRecognitionInfo> &info) {
   // return SUCCESS;
 }
 
-// KEY：人脸后处理完成返回最终结果
+// KEY：The face post-processing is complete and the final result is returned
 Result
 FacePostProcess::ReplyFeature(const shared_ptr<FaceRecognitionInfo> &info) {
   // get channel for reply feature (data from register)
@@ -181,7 +181,8 @@ FacePostProcess::ReplyFeature(const shared_ptr<FaceRecognitionInfo> &info) {
       face_feature->add_vector(face_imgs[i].feature_vector[j]);
     }
   }
-  // 将人脸识别的结果传给presenterserver，并返回执行情况
+  // Pass the result of face recognition to presenterserver and return the
+  // execution status
   PresenterErrorCode error_code = channel->SendMessage(result, resp);
   INFO_LOG("FacePostProcess::ReplyFeature end.");
   return CheckSendMessageRes(error_code);

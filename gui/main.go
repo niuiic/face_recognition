@@ -160,6 +160,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 
 	defer session2.Close()
 
+	// get PID of face recognition program
 	output, err := session2.Output(`ps -A | grep main`)
 	if err != nil {
 		log.Fatal(err)
@@ -176,6 +177,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 
 	defer session3.Close()
 
+	// kill face recognition program
 	err = session3.Run(`kill -9 ` + PID)
 	if err != nil {
 		log.Fatal(err)
@@ -223,7 +225,7 @@ func main() {
 
 	cameraPage = container.NewVBox(
 		widget.NewButton("return", func() {
-			exitChan <- struct{}{}
+			exitChan <- struct{}{} // kill the face recognition program
 			mainWindow.SetContent(switchPage)
 			switchPage.Show()
 		}),
@@ -279,8 +281,7 @@ func main() {
 	localVideoPage =
 		container.NewVBox(
 			widget.NewButton("return", func() {
-				// TODO：关闭摄像机等
-				exitChan <- struct{}{}
+				exitChan <- struct{}{} // kill the face recognition program
 				mainWindow.SetContent(switchPage)
 				switchPage.Show()
 			}), label,
