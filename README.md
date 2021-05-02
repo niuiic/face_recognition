@@ -1,4 +1,7 @@
-# Face Recognition
+# Atlas 200 DK 人脸识别
 
-A face recognition project based on the Ascend, refer to the official routines, the purpose is to learn the framework.
+本项目根据官方例程修改，支持从摄像头和本地视频识别人脸。
+
+## 环境配置
+
 
