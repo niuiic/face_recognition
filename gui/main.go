@@ -30,8 +30,6 @@ import (
 	"github.com/pkg/sftp"
 )
 
-// TODO：完善配置内容
-
 // Config : environmental parameter configuration
 
 type Config struct {
@@ -85,7 +83,9 @@ func readConfig() Config {
 	return config
 }
 
-func getSshConnect(config *Config) *ssh.Client {
+// get ssh client
+
+func getSshClient(config *Config) *ssh.Client {
 	clientConfig := &ssh.ClientConfig{
 		Timeout:         10 * time.Second,
 		User:            config.DevelopBoardUser,
@@ -101,6 +101,8 @@ func getSshConnect(config *Config) *ssh.Client {
 	}
 	return nil
 }
+
+// transfer video to develop board
 
 func transferVideo(localVideoPath string, config *Config, sshClient *ssh.Client) {
 	sftpClient, err := sftp.NewClient(sshClient)
@@ -131,6 +133,8 @@ func transferVideo(localVideoPath string, config *Config, sshClient *ssh.Client)
 		dstFile.Write(buf)
 	}
 }
+
+// exec face recognition program
 
 func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string, exitChan chan struct{}) {
 	session, err := sshClient.NewSession()
@@ -181,7 +185,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 func main() {
 
 	config := readConfig()
-	sshClient := getSshConnect(&config)
+	sshClient := getSshClient(&config)
 	faceRecognition := app.New()
 	exitChan := make(chan struct{}, 1)
 
@@ -339,6 +343,6 @@ func main() {
 
 	localVideoPage.Add(form)
 
-	mainWindow.Resize(fyne.NewSize(1000, 1000))
+	mainWindow.Resize(fyne.NewSize(1000, 400))
 	mainWindow.ShowAndRun()
 }
