@@ -14,6 +14,7 @@ import (
 	"os/exec"
 	"path"
 	"path/filepath"
+	"regexp"
 	"runtime"
 	"strings"
 	"time"
@@ -155,10 +156,16 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	defer session2.Close()
 
 	output, err := session2.Output(`ps -A | grep main`)
-	fmt.Println(string(output))
-
 	if err != nil {
 		log.Fatal(err)
+	}
+	fmt.Println(string(output))
+
+	match, err := regexp.MatchString("main", string(output))
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(match)
 	}
 }
 
