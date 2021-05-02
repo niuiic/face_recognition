@@ -165,7 +165,14 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	result := pidRegexp.FindStringSubmatch(string(output))
 	PID := result[0]
 
-	err = session2.Run(`kill -9 ` + PID)
+	session3, err := sshClient.NewSession()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer session3.Close()
+
+	err = session3.Run(`kill -9 ` + PID)
 	if err != nil {
 		log.Fatal(err)
 	}
