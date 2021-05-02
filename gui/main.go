@@ -47,8 +47,8 @@ type Config struct {
 	DevelopBoardIP string `json:"develop_board_ip"`
 	// username of develop board
 	DevelopBoardUser string `json:"develop_board_user"`
-	// password of develop board
-	DevelopBoardPassword string `json:"develop_board_password"`
+	// root password of develop board
+	DevelopBoardRootPassword string `json:"develop_board_root_password"`
 	// the path to face recognition project on develop board
 	DevelopBoardProjectPath string `json:"develop_board_project_path"`
 }
@@ -91,7 +91,7 @@ func getSshConnect(config *Config) *ssh.Client {
 		User:            config.DevelopBoardUser,
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
-	clientConfig.Auth = []ssh.AuthMethod{ssh.Password(config.DevelopBoardPassword)}
+	clientConfig.Auth = []ssh.AuthMethod{ssh.Password(config.DevelopBoardRootPassword)}
 	addr := fmt.Sprintf("%s:%d", config.DevelopBoardIP, 22)
 	sshClient, err := ssh.Dial("tcp", addr, clientConfig)
 	if err != nil {
@@ -143,17 +143,18 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	session.Stdout = &stdOut
 	session.Stderr = &stdErr
 
-	cmd := config.DevelopBoardProjectPath + `/out/main ` + videoName
+	cmd := `source /home/` + config.DevelopBoardUser + `/.bashrc` + " && " + config.DevelopBoardProjectPath + `/out/main ` + videoName
 	fmt.Println(cmd)
 	err = session.Run(cmd)
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	// ret, err := strconv.Atoi(strings.Replace(stdOut.String(), "\n", "", -1))
 	// if err != nil {
 	// panic(err)
 	// }
-	// fmt.Printf("%d, %s\n", ret, stdErr.String())
+
 }
 
 func main() {
