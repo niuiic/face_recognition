@@ -213,7 +213,7 @@ func main() {
 				}
 
 				cmd := exec.Command(run, "http://"+config.PresenterServerIp+":"+config.PresenterServerPort)
-				err := cmd.Start()
+				err := cmd.Run()
 				if err != nil {
 					fmt.Println(err)
 				}
@@ -236,7 +236,7 @@ func main() {
 			}
 
 			cmd := exec.Command(run, "http://"+config.PresenterServerIp+":"+config.PresenterServerPort)
-			err := cmd.Start()
+			err := cmd.Run()
 			if err != nil {
 				fmt.Println(err)
 			}
