@@ -37,6 +37,8 @@ Atlas 200 DK 开发板本身作为运行环境（也可以同时作为开发环�
 
 开发者可以选择 linux 虚拟机、linux 物理机、本地 linux 服务器或者 Atlas 本身搭建开发环境。如果使用本地服务器，则需要使用 ssh 控制开发机。
 
+> 以下均使用开发机表示开发环境，使用开发板表示运行环境。
+
 ### 搭建开发环境
 
 Atlas 200 DK 使用 MindStudio 作为配套 IDE，该 IDE 基于 Jetbrains 的 IDEA，随功能强大，但资源消耗量亦很大。如果开发机性能不足，则不建议使用。以下为开发环境中 MindStudio 与 Cann Toolkit 架构图。
