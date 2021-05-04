@@ -68,11 +68,11 @@ func openPresenterServer(config *Config) {
 		fmt.Println(err)
 	}
 
-	for i := 0; i < 100; i++ {
-		msg, _ := child.ReadLine()
+	// for i := 0; i < 10; i++ {
+	// msg, _ := child.ReadLine()
 
-		fmt.Println(msg)
-	}
+	// fmt.Println(msg)
+	// }
 }
 
 // read the config file
