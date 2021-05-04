@@ -153,7 +153,6 @@ func transferVideo(localVideoPath string, config *Config, sshClient *ssh.Client)
 // exec face recognition program
 
 func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string, exitChan chan struct{}) {
-	println("hello")
 	session, err := sshClient.NewSession()
 	if err != nil {
 		log.Fatal(err)

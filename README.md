@@ -401,12 +401,134 @@ git clone https://github.com/niuiic/face_recognition
 
 本项目使用官方例程提供的模型。如果想要自己训练，可以使用华为[ModelArts 平台](https://www.huaweicloud.com/product/modelarts.html)。训练完成后使用 atc 工具进行转换。
 
+将模型放在项目根目录下的 model 目录下。
+
 | 模型名称       | 模型说明               | 下载路径                                                                                                                                                                                   |
 | -------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | face_detection | 人脸检测网络模型       | [下载地址](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/facedection/ssd-facedection_framework_caffe_aipp_1_batch_1_input_fp16_output_FP32.om) |
 | vanillacnn     | 人脸特征点标记网络模型 | [下载地址](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/vanillacnn/vanillacnn_framework_caffe_aipp_0_batch_4_input_fp32_output_FP32.om)       |
 | sphereface     | 特征向量获取网络模型   | [下载地址](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sphereface/sphereface_framework_caffe_aipp_1_batch_8_input_fp32_output_FP32.om)       |
 
-> 以上下载的模型需要改成表格内的名称，如`face_dection.om`。
+> 以上下载的模型需要改成表格内的名称，如`face_detection.om`。
 
 如果以上模型已不可用，则按下述方法转化模型。
+
+face_detection
+
+下载[[1]](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/facedection/face_detection_fp32.caffemodel) [[2]](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/facedection/face_detection.prototxt) [[3]](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/facedection/insert_op.cfg)
+
+执行
+
+```shell
+export install_path=$HOME/Ascend/ascend-toolkit/latest
+export LD_LIBRARY_PATH=${install_path}/atc/lib64
+atc --model=./face_detection.prototxt --weight=./face_detection_fp32.caffemodel --framework=0 --output=./face_detection --soc_version=Ascend310 --insert_op_conf=./insert_op.cfg
+```
+
+vanillacnn
+
+下载[[1]](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/vanillacnn/vanillacnn.caffemodel) [[2]](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/vanillacnn/vanilla_deploy.prototxt)
+
+执行
+
+```shell
+export install_path=$HOME/Ascend/ascend-toolkit/latest
+export LD_LIBRARY_PATH=${install_path}/atc/lib64
+atc --model=./vanilla_deploy.prototxt --weight=./vanillacnn.caffemodel --framework=0 --output=./vanillacnn_framework_caffe_aipp_0_batch_4_input_fp32_output_FP32 --soc_version=Ascend310
+```
+
+sphereface
+
+下载[[1]](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sphereface/sphereface.caffemodel) [[2]](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sphereface/sphereface.prototxt) [[3]](https://modelzoo-train-atc.obs.cn-north-4.myhuaweicloud.com/003_Atc_Models/AE/ATC%20Model/sphereface/insert_op.cfg)
+
+执行
+
+```shell
+export install_path=$HOME/Ascend/ascend-toolkit/latest
+export LD_LIBRARY_PATH=${install_path}/atc/lib64
+atc --model=./sphereface.prototxt --weight=./sphereface.caffemodel --framework=0 --output=./sphereface_framework_caffe_aipp_1_batch_8_input_fp32_output_FP32 --soc_version=Ascend310 --insert_op_conf=./insert_op.cfg
+```
+
+3. 安装 golang
+
+项目 gui 使用 go 语言编写，需要 go 语言环境。
+
+执行
+
+```shell
+wget https://golang.google.cn/dl/go1.16.3.linux-amd64.tar.gz
+sudo tar xfz go1.16.3.linux-amd64.tar.gz -C /usr/local
+```
+
+编辑`~/.bashrc`
+
+加入`export PATH=/usr/local/go/bin:$PATH`
+
+执行
+
+```
+go env -w GO111MODULE="on"
+go env -w GOPATH="/home/username/.go"
+go env -w GOPROXY="https://goproxy.cn,direct"
+```
+
+4. 编译项目
+
+退出当前终端模拟器。再新建一个模拟终端，回到项目目录（清除刚才设置的环境变量，防止产生冲突）。
+
+在项目根目录下执行以下命令。
+
+```shell
+export DDK_PATH=$HOME/Ascend/ascend-toolkit/latest/arm64-linux
+export NPU_HOST_LIB=$DDK_PATH/acllib/lib64/stub
+mkdir -p build/intermediates/host
+cd build/intermediates/host
+make clean
+cmake ../../../src -DCMAKE_CXX_COMPILER=aarch64-linux-gnu-g++ -DCMAKE_SKIP_RPATH=TRUE
+make
+```
+
+回到项目根目录，继续执行以下命令。
+
+```shell
+cd gui
+go mod init gui
+go mod tidy
+go build
+```
+
+### 项目运行
+
+#### 配置
+
+修改项目根目录下`scripts/param.conf`中的`presenter_server_ip`、`presenter_view_ip`。将其中改为开发机 USB 网卡 ip 地址，如`192.168.1.223`。
+
+修改项目根目录下`gui/param.json`中的配置。以下为例子。
+
+```json
+{
+  "presenter_server_path": "/home/niuiic/AscendProjects/samples/cplusplus/level2_simple_inference/n_performance/1_multi_process_thread/face_recognition_camera/scripts/run_presenter_server.sh",
+  "presenter_server_ip": "192.168.1.223",
+  "presenter_server_port": "7009",
+  "presenter_server_output_dir": "out",
+  "develop_board_ip": "192.168.1.2",
+  "develop_board_user": "HwHiAiUser",
+  "develop_board_root_password": "a",
+  "develop_board_project_path": "/home/HwHiAiUser/AscendSample/face_recognition_camera"
+}
+```
+
+#### 运行
+
+进入项目根目录。
+
+```shell
+cd ./gui
+./gui
+```
+
+#### 注意事项
+
+- 必须先启动 presenter server，开发板上的人脸识别主程序才能正常启动。
+- presenter server 为单例模式，同一时间只能启动一个实例。
+- 当前界面中设置点击 go 后等待 5 秒进入选择界面，以确保 presenter server 完全启动。但是第一次打开主程序（如点击 camera）时，浏览器页面中不存在`face detection`通道。此时 presenter server 与主程序均已经启动，但似乎连接有问题。目前暂未发现该问题源头，手动解决可以点击 return 返回后重进。
