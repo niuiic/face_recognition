@@ -203,6 +203,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	if err != nil {
 		log.Fatal(err)
 	}
+	println("hello")
 }
 
 func main() {
