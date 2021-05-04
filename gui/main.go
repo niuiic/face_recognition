@@ -172,13 +172,14 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println(string(output))
 
 	pidRegexp := regexp.MustCompile(`([\d]{4}) [\S][\s]+[\d]{2}:[\d]{2}:[\d]{2} main`)
 	result := pidRegexp.FindStringSubmatch(string(output))
-	PID := result[0]
-	fmt.Println(result)
-
+	if len(result) > 0 {
+		cmd = "kill -9" + result[0]
+	} else {
+		cmd = ""
+	}
 	session3, err := sshClient.NewSession()
 	if err != nil {
 		log.Fatal(err)
@@ -187,7 +188,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	defer session3.Close()
 
 	// kill face recognition program
-	err = session3.Run(`kill -9 ` + PID)
+	err = session3.Run(cmd)
 	if err != nil {
 		log.Fatal(err)
 	}
