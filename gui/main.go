@@ -26,7 +26,6 @@ import (
 
 	"golang.org/x/crypto/ssh"
 
-	"github.com/ThomasRooney/gexpect"
 	"github.com/pkg/sftp"
 )
 
@@ -54,27 +53,32 @@ type Config struct {
 // open presenter server
 
 func openPresenterServer(config *Config) {
-	cmd := "sh " + config.PresenterServerPath + "\nout\n"
-	child, err := gexpect.Spawn(cmd)
+	cmd := exec.Command("sh " + config.PresenterServerPath + "\nout\n")
+	err := cmd.Run()
 	if err != nil {
-		log.Fatal("spawn cmd error ", err)
-	}
-
-	if err := child.ExpectTimeout("Please input a absolute path to storage facial recognition data: ", 1*time.Second); err != nil {
-		// log.Fatal("Expect timieout error ", err)
-		// child.SendLine(config.PresenterServerOutputDir)
 		fmt.Println(err)
 	}
+	// child, err := gexpect.Spawn(cmd)
+	// if err != nil {
+	// log.Fatal("spawn cmd error ", err)
+	// }
 
-	if err := child.SendLine(config.PresenterServerOutputDir); err != nil {
-		// log.Fatal("sendLine output dir error ", err)
-		fmt.Println(err)
-	}
+	// if err := child.ExpectTimeout("Please input a absolute path to storage facial recognition data: ", 1*time.Second); err != nil {
+	// log.Fatal("Expect timieout error ", err)
+	// child.SendLine(config.PresenterServerOutputDir)
+	// fmt.Println(err)
+	// }
 
-	if err := child.Wait(); err != nil {
-		// log.Fatal("Wait error: ", err)
-		fmt.Println(err)
-	}
+	// if err := child.SendLine(config.PresenterServerOutputDir); err != nil {
+	// log.Fatal("sendLine output dir error ", err)
+	// fmt.Println(err)
+	// }
+
+	// if err := child.Wait(); err != nil {
+	// log.Fatal("Wait error: ", err)
+	// fmt.Println(err)
+	// }
+
 }
 
 // read the config file
