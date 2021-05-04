@@ -224,8 +224,10 @@ func main() {
 	welcomePage = container.NewVBox(
 		widget.NewLabel("Welcome to the face recognition app"),
 		widget.NewButton("Go", func() {
+			welcomePage.Add(widget.NewLabel("Presenter server is starting. Please wait."))
 			go openPresenterServer(&config, exitChan)
 			<-exitChan
+			time.Sleep(5 * time.Second)
 			mainWindow.SetContent(switchPage)
 		}),
 	)
