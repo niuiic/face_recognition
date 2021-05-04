@@ -60,7 +60,7 @@ func openPresenterServer(config *Config) {
 	}
 	defer child.Close()
 
-	cmd := exec.Command("bash " + config.PresenterServerPath)
+	cmd := exec.Command(config.PresenterServerPath)
 	cmd.Stdin = child.Tty()
 	cmd.Stdout = child.Tty()
 	cmd.Stderr = child.Tty()
@@ -80,6 +80,7 @@ func openPresenterServer(config *Config) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	println("hello")
 }
 
 // read the config file
