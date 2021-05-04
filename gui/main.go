@@ -54,7 +54,7 @@ type Config struct {
 // open presenter server
 
 func openPresenterServer(config *Config) {
-	cmd := "sh " + config.PresenterServerPath
+	cmd := "sh " + config.PresenterServerPath + "\nout\n"
 	child, err := gexpect.Spawn(cmd)
 	if err != nil {
 		log.Fatal("spawn cmd error ", err)
