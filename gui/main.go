@@ -182,14 +182,14 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 		log.Fatal(err)
 	}
 
-	fmt.Println(string(output))
-
 	pidRegexp := regexp.MustCompile(`([\d]{4}) [\S][\s]+[\d]{2}:[\d]{2}:[\d]{2} main`)
 	result := pidRegexp.FindStringSubmatch(string(output))
 
-	fmt.Println(result)
-
-	PID := result[0]
+	if len(result) > 0 {
+		cmd = "kill -9 " + result[0]
+	} else {
+		cmd = "ls"
+	}
 
 	session3, err := sshClient.NewSession()
 	if err != nil {
@@ -199,7 +199,7 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	defer session3.Close()
 
 	// kill face recognition program
-	err = session3.Run("kill -9 " + PID)
+	err = session3.Run(cmd)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -211,6 +211,7 @@ func main() {
 	sshClient := getSshClient(&config)
 	faceRecognition := app.New()
 	exitChan := make(chan struct{}, 1)
+	runFlag := false
 
 	mainWindow := faceRecognition.NewWindow("face recognition")
 
@@ -305,7 +306,10 @@ func main() {
 	localVideoPage =
 		container.NewVBox(
 			widget.NewButton("return", func() {
-				exitChan <- struct{}{} // kill the face recognition program
+				if runFlag {
+					exitChan <- struct{}{} // kill the face recognition program
+					runFlag = false
+				}
 				mainWindow.SetContent(switchPage)
 				switchPage.Show()
 			}), label,
@@ -363,6 +367,7 @@ func main() {
 			localVideoPage.Add(btnOpenBrowser)
 			_, fileName := filepath.Split(inputPath)
 			go execFaceRecognition(sshClient, &config, fileName, exitChan)
+			runFlag = true
 		}
 	}
 
