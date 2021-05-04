@@ -26,7 +26,7 @@ import (
 
 	"golang.org/x/crypto/ssh"
 
-	"github.com/ThomasRooney/gexpect"
+	expect "github.com/Netflix/go-expect"
 	"github.com/pkg/sftp"
 )
 
@@ -54,22 +54,32 @@ type Config struct {
 // open presenter server
 
 func openPresenterServer(config *Config) {
-	cmd := "bash " + config.PresenterServerPath
-
-	child, err := gexpect.Spawn(cmd)
-
+	child, err := expect.NewConsole(expect.WithStdout(os.Stdout))
+	if err != nil {
+		log.Fatal(err)
+	}
 	defer child.Close()
 
+	cmd := exec.Command("bash " + config.PresenterServerPath)
+	cmd.Stdin = child.Tty()
+	cmd.Stdout = child.Tty()
+	cmd.Stderr = child.Tty()
+
+	go func() {
+		child.ExpectEOF()
+	}()
+
+	err = cmd.Start()
 	if err != nil {
-		log.Fatal("spawn cmd error\n", err)
+		log.Fatal(err)
 	}
 
-	err = child.SendLine("out")
+	time.Sleep(time.Second)
+	child.SendLine("out")
+	err = cmd.Wait()
 	if err != nil {
-		log.Fatal("send line error\n", err)
+		log.Fatal(err)
 	}
-	child.Wait()
-	println("hello")
 }
 
 // read the config file
