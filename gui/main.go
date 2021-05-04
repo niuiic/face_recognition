@@ -55,13 +55,14 @@ type Config struct {
 
 func openPresenterServer(config *Config) {
 	cmd := "sh " + config.PresenterServerPath
+	println(cmd)
 
 	child, err := gexpect.Spawn(cmd)
 	if err != nil {
 		log.Fatal("spawn cmd error ", err)
 	}
 
-	for i := 0; i < 4; i++ {
+	for i := 0; i < 10; i++ {
 		msg, _ := child.ReadLine()
 
 		fmt.Println(msg)
