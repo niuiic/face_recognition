@@ -58,8 +58,14 @@ func openPresenterServer(config *Config) {
 	println(cmd)
 
 	child, err := gexpect.Spawn(cmd)
+
 	if err != nil {
 		log.Fatal("spawn cmd error ", err)
+	}
+
+	err = child.SendLine("out")
+	if err != nil {
+		fmt.Println(err)
 	}
 
 	for i := 0; i < 10; i++ {
