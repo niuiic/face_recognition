@@ -68,7 +68,7 @@ func openPresenterServer(config *Config) {
 		fmt.Println(err)
 	}
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 100; i++ {
 		msg, _ := child.ReadLine()
 
 		fmt.Println(msg)
