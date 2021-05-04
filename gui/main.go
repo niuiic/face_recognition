@@ -225,6 +225,7 @@ func main() {
 		widget.NewLabel("Welcome to the face recognition app"),
 		widget.NewButton("Go", func() {
 			go openPresenterServer(&config, exitChan)
+			<-exitChan
 			mainWindow.SetContent(switchPage)
 		}),
 	)
@@ -235,7 +236,6 @@ func main() {
 		widget.NewLabel("You can choose local video or camera input to recognition face"),
 		widget.NewButton("camera", func() {
 			go execFaceRecognition(sshClient, &config, "", exitChan)
-			<-exitChan
 			mainWindow.SetContent(cameraPage)
 			cameraPage.Show()
 		}),
