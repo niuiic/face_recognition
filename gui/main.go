@@ -59,19 +59,20 @@ func openPresenterServer(config *Config) {
 	child, err := gexpect.Spawn(cmd)
 
 	if err != nil {
-		log.Fatal("spawn cmd error ", err)
+		log.Fatal("spawn cmd error\n", err)
 	}
 
 	err = child.SendLine("out")
 	if err != nil {
-		fmt.Println(err)
+		log.Fatal("send line error\n", err)
 	}
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 20; i++ {
 		msg, _ := child.ReadLine()
 
 		fmt.Println(msg)
 	}
+	child.Wait()
 }
 
 // read the config file
@@ -80,11 +81,11 @@ func readConfig() Config {
 	var config Config
 	data, err := ioutil.ReadFile("./param.json")
 	if err != nil {
-		log.Fatal("failed to open json config file", err)
+		log.Fatal("failed to open json config file\n", err)
 	} else {
 		err = json.Unmarshal(data, &config)
 		if err != nil {
-			log.Fatal("failed to parse json data", err)
+			log.Fatal("failed to parse json data\n", err)
 		}
 	}
 	return config
