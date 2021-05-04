@@ -55,7 +55,6 @@ type Config struct {
 
 func openPresenterServer(config *Config) {
 	cmd := config.PresenterServerPath
-	println(cmd)
 
 	child, err := gexpect.Spawn(cmd)
 
@@ -68,11 +67,11 @@ func openPresenterServer(config *Config) {
 		fmt.Println(err)
 	}
 
-	// for i := 0; i < 10; i++ {
-	// msg, _ := child.ReadLine()
+	for i := 0; i < 10; i++ {
+		msg, _ := child.ReadLine()
 
-	// fmt.Println(msg)
-	// }
+		fmt.Println(msg)
+	}
 }
 
 // read the config file
@@ -173,10 +172,12 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	if err != nil {
 		log.Fatal(err)
 	}
+	fmt.Println(output)
 
 	pidRegexp := regexp.MustCompile(`([\d]{4}) [\S][\s]+[\d]{2}:[\d]{2}:[\d]{2} main`)
 	result := pidRegexp.FindStringSubmatch(string(output))
 	PID := result[0]
+	fmt.Println(result)
 
 	session3, err := sshClient.NewSession()
 	if err != nil {
