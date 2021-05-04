@@ -63,6 +63,10 @@ func openPresenterServer(config *Config) {
 	if err := child.SendLine(config.PresenterServerOutputDir); err != nil {
 		log.Fatal("sendLine output dir error ", err)
 	}
+
+	if err := child.Wait(); err != nil {
+		log.Fatal("Wait error: ", err)
+	}
 }
 
 // read the config file
