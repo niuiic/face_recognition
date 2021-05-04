@@ -190,9 +190,6 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 
 	// kill face recognition program
 	err = session3.Run(cmd)
-	if err != nil {
-		log.Fatal(err)
-	}
 }
 
 func main() {
