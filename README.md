@@ -505,18 +505,26 @@ go build
 
 ```json
 {
-  "presenter_server_path": "/home/niuiic/AscendProjects/samples/cplusplus/level2_simple_inference/n_performance/1_multi_process_thread/face_recognition_camera/scripts/run_presenter_server.sh",
+  "presenter_server_path": "/home/niuiic/face_recognition/scripts/run_presenter_server.sh",
   "presenter_server_ip": "192.168.1.223",
   "presenter_server_port": "7009",
   "presenter_server_output_dir": "out",
   "develop_board_ip": "192.168.1.2",
   "develop_board_user": "HwHiAiUser",
   "develop_board_root_password": "a",
-  "develop_board_project_path": "/home/HwHiAiUser/AscendSample/face_recognition_camera"
+  "develop_board_project_path": "/home/HwHiAiUser/face_recognition_camera"
 }
 ```
 
 #### 运行
+
+先将项目同步到开发板，如进行项目根目录上一级目录，然后执行
+
+```
+rsync -P -avz ./face_recognition HwHiAiUser@192.168.1.2:/home/HwHiAiUser
+```
+
+> 用户名、文件路径、ip 地址需要安装实际情况修改。
 
 进入项目根目录。
 
@@ -524,6 +532,26 @@ go build
 cd ./gui
 ./gui
 ```
+
+注意该项目 gui 只是为了方便操作，没有进行全方位的错误检测。如果出现问题导致程序崩溃，多半是配置文件出错。
+
+如果要手动执行项目。则执行以下命令。
+
+```shell
+./scripts/run_presenter_server.sh
+```
+
+登陆到开发板，在项目根目录下执行。
+
+```shell
+cd out
+# 使用摄像头
+./main
+# 使用本地视频
+./main video_path
+```
+
+> video_path 为视频路径
 
 #### 注意事项
 
