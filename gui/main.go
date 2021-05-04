@@ -69,6 +69,7 @@ func openPresenterServer(config *Config) {
 		log.Fatal("send line error\n", err)
 	}
 	child.Wait()
+	println("hello")
 }
 
 // read the config file
