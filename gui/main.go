@@ -58,6 +58,8 @@ func openPresenterServer(config *Config) {
 
 	child, err := gexpect.Spawn(cmd)
 
+	defer child.Close()
+
 	if err != nil {
 		log.Fatal("spawn cmd error\n", err)
 	}
@@ -65,12 +67,6 @@ func openPresenterServer(config *Config) {
 	err = child.SendLine("out")
 	if err != nil {
 		log.Fatal("send line error\n", err)
-	}
-
-	for i := 0; i < 20; i++ {
-		msg, _ := child.ReadLine()
-
-		fmt.Println(msg)
 	}
 	child.Wait()
 }
@@ -174,13 +170,15 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 		log.Fatal(err)
 	}
 
+	fmt.Println(string(output))
+
 	pidRegexp := regexp.MustCompile(`([\d]{4}) [\S][\s]+[\d]{2}:[\d]{2}:[\d]{2} main`)
 	result := pidRegexp.FindStringSubmatch(string(output))
-	if len(result) > 0 {
-		cmd = "kill -9" + result[0]
-	} else {
-		cmd = ""
-	}
+
+	fmt.Println(result)
+
+	PID := result[0]
+
 	session3, err := sshClient.NewSession()
 	if err != nil {
 		log.Fatal(err)
@@ -189,7 +187,10 @@ func execFaceRecognition(sshClient *ssh.Client, config *Config, videoName string
 	defer session3.Close()
 
 	// kill face recognition program
-	err = session3.Run(cmd)
+	err = session3.Run("kill -9 " + PID)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
