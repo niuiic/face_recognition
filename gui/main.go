@@ -53,7 +53,7 @@ type Config struct {
 
 // open presenter server
 
-func openPresenterServer(config *Config) {
+func openPresenterServer(config *Config, exitChan chan struct{}) {
 	child, err := expect.NewConsole(expect.WithStdout(os.Stdout))
 	if err != nil {
 		log.Fatal(err)
@@ -76,11 +76,11 @@ func openPresenterServer(config *Config) {
 
 	time.Sleep(time.Second)
 	child.SendLine("out")
+	exitChan <- struct{}{}
 	err = cmd.Wait()
 	if err != nil {
 		log.Fatal(err)
 	}
-	println("hello")
 }
 
 // read the config file
@@ -224,7 +224,7 @@ func main() {
 	welcomePage = container.NewVBox(
 		widget.NewLabel("Welcome to the face recognition app"),
 		widget.NewButton("Go", func() {
-			go openPresenterServer(&config)
+			go openPresenterServer(&config, exitChan)
 			mainWindow.SetContent(switchPage)
 		}),
 	)
@@ -235,6 +235,7 @@ func main() {
 		widget.NewLabel("You can choose local video or camera input to recognition face"),
 		widget.NewButton("camera", func() {
 			go execFaceRecognition(sshClient, &config, "", exitChan)
+			<-exitChan
 			mainWindow.SetContent(cameraPage)
 			cameraPage.Show()
 		}),
