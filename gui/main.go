@@ -61,10 +61,11 @@ func openPresenterServer(config *Config) {
 		log.Fatal("spawn cmd error ", err)
 	}
 
-	msg, _ := child.ReadLine()
+	for i := 0; i < 4; i++ {
+		msg, _ := child.ReadLine()
 
-	fmt.Println(msg)
-
+		fmt.Println(msg)
+	}
 }
 
 // read the config file
