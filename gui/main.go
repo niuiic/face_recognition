@@ -60,18 +60,18 @@ func openPresenterServer(config *Config) {
 		log.Fatal("spawn cmd error ", err)
 	}
 
-	// if err := child.ExpectTimeout("Please input a absolute path to storage facial recognition data: ", 10*time.Second); err != nil {
-	// log.Fatal("Expect timieout error ", err)
-	// }
+	if err := child.ExpectTimeout("Please input a absolute path to storage facial recognition data: ", 1*time.Second); err != nil {
+		// log.Fatal("Expect timieout error ", err)
+		child.SendLine(config.PresenterServerOutputDir)
+	}
 
 	// if err := child.SendLine(config.PresenterServerOutputDir); err != nil {
 	// log.Fatal("sendLine output dir error ", err)
 	// }
 
-	if err := child.Wait(); err != nil {
-		// log.Fatal("Wait error: ", err)
-		child.SendLine(config.PresenterServerOutputDir)
-	}
+	// if err := child.Wait(); err != nil {
+	// log.Fatal("Wait error: ", err)
+	// }
 }
 
 // read the config file
