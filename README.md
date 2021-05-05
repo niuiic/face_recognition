@@ -190,7 +190,7 @@ export ASCEND_OPP_PATH=${install_path}/opp
 
 MindStudio 的安装与基础功能介绍可以参考[文档](https://support.huaweicloud.com/ug-mindstudioc75/atlasms_02_0191.html)。
 
-由于虚拟机性能不高，此处暂时放弃使用 MindStudio，之后将另介绍一种开发环境。
+由于虚拟机性能不高，此处暂时放弃使用 MindStudio，之后另介绍一种开发方式。
 
 #### 部署 Media 模块
 
@@ -313,9 +313,111 @@ sudo iptables -A FORWARD -i enp0s20f0u8 -o enp2s0 -m state --state RELATED,ESTAB
 
 ### 配置开发工具
 
-如果开发机性能不足以运行 MindStudio，且对命令行有一定熟悉程度，可以使用 vim 或 neovim 作为编辑器开发项目。
+如果开发机性能不足以运行 MindStudio，建议使用以下方案。
 
-关于 vim 的配置可以参考[我的博客](https://www.niuiic.top/categories/Vim/)。
+#### 编辑环境搭建
+
+在使用虚拟机作为开发机的情况下，由于开发机性能不足，使用 MindStudio 作为 IDE 进行开发非常容易卡机。为了弥补性能的不足，将项目的编辑与编译环节分离。项目编辑转移到主机或者其他电脑（以下假设使用主机），编译仍然使用开发机。
+
+要剥离编辑环节，就要向主机提供编辑所需的环境。该环境包含内容如下。
+
+- 各种头文件、库文件
+- 编译工具链
+
+头文件与库文件只需要复制开发机主目录下（如果安装时使用默认路径的话）的`Ascend`、`ascend_ddk`目录到主机即可。
+
+编译工具链可以在网上下载 aarch64 gcc 编译链。
+
+准备好这些之后，选用 vscode 作为编辑器来编写代码。在其中安装各种语言所需插件，设置头文件路径、编译链路径。就可以达到代码自动补全、代码格式化、代码逻辑检查等功能。
+
+vscode 的安装配置可以在网上找教程，如[教程示例](https://zhuanlan.zhihu.com/p/87864677)。
+
+如果觉得 vscode 配置起来比较麻烦，可以选用其他编辑器，或者 IDE，如 jetbrains 的 Clion 等。如果选择 IDE，尤其是 jetbrains 系列的 IDE，要在编辑的同时打开虚拟机，电脑内存最好在 16G 及以上。
+
+如果对 vim 比较熟悉，可以尝试使用 vim/neovim 作为编辑器开发项目。如果不熟悉，最好果断放弃。此外如果主机是 windows 系统，不推荐使用 vim。
+
+如果有兴趣将 vim 打造成比 IDE 更强大的多语言编辑器，可以参考[我的博客](https://www.niuiic.top/categories/Vim/)。
+
+搭建好编辑环境之后，就可以开始编辑代码。编辑器不会提供新建项目的功能，如果要新建项目，按照项目的目录结构搭建即可。建议先从 gitee 拷贝官方例程序，进行修改。
+
+#### 从编辑到编译
+
+现在编辑和编译环境已经分离，编辑完成后要进行编译，必须先把写好的代码上传到开发机。该步骤有多种实现方案，推荐以下两个方案。
+
+1. 直接拷贝
+
+因为是使用虚拟机，直接将代码从主机拷贝到虚拟机然后执行编译命令是最简单，也是相当快速的方法。
+
+2. 使用 git
+
+git 是分布式版本控制工具。大小项目的管理通常都使用 git 及其它类似的工具。要实现以上功能，只需在主机将写好的代码推送到远程仓库，然后在开发机上拉取远程仓库的代码即可。
+
+使用该方案的好处是可以方便的管理项目，对于初学者而言，可能最重要功能的就是版本的回滚与多分支。当因为在正确的代码上为添加功能而引入错误，又实在改不回去时，回滚可以节省相当多的时间。多分支的结构允许在 main 分支上保存稳定的版本，然后在其余分支上进行修改，直到再次稳定后合并到 main 分支，确保修改代码的尝试不至于损害之前的劳动成果。
+
+git 的初步使用可以参考[git 入门教程](https://www.liaoxuefeng.com/wiki/896043488029600)。
+
+#### 案例
+
+下面以我的开发环境为例，说明一下部署与流程。
+
+- 操作系统
+  ![操作系统](./img/7.png)
+- 编辑器
+  ![编辑器](./img/8.png)
+- 编译链
+  ![编译链](./img/9.png)
+
+将`Ascend`和`ascend_ddk`拷贝到`~/Ascend`和`~/ascend_ddk`。
+
+将项目拷贝到本地。`git clone https://github.com/niuiic/face_recognition`。
+
+执行以下命令。
+
+```shell
+export DDK_PATH=$HOME/Ascend/ascend-toolkit/latest/arm64-linux
+export NPU_HOST_LIB=$DDK_PATH/acllib/lib64/stub
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=aarch64-unknown-linux-musl-gcc -DCMAKE_CXX_COMPILER=aarch64-unknown-linux-musl-g++
+compiledb -n make
+```
+
+此时会产生一个`compile_commands.json`，该文件是`clangd`（C 和 C++的语言服务器）工作的配置文件。将该文件放到项目根目录下，即可使`clangd`正确工作。
+
+使用 neovim 打开一个 cpp 文件，已经可以正确启动所有功能。（neovim 配置略）
+
+编写代码，然后推送到 github 远程仓库。
+
+```shell
+git add .
+git commit -m "update"
+git pull origin main
+git push origin main
+```
+
+编写一个编译脚本。
+
+```shell
+# build.sh
+ssh niuiic@192.168.1.106 "cd ~/AscendProjects/samples/cplusplus/level2_simple_inference/n_performance/1_multi_process_thread/face_recognition_camera && ./make.sh" > ./build.log 2>&1
+sed -i "s/fatal/%ERROR% fatal/g" ./build.log
+sed -i "s/\/home\/niuiic\/AscendProjects\/samples\/cplusplus\/level2_simple_inference\/n_performance\/1_multi_process_thread\/face_recognition_camera/\/home\/niuiic\/Documents\/Project\/Cpp\/face_recognition/g" ./build.log
+sed -i "s/warning/%WARNING%/g" ./build.log
+sed -i "s/error/%ERROR%/g" ./build.log
+cat ./build.log
+```
+
+该脚本通过 ssh 通道控制开发机拉取 git 仓库，然后完成编译，并且把输出的信息返回，然后修改开发机上项目目录到本地目录。传给 neovim 的 quickfix 插件（过程可见[vim quickfix](https://www.niuiic.top/2021/04/17/vim-quickfix/)，然后插件会在 neovim 中自动定位到编译出错的位置，以达到在本地使用 IDE 的效果。
+
+测试项目时，连接好开发机和开发板，在开发机上运行程序，检验效果。
+
+比较使用 IDE 的方案，该方案下编辑所用电脑（非虚拟机主机）内存占用最高时不超过 4G（4G/18G），远低于使用 IDE 的消耗。且量身定制的 neovim 提供的编辑体验远超 IDE。
+
+如果对本套方案感兴趣，可以看一下以下链接。以下提供的内容只是入门级的，无基础情况下，想要真正了解并熟练运用至少需要一年时间。
+
+[gentoo linux 入门教程](https://www.niuiic.top/categories/Gentoo/)
+[vim 配置教程](https://www.niuiic.top/categories/Vim/)
+[vim 配置文件参考](https://github.com/niuiic/ultimate_neovim_configuration)
 
 ## 应用开发
 
@@ -382,7 +484,7 @@ Atlas 200 DK 开发套件为开发者提供了一套适配硬件加速的接口�
 
 首先确保已经按上述环境部署的步骤部署好开发已经运行环境。
 
-确保开发板与开发机连接正常。
+确保开发板与开发机连接正常，摄像头安装正确。
 
 #### 软件准备
 
@@ -562,3 +664,4 @@ cd out
 - 当前界面中设置点击 go 后等待 5 秒进入选择界面，以确保 presenter server 完全启动。但是第一次打开主程序（如点击 camera）时，浏览器页面中不存在`face detection`通道。此时 presenter server 与主程序均已经启动，但似乎连接有问题。目前暂未发现该问题源头，手动解决可以点击 return 返回后重进。
 - 模型的效果并不好，需要调整好角度才可识别。
 - 如果出现浏览器中有通道，但是无法正常显示视频等问题，建议重启开发机与开发板后重试。
+- 如果无法找到摄像头，建议换一个接口试一下。
