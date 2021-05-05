@@ -413,7 +413,7 @@ cat ./build.log
 
 比较使用 IDE 的方案，该方案下编辑所用电脑（非虚拟机主机）内存占用最高时不超过 4G（4G/18G），远低于使用 IDE 的消耗。且量身定制的 neovim 提供的编辑体验远超 IDE。
 
-如果对本套方案感兴趣，可以看一下以下链接。以下提供的链接不包含深度内容，无基础情况下，想要真正了解并熟练运用至少需要折腾一年。
+如果对本套方案感兴趣，可以查看[我的博客](https://www.niuiic.top/)。以下提供的链接不包含深度内容，相对容易入手。无基础情况下，想要真正了解并熟练运用 linux + vim 的开发模式至少需要折腾一年。
 
 [gentoo linux 入门教程](https://www.niuiic.top/categories/Gentoo/)
 [vim 配置教程](https://www.niuiic.top/categories/Vim/)
