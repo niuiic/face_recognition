@@ -407,13 +407,13 @@ sed -i "s/error/%ERROR%/g" ./build.log
 cat ./build.log
 ```
 
-该脚本通过 ssh 通道控制开发机拉取 git 仓库，然后完成编译，并且把输出的信息返回，然后修改开发机上项目目录到本地目录。传给 neovim 的 quickfix 插件（过程可见[vim quickfix](https://www.niuiic.top/2021/04/17/vim-quickfix/)，然后插件会在 neovim 中自动定位到编译出错的位置，以达到在本地使用 IDE 的效果。
+该脚本通过 ssh 通道控制开发机拉取 git 仓库，然后完成编译，并且把输出的信息返回，然后修改开发机上项目目录到本地目录。传给 neovim 的 quickfix 插件（具体可见[vim quickfix](https://www.niuiic.top/2021/04/17/vim-quickfix/)），然后插件会在 neovim 中自动定位到编译出错的位置，以达到在本地使用 IDE 的效果。
 
 测试项目时，连接好开发机和开发板，在开发机上运行程序，检验效果。
 
 比较使用 IDE 的方案，该方案下编辑所用电脑（非虚拟机主机）内存占用最高时不超过 4G（4G/18G），远低于使用 IDE 的消耗。且量身定制的 neovim 提供的编辑体验远超 IDE。
 
-如果对本套方案感兴趣，可以看一下以下链接。以下提供的内容只是入门级的，无基础情况下，想要真正了解并熟练运用至少需要一年时间。
+如果对本套方案感兴趣，可以看一下以下链接。以下提供的链接不包含深度内容，无基础情况下，想要真正了解并熟练运用至少需要折腾一年。
 
 [gentoo linux 入门教程](https://www.niuiic.top/categories/Gentoo/)
 [vim 配置教程](https://www.niuiic.top/categories/Vim/)
