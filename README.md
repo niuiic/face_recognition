@@ -574,7 +574,13 @@ go env -w GOPATH="/home/username/.go"
 go env -w GOPROXY="https://goproxy.cn,direct"
 ```
 
-4. 编译项目
+4. 安装mplayer
+
+需要 mplayer 对本地视频进行分辨率检测。（本地视频支持的分辨率为1280*720）
+
+`sudo apt-get install mplayer`
+
+5. 编译项目
 
 退出当前终端模拟器。再新建一个模拟终端，回到项目目录（清除刚才设置的环境变量，防止产生冲突）。
 
