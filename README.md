@@ -511,10 +511,9 @@ make install
 
 编译生成的`libatalsutil.so`将被拷贝到`$HOME/ascend_ddk/arm/lib/`下；头文件拷贝到`$HOME/ascend_ddk/arm/include/atlasutil`。
 
-将`libatlasutil.so`拷贝到运行环境`/home/HwHiAiUser/ascend_ddk/arm/lib`目录下。
+将`libatlasutil.so`拷贝到开发板`/home/HwHiAiUser/ascend_ddk/arm/lib`目录下。
 
-在运行环境下切换到 root用户，打开`/etc/ld.so.conf.d/mind_so.conf`，将`/home/HwHiAiUser/ascend_ddk/$arch/lib`追加到文件末尾，保存后退出，然后执行命令`ldconfig`。
-
+在开发板下切换到 root用户，打开`/etc/ld.so.conf.d/mind_so.conf`，将`/home/HwHiAiUser/ascend_ddk/$arch/lib`追加到文件末尾，保存后退出，然后执行命令`ldconfig`。
 
 2. 获取人脸识别模型
 
