@@ -499,6 +499,23 @@ cd ~/AscendProject
 git clone https://github.com/niuiic/face_recognition
 ```
 
+接下来安装atlasutil库。访问[官方例程页面](https://gitee.com/ascend/samples/tree/master/cplusplus/common/atlasutil#atlasutil%E5%BA%93%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E)。下载本页面中的源码。
+
+进入atlasutil源码目录，执行以下命令。
+
+```shell
+export DDK_PATH=$HOME/Ascend/ascend-toolkit/latest/arm64-linux
+make 
+make install
+````
+
+编译生成的`libatalsutil.so`将被拷贝到`$HOME/ascend_ddk/arm/lib/`下；头文件拷贝到`$HOME/ascend_ddk/arm/include/atlasutil`。
+
+将`libatlasutil.so`拷贝到运行环境`/home/HwHiAiUser/ascend_ddk/arm/lib`目录下。
+
+在运行环境下切换到 root用户，打开`/etc/ld.so.conf.d/mind_so.conf`，将`/home/HwHiAiUser/ascend_ddk/$arch/lib`追加到文件末尾，保存后退出，然后执行命令`ldconfig`。
+
+
 2. 获取人脸识别模型
 
 本项目使用官方例程提供的模型。如果想要自己训练，可以使用华为[ModelArts 平台](https://www.huaweicloud.com/product/modelarts.html)。训练完成后使用 atc 工具进行转换。
